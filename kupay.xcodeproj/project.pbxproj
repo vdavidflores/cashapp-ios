@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		229150CB1809F2BE00D0A715 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229150C91809F2BE00D0A715 /* ViewController.m */; };
+		229150CC1809F2BE00D0A715 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 229150CA1809F2BE00D0A715 /* ViewController.xib */; };
+		229150D01809F63300D0A715 /* ViewControllerConsultar.m in Sources */ = {isa = PBXBuildFile; fileRef = 229150CE1809F63300D0A715 /* ViewControllerConsultar.m */; };
+		229150D11809F63300D0A715 /* ViewControllerConsultar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 229150CF1809F63300D0A715 /* ViewControllerConsultar.xib */; };
 		2295FECC18077D9D002FF865 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2295FECB18077D9D002FF865 /* Foundation.framework */; };
 		2295FECE18077D9D002FF865 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2295FECD18077D9D002FF865 /* CoreGraphics.framework */; };
 		2295FED018077D9D002FF865 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2295FECF18077D9D002FF865 /* UIKit.framework */; };
@@ -19,6 +23,10 @@
 		2295FEE718077D9E002FF865 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2295FECF18077D9D002FF865 /* UIKit.framework */; };
 		2295FEEF18077D9E002FF865 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2295FEED18077D9E002FF865 /* InfoPlist.strings */; };
 		2295FEF118077D9E002FF865 /* kupayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2295FEF018077D9E002FF865 /* kupayTests.m */; };
+		2295FEFD18077E09002FF865 /* ViewControllerTransferir.m in Sources */ = {isa = PBXBuildFile; fileRef = 2295FEFB18077E09002FF865 /* ViewControllerTransferir.m */; };
+		2295FEFE18077E09002FF865 /* ViewControllerTransferir.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2295FEFC18077E09002FF865 /* ViewControllerTransferir.xib */; };
+		2295FF0218077E41002FF865 /* ViewControllerEscanear.m in Sources */ = {isa = PBXBuildFile; fileRef = 2295FF0018077E41002FF865 /* ViewControllerEscanear.m */; };
+		2295FF0318077E41002FF865 /* ViewControllerEscanear.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2295FF0118077E41002FF865 /* ViewControllerEscanear.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +40,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		229150C81809F2BE00D0A715 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		229150C91809F2BE00D0A715 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		229150CA1809F2BE00D0A715 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		229150CD1809F63300D0A715 /* ViewControllerConsultar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerConsultar.h; sourceTree = "<group>"; };
+		229150CE1809F63300D0A715 /* ViewControllerConsultar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerConsultar.m; sourceTree = "<group>"; };
+		229150CF1809F63300D0A715 /* ViewControllerConsultar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerConsultar.xib; sourceTree = "<group>"; };
 		2295FEC818077D9D002FF865 /* kupay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kupay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2295FECB18077D9D002FF865 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2295FECD18077D9D002FF865 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -48,6 +62,12 @@
 		2295FEEC18077D9E002FF865 /* kupayTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "kupayTests-Info.plist"; sourceTree = "<group>"; };
 		2295FEEE18077D9E002FF865 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2295FEF018077D9E002FF865 /* kupayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = kupayTests.m; sourceTree = "<group>"; };
+		2295FEFA18077E09002FF865 /* ViewControllerTransferir.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewControllerTransferir.h; path = ../ViewControllerTransferir.h; sourceTree = "<group>"; };
+		2295FEFB18077E09002FF865 /* ViewControllerTransferir.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewControllerTransferir.m; path = ../ViewControllerTransferir.m; sourceTree = "<group>"; };
+		2295FEFC18077E09002FF865 /* ViewControllerTransferir.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewControllerTransferir.xib; path = ../ViewControllerTransferir.xib; sourceTree = "<group>"; };
+		2295FEFF18077E41002FF865 /* ViewControllerEscanear.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerEscanear.h; sourceTree = "<group>"; };
+		2295FF0018077E41002FF865 /* ViewControllerEscanear.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerEscanear.m; sourceTree = "<group>"; };
+		2295FF0118077E41002FF865 /* ViewControllerEscanear.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerEscanear.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +127,20 @@
 		2295FED118077D9D002FF865 /* kupay */ = {
 			isa = PBXGroup;
 			children = (
+				229150CD1809F63300D0A715 /* ViewControllerConsultar.h */,
+				229150CE1809F63300D0A715 /* ViewControllerConsultar.m */,
+				229150CF1809F63300D0A715 /* ViewControllerConsultar.xib */,
+				2295FEFA18077E09002FF865 /* ViewControllerTransferir.h */,
+				2295FEFB18077E09002FF865 /* ViewControllerTransferir.m */,
+				2295FEFC18077E09002FF865 /* ViewControllerTransferir.xib */,
+				2295FEFF18077E41002FF865 /* ViewControllerEscanear.h */,
+				2295FF0018077E41002FF865 /* ViewControllerEscanear.m */,
+				2295FF0118077E41002FF865 /* ViewControllerEscanear.xib */,
 				2295FEDA18077D9E002FF865 /* AppDelegate.h */,
 				2295FEDB18077D9E002FF865 /* AppDelegate.m */,
+				229150C81809F2BE00D0A715 /* ViewController.h */,
+				229150C91809F2BE00D0A715 /* ViewController.m */,
+				229150CA1809F2BE00D0A715 /* ViewController.xib */,
 				2295FEDD18077D9E002FF865 /* Images.xcassets */,
 				2295FED218077D9D002FF865 /* Supporting Files */,
 			);
@@ -219,8 +251,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				229150CC1809F2BE00D0A715 /* ViewController.xib in Resources */,
+				2295FF0318077E41002FF865 /* ViewControllerEscanear.xib in Resources */,
 				2295FED618077D9E002FF865 /* InfoPlist.strings in Resources */,
 				2295FEDE18077D9E002FF865 /* Images.xcassets in Resources */,
+				229150D11809F63300D0A715 /* ViewControllerConsultar.xib in Resources */,
+				2295FEFE18077E09002FF865 /* ViewControllerTransferir.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,8 +275,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				229150D01809F63300D0A715 /* ViewControllerConsultar.m in Sources */,
+				2295FF0218077E41002FF865 /* ViewControllerEscanear.m in Sources */,
 				2295FEDC18077D9E002FF865 /* AppDelegate.m in Sources */,
 				2295FED818077D9E002FF865 /* main.m in Sources */,
+				2295FEFD18077E09002FF865 /* ViewControllerTransferir.m in Sources */,
+				229150CB1809F2BE00D0A715 /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +481,7 @@
 				2295FEF618077D9E002FF865 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2295FEF718077D9E002FF865 /* Build configuration list for PBXNativeTarget "kupayTests" */ = {
 			isa = XCConfigurationList;
@@ -449,6 +490,7 @@
 				2295FEF918077D9E002FF865 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

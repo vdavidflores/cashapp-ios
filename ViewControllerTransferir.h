@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  ViewControllerTransferir.h
 //  kupay
 //
 //  Created by Ma. Cristina Gonzalez Mayorga on 10/10/13.
@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
-
+@interface ViewControllerTransferir : UIViewController
 
 @end
