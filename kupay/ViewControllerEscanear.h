@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZBarSDK.h"
+@interface ViewControllerEscanear : UIViewController <ZBarReaderDelegate>{
+    ZBarReaderView * _reader;
+}
 
-@interface ViewControllerEscanear : UIViewController
+@property (strong, nonatomic) ZBarReaderView * reader;
+@property Boolean ecaneando;
 
 @end
