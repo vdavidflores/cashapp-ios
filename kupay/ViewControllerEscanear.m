@@ -72,13 +72,20 @@
 
 
 
-- (BOOL) init_camera
-{
+- (BOOL) init_camera {
     self.reader = [ZBarReaderView new];
     ZBarImageScanner * scanner = [ZBarImageScanner new];
-    [scanner setSymbology:ZBAR_PARTIAL config:0 to:0];
+    [scanner setSymbology: 0
+                   config: ZBAR_CFG_ENABLE
+                       to: 0];
+    [scanner setSymbology: ZBAR_QRCODE
+                   config: ZBAR_CFG_ENABLE
+                       to: 1];
     [self.reader initWithImageScanner:scanner];
-  
+    [self.reader setTrackingColor:[[UIColor alloc] initWithRed:197.0/255.0
+                                                         green:30.0/255.0
+                                                          blue:79.0/255.0
+                                                         alpha:1.0]];
     self.reader.readerDelegate = self;
     
     const float h = [UIScreen mainScreen].bounds.size.height;
@@ -87,12 +94,12 @@
     CGRect reader_rect = CGRectMake(0.0, 0.0,
                                     w , h );
     self.reader.frame = reader_rect;
-    self.reader.backgroundColor = [UIColor redColor];
+    self.reader.backgroundColor = [UIColor colorWithRed:179.0/255.0 green:30.0/255.0 blue:79.0/255.0 alpha:1.0];
     [self.reader start];
     
     [self.view addSubview: self.reader];
     return YES;
-   }
+}
 
 
 
