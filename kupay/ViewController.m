@@ -27,57 +27,47 @@
         
         ViewControllerConsultar *consultar = [[ViewControllerConsultar alloc]  initWithNibName:@"ViewControllerConsultar" bundle:nil];
         
-        [consultar setTitle:@"consultar"];
+        
         
         [consultar.tabBarItem setTitle:@"consultar"];
         [escanear.tabBarItem setTitle:@"escanear"];
         [transferir.tabBarItem setTitle:@"transferir"];
         
-        [escanear.tabBarItem setImage:[UIImage imageNamed:@"ku"]];
-      
+        [escanear.tabBarItem setImage:[UIImage imageNamed:@"scanerLogoUnselected"]];
+        [escanear.tabBarItem  setSelectedImage:[UIImage imageNamed:@"scanerLogoSelected"]];
+        [consultar.tabBarItem setImage:[UIImage imageNamed:@"historyLogoUnselected"]];
+        [consultar.tabBarItem setSelectedImage:[UIImage imageNamed:@"historyLogoSelected"]];
+        [transferir.tabBarItem setImage:[UIImage imageNamed:@"transferLogoUnselected"]];
+        [transferir.tabBarItem setSelectedImage:[UIImage imageNamed:@"transferLogoSelected"]];
+        
+        
         self.selectedIndex = 2;
         
         NSArray* controlers = [NSArray arrayWithObjects:escanear,transferir,consultar,nil];
-            [self setViewControllers:controlers];
-        
-     //  [self setTabEdgeColor:[UIColor clearColor]];
-     //   [self setTabInnerStrokeColor:[UIColor yellowColor]];
-        //[self beginAppearanceTransition:NO animated:NO];
-      //  [self setTopEdgeColor:[UIColor yellowColor]];
-       
-       /*   [self setTabStrokeColor:[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0]];
-        
-                [self setIconShadowColor:[UIColor clearColor]];
-        [self setIconGlossyIsHidden:YES];
-        */
-       // [self setHidesBottomBarWhenPushed:YES];
-    //    [self setSelectedTabColors:@[[UIColor whiteColor],[UIColor whiteColor]]];
-      //  [self setBackgroundImageName:@"kucolor"];
-        
-        
-        /////////////////////////////////////////////////////////////////////////////////////////
+        [self setViewControllers:controlers];
         
         [self.tabBarController.tabBar setTranslucent:NO];
+    
         
-        [[UITabBar appearance] setBackgroundColor:[UIColor redColor]];
+        [[UITabBar appearance] setSelectedImageTintColor:[UIColor clearColor]];
         
-       [[UITabBar appearance] setSelectionIndicatorImage:[UIImage imageNamed:@"kucolor"]];
-      
-        [[UITabBar appearance] setTintColor:[UIColor clearColor]];
+        [[UITabBar appearance] setSelectionIndicatorImage:[UIImage imageNamed:@"selectedTab"]];
+        [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
         
+        [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"tabhostbg"]];
+        [[UITabBarItem appearance] setTitleTextAttributes:
+         [NSDictionary dictionaryWithObjectsAndKeys:
+          [UIColor colorWithRed:197.0/255.0 green:30.0/255.0 blue:79.0/255.0 alpha:1.0], UITextAttributeTextColor,
+          [UIFont fontWithName:@"ProximaNova-Semibold" size:0.0], UITextAttributeFont,
+          nil]forState:UIControlStateNormal];
         
-        CGRect frame = CGRectMake(0.0, 0, self.view.bounds.size.width, 49);
+        [[UITabBarItem appearance] setTitleTextAttributes:
+         [NSDictionary dictionaryWithObjectsAndKeys:
+          [UIColor whiteColor], UITextAttributeTextColor,
+          [UIFont fontWithName:@"ProximaNova-Semibold" size:0.0], UITextAttributeFont,
+          nil]forState:UIControlStateSelected];
         
-        UIView *v = [[UIView alloc] initWithFrame:frame];
-        
-        [v setBackgroundColor:[[UIColor alloc] initWithRed:197.0/255.0
-                                                     green:30.0/255.0
-                                                      blue:79.0/255.0
-                                                     alpha:1.0]];
-        [[UITabBar appearance] insertSubview:v atIndex:0];
-        
-       // [[UITabBar appearance] setSelectedImageTintColor:[UIColor clearColor]];
-
+        [[UITabBar appearance] setShadowImage:[[UIImage alloc]init]];
     }
     return self;
 }
