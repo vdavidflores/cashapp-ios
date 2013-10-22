@@ -26,6 +26,8 @@
 		220B1BA61816CE800049B519 /* gothicb.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 220B1BA51816CE800049B519 /* gothicb.ttf */; };
 		220B1BAC1816D4890049B519 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B1BA91816D4890049B519 /* TPKeyboardAvoidingScrollView.m */; };
 		220B1BAD1816D4890049B519 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B1BAB1816D4890049B519 /* TPKeyboardAvoidingTableView.m */; };
+		220B1BB21816E57A0049B519 /* iToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B1BB01816E57A0049B519 /* iToast.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		220B1BB31816E57A0049B519 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 220B1BB11816E57A0049B519 /* README.md */; };
 		2233120F181060CB001FD603 /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22331209181060CB001FD603 /* libzbar.a */; };
 		22331210181060CB001FD603 /* zbar-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 2233120B181060CB001FD603 /* zbar-back.png */; };
 		22331211181060CB001FD603 /* zbar-help.html in Resources */ = {isa = PBXBuildFile; fileRef = 2233120C181060CB001FD603 /* zbar-help.html */; };
@@ -111,6 +113,9 @@
 		220B1BA91816D4890049B519 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
 		220B1BAA1816D4890049B519 /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
 		220B1BAB1816D4890049B519 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		220B1BAF1816E57A0049B519 /* iToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iToast.h; sourceTree = "<group>"; };
+		220B1BB01816E57A0049B519 /* iToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iToast.m; sourceTree = "<group>"; };
+		220B1BB11816E57A0049B519 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		223311F5181060CB001FD603 /* Decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Decoder.h; sourceTree = "<group>"; };
 		223311F6181060CB001FD603 /* Exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exception.h; sourceTree = "<group>"; };
 		223311F7181060CB001FD603 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
@@ -235,6 +240,17 @@
 			path = kupay/TPKeyboardAvoiding;
 			sourceTree = "<group>";
 		};
+		220B1BAE1816E57A0049B519 /* toast */ = {
+			isa = PBXGroup;
+			children = (
+				220B1BAF1816E57A0049B519 /* iToast.h */,
+				220B1BB01816E57A0049B519 /* iToast.m */,
+				220B1BB11816E57A0049B519 /* README.md */,
+			);
+			name = toast;
+			path = kupay/toast;
+			sourceTree = "<group>";
+		};
 		223311F1181060CB001FD603 /* ZBarSDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -347,6 +363,7 @@
 		2295FEBF18077D9D002FF865 = {
 			isa = PBXGroup;
 			children = (
+				220B1BAE1816E57A0049B519 /* toast */,
 				220B1BA71816D4890049B519 /* TPKeyboardAvoiding */,
 				220B1BA51816CE800049B519 /* gothicb.ttf */,
 				223311F1181060CB001FD603 /* ZBarSDK */,
@@ -516,6 +533,7 @@
 				220B1B8F1815BAED0049B519 /* tabhostbg.png in Resources */,
 				229150F01809F8B200D0A715 /* ku.png in Resources */,
 				229150ED1809F8B200D0A715 /* compm.png in Resources */,
+				220B1BB31816E57A0049B519 /* README.md in Resources */,
 				229150F21809F8B200D0A715 /* kucolor.png in Resources */,
 				22331213181060CB001FD603 /* zbar-samples.png in Resources */,
 				220B1B8D1815BAED0049B519 /* selectedTab.png in Resources */,
@@ -575,6 +593,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				220B1BB21816E57A0049B519 /* iToast.m in Sources */,
 				220B1BAC1816D4890049B519 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				220B1BAD1816D4890049B519 /* TPKeyboardAvoidingTableView.m in Sources */,
 				229150D01809F63300D0A715 /* ViewControllerConsultar.m in Sources */,

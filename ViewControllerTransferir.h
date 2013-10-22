@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewControllerTransferir : UIViewController
+- (IBAction)onEnviar:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *campoPara;
+@property (weak, nonatomic) IBOutlet UITextField *campoCantidad;
+
 
 @end
