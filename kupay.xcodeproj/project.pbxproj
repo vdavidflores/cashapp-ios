@@ -23,6 +23,7 @@
 		220B1BA21815C28F0049B519 /* tabhostbg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 220B1B9A1815C28F0049B519 /* tabhostbg@2x.png */; };
 		220B1BA31815C28F0049B519 /* transferLogoSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 220B1B9B1815C28F0049B519 /* transferLogoSelected@2x.png */; };
 		220B1BA41815C28F0049B519 /* transferLogoUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 220B1B9C1815C28F0049B519 /* transferLogoUnselected@2x.png */; };
+		220B1BA61816CE800049B519 /* gothicb.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 220B1BA51816CE800049B519 /* gothicb.ttf */; };
 		2233120F181060CB001FD603 /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22331209181060CB001FD603 /* libzbar.a */; };
 		22331210181060CB001FD603 /* zbar-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 2233120B181060CB001FD603 /* zbar-back.png */; };
 		22331211181060CB001FD603 /* zbar-help.html in Resources */ = {isa = PBXBuildFile; fileRef = 2233120C181060CB001FD603 /* zbar-help.html */; };
@@ -103,6 +104,7 @@
 		220B1B9A1815C28F0049B519 /* tabhostbg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabhostbg@2x.png"; sourceTree = "<group>"; };
 		220B1B9B1815C28F0049B519 /* transferLogoSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transferLogoSelected@2x.png"; sourceTree = "<group>"; };
 		220B1B9C1815C28F0049B519 /* transferLogoUnselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transferLogoUnselected@2x.png"; sourceTree = "<group>"; };
+		220B1BA51816CE800049B519 /* gothicb.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = gothicb.ttf; path = kupay/gothicb.ttf; sourceTree = "<group>"; };
 		223311F5181060CB001FD603 /* Decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Decoder.h; sourceTree = "<group>"; };
 		223311F6181060CB001FD603 /* Exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exception.h; sourceTree = "<group>"; };
 		223311F7181060CB001FD603 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 		2295FEBF18077D9D002FF865 = {
 			isa = PBXGroup;
 			children = (
+				220B1BA51816CE800049B519 /* gothicb.ttf */,
 				223311F1181060CB001FD603 /* ZBarSDK */,
 				229150D21809F8B200D0A715 /* imgs */,
 				2295FED118077D9D002FF865 /* kupay */,
@@ -532,6 +535,7 @@
 				229150D11809F63300D0A715 /* ViewControllerConsultar.xib in Resources */,
 				2295FEFE18077E09002FF865 /* ViewControllerTransferir.xib in Resources */,
 				220B1BA31815C28F0049B519 /* transferLogoSelected@2x.png in Resources */,
+				220B1BA61816CE800049B519 /* gothicb.ttf in Resources */,
 				220B1B911815BAED0049B519 /* transferLogoSelected.png in Resources */,
 				229150EC1809F8B200D0A715 /* comp2.png in Resources */,
 			);

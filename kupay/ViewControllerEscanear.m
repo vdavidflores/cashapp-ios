@@ -67,7 +67,7 @@
     ZBarSymbol * s = nil;
     for (s in symbols)
     {
-       
+       //aqui va la deteccion del QR
         NSLog(s.data);
     }
 }

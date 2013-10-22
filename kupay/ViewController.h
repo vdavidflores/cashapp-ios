@@ -14,7 +14,7 @@
     IBOutlet UITabBarController *tabbar;
   
 }
-
+@property (strong, nonatomic) UILabel *saldo;
 
 
 
