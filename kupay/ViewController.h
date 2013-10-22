@@ -10,7 +10,11 @@
 
 //#import "AKTabBarController.h"
 
-@interface ViewController : UITabBarController
+@interface ViewController : UITabBarController  {
+    IBOutlet UITabBarController *tabbar;
+  
+}
+
 
 
 
