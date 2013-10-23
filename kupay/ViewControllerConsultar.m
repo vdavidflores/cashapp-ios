@@ -8,6 +8,7 @@
 
 #import "ViewControllerConsultar.h"
 #import "iToast.h"
+#import "SBJson.h"
 
 @interface ViewControllerConsultar ()
 
@@ -35,7 +36,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 static NSString *CellIdentifier = @"Cell Identifier";
     
-    
     [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CellIdentifier];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
 
@@ -52,6 +52,34 @@ return cell;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+    NSString *json =  @"{"
+    @"  \"data\": ["
+    @"{"
+    @"    \"dato\": \"eletroma\"  "
+    @"},"
+    @"{"
+    @"    \"dato\": \"eletronus\"  "
+    @"}"
+     @"]"
+    
+    @"}";
+     NSError *error = nil;
+    NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:[json dataUsingEncoding:NSUTF8StringEncoding] options:0 error:&error];
+    
+    
+    NSArray *data = [dataDictionary objectForKey:@"data"];
+
+    for (NSDictionary *row in data) {
+        // You can retrieve individual values using objectForKey on the status NSDictionary
+        // This will print the tweet and username to the console
+        NSLog(@"%@", [row objectForKey:@"dato"]);
+    }
+    NSLog([error localizedDescription]);
+    
+    
+    
     [self.view setBackgroundColor:[UIColor colorWithRed:197.0/255.0 green:30.0/255.0 blue:79.0/255.0 alpha:1.0]];
     self.fruits = @[@"Apple", @"Pineapple", @"Orange", @"Banana", @"Pear", @"Kiwi", @"Strawberry", @"Mango", @"Walnut", @"Apricot", @"Tomato", @"Almond", @"Date", @"Melon", @"Water Melon", @"Lemon", @"Blackberry", @"Coconut", @"Fig", @"Passionfruit", @"Star Fruit"];
     
