@@ -14,6 +14,23 @@
         <view contentMode="scaleToFill" id="1">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="lT7-DC-4WO">
+                    <rect key="frame" x="0.0" y="48" width="320" height="471"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Seg-3t-hYp"/>
+                        <outlet property="delegate" destination="-1" id="HuP-hk-LUd"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="lT7-DC-4WO" secondAttribute="trailing" id="KbZ-sO-eeD"/>
+                <constraint firstAttribute="bottom" secondItem="lT7-DC-4WO" secondAttribute="bottom" id="auB-pe-xdR"/>
+                <constraint firstItem="lT7-DC-4WO" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="geB-6d-WQg"/>
+                <constraint firstItem="lT7-DC-4WO" firstAttribute="top" secondItem="1" secondAttribute="top" constant="48" id="mae-oP-LdW"/>
+            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>

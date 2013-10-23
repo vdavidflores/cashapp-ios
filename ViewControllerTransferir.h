@@ -10,6 +10,7 @@
 
 @interface ViewControllerTransferir : UIViewController
 - (IBAction)onEnviar:(id)sender;
+- (IBAction)onParaInfo:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *campoPara;
 @property (weak, nonatomic) IBOutlet UITextField *campoCantidad;
 

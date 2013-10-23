@@ -73,6 +73,16 @@
    
 }
 
+- (IBAction)onParaInfo:(id)sender {
+    
+    
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Transferencia de saldo" message:@"Aqui se le da información al usuario sobre que significa transferir saldo, a quien se lo puede transferir y que pasa si el correo al que transfiere no esta dado de alta en kuPay." delegate:self  cancelButtonTitle:@"Aceptar" otherButtonTitles:nil, nil];
+    alert.tag =	2;
+    
+    [alert show];
+    
+}
+
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if(alertView.tag == 1){

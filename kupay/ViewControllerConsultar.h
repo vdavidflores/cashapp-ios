@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewControllerConsultar : UIViewController
+@interface ViewControllerConsultar : UIViewController<UITableViewDataSource, UITableViewDelegate>{
+    
+}
+@property NSArray *fruits;
 
 @end
