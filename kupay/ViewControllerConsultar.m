@@ -8,7 +8,7 @@
 
 #import "ViewControllerConsultar.h"
 #import "iToast.h"
-#import "SBJson.h"
+
 
 @interface ViewControllerConsultar ()
 
@@ -16,7 +16,7 @@
 
 @implementation ViewControllerConsultar
 
-
+@synthesize content;
 
 
 - (NSString *)tabTitle
@@ -25,30 +25,143 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [[[iToast makeText:[self.fruits objectAtIndex:[indexPath row]]] setDuration:2000] show];
+    
+     NSDictionary *item = (NSDictionary *)[self.content objectAtIndex:indexPath.row];
+
+    
+    UIAlertView *alert=[[UIAlertView alloc]initWithFrame:CGRectMake(50.0, 20.0, 100.0f, 400.0f)];
+    alert.title=@"Tiket de operación";
+    
+    alert.message=[NSString stringWithFormat:@" %@ \n ", [[item objectForKey:@"operacionId"] substringToIndex:5]];
+    
+    alert.delegate=self.content;
+    [alert addButtonWithTitle:@"OK"];
+    
+    NSArray *subViewArray = alert.subviews;
+    for(int x=0;x<[subViewArray count];x++){
+        if([[[subViewArray objectAtIndex:x] class] isSubclassOfClass:[UILabel class]])
+        {
+            UILabel *label = [subViewArray objectAtIndex:x];
+            label.textAlignment = NSTextAlignmentLeft;
+            if ([subViewArray objectAtIndex:1]) {
+                label.font = [UIFont systemFontOfSize:40.0];
+                label.textAlignment = NSTextAlignmentCenter;
+            }
+        }
+        
+    }
+    UILabel *concepto = [[UILabel alloc] initWithFrame:CGRectMake(20.0f, 100.0f, 200.0f, 50.0f)];
+    concepto.textAlignment = NSTextAlignmentLeft;
+    concepto.numberOfLines = 2;
+    concepto.backgroundColor =[UIColor clearColor];
+    concepto.textColor = [UIColor whiteColor];
+    [concepto setText:[NSString stringWithFormat:@"concepto: %@", [item objectForKey:@"concepto"]]];
+    [alert addSubview:concepto];
+
+    
+    
+    
+    
+    [alert show];
+    
+    
     
 }
+
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if(alertView.tag == 1){
+        if(buttonIndex == 1){
+            
+            
+        }
+    }
+    
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
+#define SECONDLABEL_TAG 2
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-static NSString *CellIdentifier = @"Cell Identifier";
+static NSString *CellIdentifier = @"MyIdentifier";
     
-    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CellIdentifier];
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
 
-NSString *fruit = [self.fruits objectAtIndex:[indexPath row]];
-  //  [cell setBackgroundColor:[UIColor colorWithRed:197.0/255.0 green:30.0/255.0 blue:79.0/255.0 alpha:1.0]];
-[cell.textLabel setText:fruit];
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+         cell = [self makeLensListCell: CellIdentifier];
+        cell.selectionStyle = UITableViewCellSelectionStyleGray;
+       
+    
+    }
+    
+  
+  
+    
+    
+    NSDictionary *item = (NSDictionary *)[self.content objectAtIndex:indexPath.row];
+    
+
+    
+    switch ([[item objectForKey:@"tipo"] integerValue]) {
+        case 1:
+            cell.textLabel.text = [NSString stringWithFormat:@"Abono de %@$%@",[item objectForKey:@"polo"],[item objectForKey:@"monto"]];
+            cell.detailTextLabel.text = [item objectForKey:@"fecha"];
+            cell.imageView.image = [UIImage imageNamed:@"mdm"];
+            break;
+        case 2:
+            cell.textLabel.text = [NSString stringWithFormat:@"Compra de %@$%@",[item objectForKey:@"polo"],[item objectForKey:@"monto"]];
+            cell.detailTextLabel.text = [item objectForKey:@"fecha"];
+            cell.imageView.image = [UIImage imageNamed:@"compm"];
+            break;
+            
+        case 3:
+            cell.textLabel.text = [NSString stringWithFormat:@"Transferencia de %@$%@",[item objectForKey:@"polo"],[item objectForKey:@"monto"]];
+            cell.detailTextLabel.text = [item objectForKey:@"fecha"];
+            cell.imageView.image = [UIImage imageNamed:@"tranm"];
+            break;
+        case 5:
+            cell.textLabel.text = [NSString stringWithFormat:@"Compra de %@$%@",[item objectForKey:@"polo"],[item objectForKey:@"monto"]];
+            cell.detailTextLabel.text = [NSString stringWithFormat:@" %@ \n %@ ",[item objectForKey:@"fecha"], @"dsfas"];
+            cell.imageView.image = [UIImage imageNamed:@"compm"];
+            break;
+
+            
+        default:
+        
+            cell.textLabel.text = [NSString stringWithFormat:@"Movimiento desconosidp de %@$%@",[item objectForKey:@"polo"],[item objectForKey:@"monto"]];
+            cell.detailTextLabel.text = [item objectForKey:@"fecha"];
+            cell.imageView.image = [UIImage imageNamed:@"mdm"];
+            
+            break;
+    }
+    cell.textLabel.textColor = [UIColor whiteColor];
+    cell.detailTextLabel.textColor = [UIColor whiteColor];
+   
 return cell;
 }
 
+
+- (UITableViewCell *)makeLensListCell: (NSString *)identifier
+{
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier] ;
+    
+    return cell;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSInteger numberOfRows = [self.fruits count];
+    NSInteger numberOfRows = [self.content count];
     return numberOfRows;
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 65.0;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -57,10 +170,36 @@ return cell;
     NSString *json =  @"{"
     @"  \"data\": ["
     @"{"
-    @"    \"dato\": \"eletroma\"  "
+    @"    \"tipo\": \"1\" , "
+     @"    \"monto\": \"23\" , "
+    @"    \"fecha\": \"hoy\" , "
+          @"    \"operacionId\": \"23sm4348u5ij34bhij34b5jk4\" , "
+    @"    \"concepto\": \"abono en oxxo\" , "
+    @"    \"polo\": \"-\"  "
     @"},"
     @"{"
-    @"    \"dato\": \"eletronus\"  "
+    @"    \"tipo\": \"2\" , "
+    @"    \"monto\": \"434\" , "
+    @"    \"fecha\": \"hoy\" , "
+      @"    \"operacionId\": \"f4ds45534m5ijk34bn5bn34jk\" , "
+    @"    \"concepto\": \"transferencia a usuario\" , "
+    @"    \"polo\": \"+\"  "
+    @"},"
+    @"{"
+    @"    \"tipo\": \"3\" , "
+    @"    \"monto\": \"31\" , "
+    @"    \"fecha\": \"hoy\" , "
+    @"    \"operacionId\": \"3h5gb45mkn34knjk34n5340\" , "
+     @"    \"concepto\": \"transferencia a usuario\" , "
+    @"    \"polo\": \"-\"  "
+    @"},"
+    @"{"
+    @"    \"tipo\": \"1\" , "
+    @"    \"monto\": \"31\" , "
+    @"    \"fecha\": \"hoy\" , "
+    @"    \"operacionId\": \"45jn334mnj5hb34jb45jk\" , "
+     @"    \"concepto\": \"tarjeta de abono\" , "
+    @"    \"polo\": \"+\"  "
     @"}"
      @"]"
     
@@ -68,23 +207,8 @@ return cell;
      NSError *error = nil;
     NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:[json dataUsingEncoding:NSUTF8StringEncoding] options:0 error:&error];
     
-    
-    NSArray *data = [dataDictionary objectForKey:@"data"];
-
-    for (NSDictionary *row in data) {
-        // You can retrieve individual values using objectForKey on the status NSDictionary
-        // This will print the tweet and username to the console
-        NSLog(@"%@", [row objectForKey:@"dato"]);
-    }
-    NSLog([error localizedDescription]);
-    
-    
-    
-    [self.view setBackgroundColor:[UIColor colorWithRed:197.0/255.0 green:30.0/255.0 blue:79.0/255.0 alpha:1.0]];
-    self.fruits = @[@"Apple", @"Pineapple", @"Orange", @"Banana", @"Pear", @"Kiwi", @"Strawberry", @"Mango", @"Walnut", @"Apricot", @"Tomato", @"Almond", @"Date", @"Melon", @"Water Melon", @"Lemon", @"Blackberry", @"Coconut", @"Fig", @"Passionfruit", @"Star Fruit"];
-    
-    //self.view.backgroundColor = [UIColor colorWithRed:197.0/255.0 green:30.0/255.0 blue:79.0/255.0 alpha:1.0];
-    // Do any additional setup after loading the view from its nib.
+    self.content = [dataDictionary objectForKey:@"data"];;
+   
 }
 
 

@@ -12,5 +12,6 @@
     
 }
 @property NSArray *fruits;
+@property (retain,nonatomic) NSArray *content;
 
 @end
