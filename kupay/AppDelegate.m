@@ -6,11 +6,14 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "ViewControllerMain.h"
+#import "RevealController.h"
+#import "ViewControllerMain.h"
+#import "RearViewController.h"
 @implementation AppDelegate
 
 
-
+@synthesize viewController;
 
 
 
@@ -18,10 +21,19 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    [[UITabBar appearance] setBackgroundColor:[[UIColor alloc] initWithRed:197 green:30 blue:79 alpha:100]];
-                                                 ViewController *vc = [[ViewController alloc] init];
+    
+    
+   // [[UITabBar appearance] setBackgroundColor:[[UIColor alloc] initWithRed:197 green:30 blue:79 alpha:100]];
+       //                                          ViewControllerMain *vc = [[ViewControllerMain alloc] init];
+    
+    ViewControllerMain *frontViewController = [[ViewControllerMain alloc] init];
+    RearViewController *rearViewController = [[RearViewController alloc] init];
+    
+    
+    RevealController *revealController = [[RevealController alloc] initWithFrontViewController:frontViewController rearViewController:rearViewController];
+    self.viewController = revealController;
   
-    self.window.rootViewController = vc;
+    self.window.rootViewController = self.viewController;
     
     self.window.backgroundColor = [UIColor grayColor];
     [self.window makeKeyAndVisible];

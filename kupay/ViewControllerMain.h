@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 
 //#import "AKTabBarController.h"
+#import "ZUUIRevealController.h"
 
-@interface ViewController : UITabBarController  {
+@interface ViewControllerMain : UITabBarController   {
     IBOutlet UITabBarController *tabbar;
   
 }

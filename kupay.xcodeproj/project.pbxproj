@@ -28,6 +28,8 @@
 		220B1BAD1816D4890049B519 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B1BAB1816D4890049B519 /* TPKeyboardAvoidingTableView.m */; };
 		220B1BB21816E57A0049B519 /* iToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B1BB01816E57A0049B519 /* iToast.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		220B1BB31816E57A0049B519 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 220B1BB11816E57A0049B519 /* README.md */; };
+		221A36B8181EF96B009C5AC0 /* ViewControllerDeposito.m in Sources */ = {isa = PBXBuildFile; fileRef = 221A36B6181EF96B009C5AC0 /* ViewControllerDeposito.m */; };
+		221A36B9181EF96B009C5AC0 /* ViewControllerDeposito.xib in Resources */ = {isa = PBXBuildFile; fileRef = 221A36B7181EF96B009C5AC0 /* ViewControllerDeposito.xib */; };
 		2233120F181060CB001FD603 /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22331209181060CB001FD603 /* libzbar.a */; };
 		22331210181060CB001FD603 /* zbar-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 2233120B181060CB001FD603 /* zbar-back.png */; };
 		22331211181060CB001FD603 /* zbar-help.html in Resources */ = {isa = PBXBuildFile; fileRef = 2233120C181060CB001FD603 /* zbar-help.html */; };
@@ -39,7 +41,7 @@
 		2233121B1810616E001FD603 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2233121A1810616E001FD603 /* CoreVideo.framework */; };
 		2233121D18106177001FD603 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2233121C18106177001FD603 /* QuartzCore.framework */; };
 		2233121F18106191001FD603 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2233121E18106191001FD603 /* libiconv.dylib */; };
-		229150CB1809F2BE00D0A715 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229150C91809F2BE00D0A715 /* ViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		229150CB1809F2BE00D0A715 /* ViewControllerMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 229150C91809F2BE00D0A715 /* ViewControllerMain.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		229150D01809F63300D0A715 /* ViewControllerConsultar.m in Sources */ = {isa = PBXBuildFile; fileRef = 229150CE1809F63300D0A715 /* ViewControllerConsultar.m */; };
 		229150D11809F63300D0A715 /* ViewControllerConsultar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 229150CF1809F63300D0A715 /* ViewControllerConsultar.xib */; };
 		229150E81809F8B200D0A715 /* benviar.png in Resources */ = {isa = PBXBuildFile; fileRef = 229150D31809F8B200D0A715 /* benviar.png */; };
@@ -79,6 +81,20 @@
 		2295FEFE18077E09002FF865 /* ViewControllerTransferir.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2295FEFC18077E09002FF865 /* ViewControllerTransferir.xib */; };
 		2295FF0218077E41002FF865 /* ViewControllerEscanear.m in Sources */ = {isa = PBXBuildFile; fileRef = 2295FF0018077E41002FF865 /* ViewControllerEscanear.m */; };
 		2295FF0318077E41002FF865 /* ViewControllerEscanear.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2295FF0118077E41002FF865 /* ViewControllerEscanear.xib */; };
+		22DD5E73181EB20A004803D3 /* ZUUIRevealController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DD5E72181EB20A004803D3 /* ZUUIRevealController.m */; };
+		22DD5E76181EB282004803D3 /* RevealController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DD5E75181EB282004803D3 /* RevealController.m */; };
+		22DD5E79181EB480004803D3 /* RearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DD5E78181EB480004803D3 /* RearViewController.m */; };
+		22DD5E7B181EB982004803D3 /* RearViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22DD5E7A181EB982004803D3 /* RearViewController.xib */; };
+		22DD5E84181EC924004803D3 /* ViewControllerRetiro.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DD5E82181EC924004803D3 /* ViewControllerRetiro.m */; };
+		22DD5E85181EC924004803D3 /* ViewControllerRetiro.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22DD5E83181EC924004803D3 /* ViewControllerRetiro.xib */; };
+		22DD5E89181EC956004803D3 /* ViewControllerLLaveKu.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DD5E87181EC956004803D3 /* ViewControllerLLaveKu.m */; };
+		22DD5E8A181EC956004803D3 /* ViewControllerLLaveKu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22DD5E88181EC956004803D3 /* ViewControllerLLaveKu.xib */; };
+		22DD5E8E181EC96E004803D3 /* ViewControllerPerfil.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DD5E8C181EC96E004803D3 /* ViewControllerPerfil.m */; };
+		22DD5E8F181EC96E004803D3 /* ViewControllerPerfil.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22DD5E8D181EC96E004803D3 /* ViewControllerPerfil.xib */; };
+		22DD5E93181EC985004803D3 /* ViewControllerSoporte.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DD5E91181EC985004803D3 /* ViewControllerSoporte.m */; };
+		22DD5E94181EC985004803D3 /* ViewControllerSoporte.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22DD5E92181EC985004803D3 /* ViewControllerSoporte.xib */; };
+		22DD5E98181EC9AD004803D3 /* ViewControllerDesenlaze.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DD5E96181EC9AD004803D3 /* ViewControllerDesenlaze.m */; };
+		22DD5E99181EC9AD004803D3 /* ViewControllerDesenlaze.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22DD5E97181EC9AD004803D3 /* ViewControllerDesenlaze.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +132,9 @@
 		220B1BAF1816E57A0049B519 /* iToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iToast.h; sourceTree = "<group>"; };
 		220B1BB01816E57A0049B519 /* iToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iToast.m; sourceTree = "<group>"; };
 		220B1BB11816E57A0049B519 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		221A36B5181EF96B009C5AC0 /* ViewControllerDeposito.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerDeposito.h; sourceTree = "<group>"; };
+		221A36B6181EF96B009C5AC0 /* ViewControllerDeposito.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerDeposito.m; sourceTree = "<group>"; };
+		221A36B7181EF96B009C5AC0 /* ViewControllerDeposito.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerDeposito.xib; sourceTree = "<group>"; };
 		223311F5181060CB001FD603 /* Decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Decoder.h; sourceTree = "<group>"; };
 		223311F6181060CB001FD603 /* Exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exception.h; sourceTree = "<group>"; };
 		223311F7181060CB001FD603 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
@@ -147,8 +166,8 @@
 		2233121A1810616E001FD603 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		2233121C18106177001FD603 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2233121E18106191001FD603 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
-		229150C81809F2BE00D0A715 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		229150C91809F2BE00D0A715 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		229150C81809F2BE00D0A715 /* ViewControllerMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerMain.h; sourceTree = "<group>"; };
+		229150C91809F2BE00D0A715 /* ViewControllerMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerMain.m; sourceTree = "<group>"; };
 		229150CD1809F63300D0A715 /* ViewControllerConsultar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerConsultar.h; sourceTree = "<group>"; };
 		229150CE1809F63300D0A715 /* ViewControllerConsultar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerConsultar.m; sourceTree = "<group>"; };
 		229150CF1809F63300D0A715 /* ViewControllerConsultar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerConsultar.xib; sourceTree = "<group>"; };
@@ -195,6 +214,28 @@
 		2295FEFF18077E41002FF865 /* ViewControllerEscanear.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerEscanear.h; sourceTree = "<group>"; };
 		2295FF0018077E41002FF865 /* ViewControllerEscanear.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerEscanear.m; sourceTree = "<group>"; };
 		2295FF0118077E41002FF865 /* ViewControllerEscanear.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerEscanear.xib; sourceTree = "<group>"; };
+		22DD5E71181EB20A004803D3 /* ZUUIRevealController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZUUIRevealController.h; sourceTree = "<group>"; };
+		22DD5E72181EB20A004803D3 /* ZUUIRevealController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZUUIRevealController.m; sourceTree = "<group>"; };
+		22DD5E74181EB282004803D3 /* RevealController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RevealController.h; sourceTree = "<group>"; };
+		22DD5E75181EB282004803D3 /* RevealController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RevealController.m; sourceTree = "<group>"; };
+		22DD5E77181EB480004803D3 /* RearViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RearViewController.h; sourceTree = "<group>"; };
+		22DD5E78181EB480004803D3 /* RearViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RearViewController.m; sourceTree = "<group>"; };
+		22DD5E7A181EB982004803D3 /* RearViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RearViewController.xib; path = ../RearViewController.xib; sourceTree = "<group>"; };
+		22DD5E81181EC924004803D3 /* ViewControllerRetiro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerRetiro.h; sourceTree = "<group>"; };
+		22DD5E82181EC924004803D3 /* ViewControllerRetiro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerRetiro.m; sourceTree = "<group>"; };
+		22DD5E83181EC924004803D3 /* ViewControllerRetiro.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerRetiro.xib; sourceTree = "<group>"; };
+		22DD5E86181EC956004803D3 /* ViewControllerLLaveKu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerLLaveKu.h; sourceTree = "<group>"; };
+		22DD5E87181EC956004803D3 /* ViewControllerLLaveKu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerLLaveKu.m; sourceTree = "<group>"; };
+		22DD5E88181EC956004803D3 /* ViewControllerLLaveKu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerLLaveKu.xib; sourceTree = "<group>"; };
+		22DD5E8B181EC96E004803D3 /* ViewControllerPerfil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerPerfil.h; sourceTree = "<group>"; };
+		22DD5E8C181EC96E004803D3 /* ViewControllerPerfil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerPerfil.m; sourceTree = "<group>"; };
+		22DD5E8D181EC96E004803D3 /* ViewControllerPerfil.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerPerfil.xib; sourceTree = "<group>"; };
+		22DD5E90181EC985004803D3 /* ViewControllerSoporte.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewControllerSoporte.h; path = ../ViewControllerSoporte.h; sourceTree = "<group>"; };
+		22DD5E91181EC985004803D3 /* ViewControllerSoporte.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewControllerSoporte.m; path = ../ViewControllerSoporte.m; sourceTree = "<group>"; };
+		22DD5E92181EC985004803D3 /* ViewControllerSoporte.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewControllerSoporte.xib; path = ../ViewControllerSoporte.xib; sourceTree = "<group>"; };
+		22DD5E95181EC9AD004803D3 /* ViewControllerDesenlaze.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerDesenlaze.h; sourceTree = "<group>"; };
+		22DD5E96181EC9AD004803D3 /* ViewControllerDesenlaze.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerDesenlaze.m; sourceTree = "<group>"; };
+		22DD5E97181EC9AD004803D3 /* ViewControllerDesenlaze.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerDesenlaze.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -363,6 +404,7 @@
 		2295FEBF18077D9D002FF865 = {
 			isa = PBXGroup;
 			children = (
+				22DD5E70181EB20A004803D3 /* ZUUIRevealController */,
 				220B1BAE1816E57A0049B519 /* toast */,
 				220B1BA71816D4890049B519 /* TPKeyboardAvoiding */,
 				220B1BA51816CE800049B519 /* gothicb.ttf */,
@@ -404,6 +446,29 @@
 		2295FED118077D9D002FF865 /* kupay */ = {
 			isa = PBXGroup;
 			children = (
+				22DD5E95181EC9AD004803D3 /* ViewControllerDesenlaze.h */,
+				22DD5E96181EC9AD004803D3 /* ViewControllerDesenlaze.m */,
+				22DD5E97181EC9AD004803D3 /* ViewControllerDesenlaze.xib */,
+				22DD5E90181EC985004803D3 /* ViewControllerSoporte.h */,
+				22DD5E91181EC985004803D3 /* ViewControllerSoporte.m */,
+				22DD5E92181EC985004803D3 /* ViewControllerSoporte.xib */,
+				22DD5E8B181EC96E004803D3 /* ViewControllerPerfil.h */,
+				22DD5E8C181EC96E004803D3 /* ViewControllerPerfil.m */,
+				22DD5E8D181EC96E004803D3 /* ViewControllerPerfil.xib */,
+				22DD5E86181EC956004803D3 /* ViewControllerLLaveKu.h */,
+				22DD5E87181EC956004803D3 /* ViewControllerLLaveKu.m */,
+				22DD5E88181EC956004803D3 /* ViewControllerLLaveKu.xib */,
+				22DD5E81181EC924004803D3 /* ViewControllerRetiro.h */,
+				22DD5E82181EC924004803D3 /* ViewControllerRetiro.m */,
+				22DD5E83181EC924004803D3 /* ViewControllerRetiro.xib */,
+				22DD5E7A181EB982004803D3 /* RearViewController.xib */,
+				22DD5E77181EB480004803D3 /* RearViewController.h */,
+				22DD5E78181EB480004803D3 /* RearViewController.m */,
+				221A36B5181EF96B009C5AC0 /* ViewControllerDeposito.h */,
+				221A36B6181EF96B009C5AC0 /* ViewControllerDeposito.m */,
+				221A36B7181EF96B009C5AC0 /* ViewControllerDeposito.xib */,
+				22DD5E75181EB282004803D3 /* RevealController.m */,
+				22DD5E74181EB282004803D3 /* RevealController.h */,
 				229150CD1809F63300D0A715 /* ViewControllerConsultar.h */,
 				229150CE1809F63300D0A715 /* ViewControllerConsultar.m */,
 				229150CF1809F63300D0A715 /* ViewControllerConsultar.xib */,
@@ -415,8 +480,8 @@
 				2295FF0118077E41002FF865 /* ViewControllerEscanear.xib */,
 				2295FEDA18077D9E002FF865 /* AppDelegate.h */,
 				2295FEDB18077D9E002FF865 /* AppDelegate.m */,
-				229150C81809F2BE00D0A715 /* ViewController.h */,
-				229150C91809F2BE00D0A715 /* ViewController.m */,
+				229150C81809F2BE00D0A715 /* ViewControllerMain.h */,
+				229150C91809F2BE00D0A715 /* ViewControllerMain.m */,
 				2295FEDD18077D9E002FF865 /* Images.xcassets */,
 				2295FED218077D9D002FF865 /* Supporting Files */,
 			);
@@ -450,6 +515,15 @@
 				2295FEED18077D9E002FF865 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		22DD5E70181EB20A004803D3 /* ZUUIRevealController */ = {
+			isa = PBXGroup;
+			children = (
+				22DD5E71181EB20A004803D3 /* ZUUIRevealController.h */,
+				22DD5E72181EB20A004803D3 /* ZUUIRevealController.m */,
+			);
+			path = ZUUIRevealController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -529,11 +603,14 @@
 			files = (
 				229150F41809F8B200D0A715 /* opciones.png in Resources */,
 				229150F31809F8B200D0A715 /* mdm.png in Resources */,
+				221A36B9181EF96B009C5AC0 /* ViewControllerDeposito.xib in Resources */,
 				220B1B871815BAED0049B519 /* historyLogoUnselected.png in Resources */,
+				22DD5E94181EC985004803D3 /* ViewControllerSoporte.xib in Resources */,
 				220B1B8F1815BAED0049B519 /* tabhostbg.png in Resources */,
 				229150F01809F8B200D0A715 /* ku.png in Resources */,
 				229150ED1809F8B200D0A715 /* compm.png in Resources */,
 				220B1BB31816E57A0049B519 /* README.md in Resources */,
+				22DD5E99181EC9AD004803D3 /* ViewControllerDesenlaze.xib in Resources */,
 				229150F21809F8B200D0A715 /* kucolor.png in Resources */,
 				22331213181060CB001FD603 /* zbar-samples.png in Resources */,
 				220B1B8D1815BAED0049B519 /* selectedTab.png in Resources */,
@@ -544,6 +621,7 @@
 				22331210181060CB001FD603 /* zbar-back.png in Resources */,
 				229150EA1809F8B200D0A715 /* ccbg.png in Resources */,
 				220B1B891815BAED0049B519 /* scanerLogoSelected.png in Resources */,
+				22DD5E85181EC924004803D3 /* ViewControllerRetiro.xib in Resources */,
 				220B1BA01815C28F0049B519 /* scanerLogoUnselected@2x.png in Resources */,
 				229150F61809F8B200D0A715 /* refresh.png in Resources */,
 				229150FA1809F8B200D0A715 /* venm.png in Resources */,
@@ -558,10 +636,12 @@
 				220B1BA21815C28F0049B519 /* tabhostbg@2x.png in Resources */,
 				22331211181060CB001FD603 /* zbar-help.html in Resources */,
 				220B1BA41815C28F0049B519 /* transferLogoUnselected@2x.png in Resources */,
+				22DD5E7B181EB982004803D3 /* RearViewController.xib in Resources */,
 				2295FED618077D9E002FF865 /* InfoPlist.strings in Resources */,
 				22331212181060CB001FD603 /* zbar-helpicons.png in Resources */,
 				220B1B851815BAED0049B519 /* historyLogoSelected.png in Resources */,
 				220B1B9E1815C28F0049B519 /* historyLogoUnselected@2x.png in Resources */,
+				22DD5E8A181EC956004803D3 /* ViewControllerLLaveKu.xib in Resources */,
 				229150F51809F8B200D0A715 /* pin.png in Resources */,
 				220B1B9F1815C28F0049B519 /* scanerLogoSelected@2x.png in Resources */,
 				229150FB1809F8B200D0A715 /* vent.png in Resources */,
@@ -572,6 +652,7 @@
 				229150D11809F63300D0A715 /* ViewControllerConsultar.xib in Resources */,
 				2295FEFE18077E09002FF865 /* ViewControllerTransferir.xib in Resources */,
 				220B1BA31815C28F0049B519 /* transferLogoSelected@2x.png in Resources */,
+				22DD5E8F181EC96E004803D3 /* ViewControllerPerfil.xib in Resources */,
 				220B1BA61816CE800049B519 /* gothicb.ttf in Resources */,
 				220B1B911815BAED0049B519 /* transferLogoSelected.png in Resources */,
 				229150EC1809F8B200D0A715 /* comp2.png in Resources */,
@@ -594,14 +675,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				220B1BB21816E57A0049B519 /* iToast.m in Sources */,
+				22DD5E93181EC985004803D3 /* ViewControllerSoporte.m in Sources */,
+				22DD5E8E181EC96E004803D3 /* ViewControllerPerfil.m in Sources */,
+				22DD5E79181EB480004803D3 /* RearViewController.m in Sources */,
 				220B1BAC1816D4890049B519 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				220B1BAD1816D4890049B519 /* TPKeyboardAvoidingTableView.m in Sources */,
+				22DD5E84181EC924004803D3 /* ViewControllerRetiro.m in Sources */,
+				22DD5E98181EC9AD004803D3 /* ViewControllerDesenlaze.m in Sources */,
+				22DD5E89181EC956004803D3 /* ViewControllerLLaveKu.m in Sources */,
 				229150D01809F63300D0A715 /* ViewControllerConsultar.m in Sources */,
 				2295FF0218077E41002FF865 /* ViewControllerEscanear.m in Sources */,
 				2295FEDC18077D9E002FF865 /* AppDelegate.m in Sources */,
 				2295FED818077D9E002FF865 /* main.m in Sources */,
+				221A36B8181EF96B009C5AC0 /* ViewControllerDeposito.m in Sources */,
+				22DD5E76181EB282004803D3 /* RevealController.m in Sources */,
 				2295FEFD18077E09002FF865 /* ViewControllerTransferir.m in Sources */,
-				229150CB1809F2BE00D0A715 /* ViewController.m in Sources */,
+				22DD5E73181EB20A004803D3 /* ZUUIRevealController.m in Sources */,
+				229150CB1809F2BE00D0A715 /* ViewControllerMain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

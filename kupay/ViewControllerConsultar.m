@@ -50,7 +50,7 @@
         }
         
     }
-    UILabel *concepto = [[UILabel alloc] initWithFrame:CGRectMake(20.0f, 100.0f, 200.0f, 50.0f)];
+    UILabel *concepto = [[UILabel alloc] initWithFrame:CGRectMake(20.0f, 100.0f, 245.0f, 50.0f)];
     concepto.textAlignment = NSTextAlignmentLeft;
     concepto.numberOfLines = 2;
     concepto.backgroundColor =[UIColor clearColor];
@@ -97,7 +97,9 @@ static NSString *CellIdentifier = @"MyIdentifier";
        
     
     }
-    
+    cell.textLabel.textColor = [UIColor whiteColor];
+    cell.detailTextLabel.textColor = [UIColor whiteColor];
+
   
   
     
@@ -138,9 +140,7 @@ static NSString *CellIdentifier = @"MyIdentifier";
             
             break;
     }
-    cell.textLabel.textColor = [UIColor whiteColor];
-    cell.detailTextLabel.textColor = [UIColor whiteColor];
-   
+    
 return cell;
 }
 

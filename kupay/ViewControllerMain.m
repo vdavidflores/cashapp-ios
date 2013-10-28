@@ -6,25 +6,24 @@
 //  Copyright (c) 2013 ku. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "ViewControllerMain.h"
 
 
 #import "ViewControllerEscanear.h"
 #import "ViewControllerTransferir.h"
 #import "ViewControllerConsultar.h"
-@interface ViewController ()
+@interface ViewControllerMain ()
 
 @end
 
 
-@implementation ViewController
+@implementation ViewControllerMain
 @synthesize saldo;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        
         //se añaden los views controlers a el tabbar
         
         ViewControllerEscanear *escanear = [[ViewControllerEscanear alloc]  initWithNibName:@"ViewControllerEscanear" bundle:nil];
@@ -39,7 +38,7 @@
         [consultar.tabBarItem setSelectedImage:[UIImage imageNamed:@"historyLogoSelected"]];
         [transferir.tabBarItem setImage:[UIImage imageNamed:@"transferLogoUnselected"]];
         [transferir.tabBarItem setSelectedImage:[UIImage imageNamed:@"transferLogoSelected"]];
-        self.selectedIndex = 2;  //tabbar inicia en el elemento 3
+        self.tabBarController.selectedIndex = 2;  //tabbar inicia en el elemento 3
         NSArray* controlers = [NSArray arrayWithObjects:escanear,transferir,consultar,nil];
         [self setViewControllers:controlers];
         
@@ -65,7 +64,7 @@
         
         
         //Se añade el top bar
-        CGRect frame = CGRectMake(0.0f, 0.0f, self.view.frame.size.width, 70.0f);
+        CGRect frame = CGRectMake(0.0f, 0.0f, self.view.frame.size.width, 55.0f);
         UIView *topBar = [[UIView alloc] initWithFrame:frame];
         topBar.backgroundColor =  [UIColor colorWithRed:197.0/255.0 green:30.0/255.0 blue:79.0/255.0 alpha:1.0];
         
@@ -73,18 +72,19 @@
         UIButton *referscar = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         [referscar addTarget:self action:@selector(handlereferscar) forControlEvents:UIControlEventTouchUpInside];
         [referscar setBackgroundImage:[UIImage imageNamed:@"refresh"] forState:UIControlStateNormal];
-         [referscar setFrame:CGRectMake(self.view.frame.size.width-50, 30, 36, 32)];
+         [referscar setFrame:CGRectMake(self.view.frame.size.width-50, 12, 36, 32)];
        
        //boton de navicon
         UIButton *navicon = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         [navicon addTarget:self action:@selector(handlenavicon) forControlEvents:UIControlEventTouchUpInside];
         [navicon setBackgroundImage:[UIImage imageNamed:@"opciones"] forState:UIControlStateNormal];
-        [navicon setFrame:CGRectMake(0, 20, 65, 50)];
+        [navicon setFrame:CGRectMake(0, 3, 65, 50)];
+        [navicon addTarget:self.parentViewController action:@selector(revealToggle:) forControlEvents:UIControlEventTouchUpInside ];
         
         
         //saldo
         saldo = [[UILabel alloc] init];
-        saldo.frame = CGRectMake(0,10,150,50.0);
+        saldo.frame = CGRectMake(0,0,150,50.0);
         saldo.textAlignment = NSTextAlignmentCenter;
         saldo.textColor = [UIColor whiteColor];
         saldo.numberOfLines = 0;
@@ -93,7 +93,7 @@
         saldo.font = [saldo.font fontWithSize:20.0];
 
         [topBar addSubview:saldo];
-        [saldo setCenter:CGPointMake(topBar.center.x, topBar.center.y+10.0)];
+        [saldo setCenter:CGPointMake(topBar.center.x, topBar.center.y)];
         [topBar addSubview:navicon];
         [topBar addSubview:referscar];
         
@@ -113,6 +113,17 @@
     
 }
 
+
+- (BOOL)slideNavigationControllerShouldDisplayLeftMenu
+{
+	return YES;
+}
+
+- (BOOL)slideNavigationControllerShouldDisplayRightMenu
+{
+	return NO;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -126,5 +137,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+	return (toInterfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
 
 @end
