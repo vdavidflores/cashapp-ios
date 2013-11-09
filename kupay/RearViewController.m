@@ -39,7 +39,7 @@
 	
 	if (indexPath.row == 0)
 	{
-		cell.textLabel.text = @"Operaciones";
+		cell.textLabel.text = @"Inicio";
         cell.imageView.image = [UIImage imageNamed:@"mdm"];
 	}
 	else if (indexPath.row == 1)
@@ -110,10 +110,18 @@
 	{
 		// Now let's see if we're not attempting to swap the current frontViewController for a new instance of ITSELF, which'd be highly redundant.
       
-        if (![revealController.frontViewController isKindOfClass:[ViewControllerDeposito class]])
+        if (![revealController.frontViewController.navigationController.presentedViewController isKindOfClass:[ViewControllerDeposito class]])
 		{
-			ViewControllerDeposito *frontViewController = [[ViewControllerDeposito alloc] init];
-			[revealController setFrontViewController:frontViewController animated:NO];
+            
+            NSLog(@"cargando el deposito");
+            ViewControllerDeposito *frontViewController = [[ViewControllerDeposito alloc] init];
+            UINavigationController * nc = [[UINavigationController alloc] initWithRootViewController:
+                                           frontViewController ];
+            
+            
+			[nc setNavigationBarHidden:YES];
+          
+			[revealController setFrontViewController:nc animated:YES];
 			
 		}
 		// Seems the user attempts to 'switch' to exactly the same controller he came from!
@@ -130,12 +138,7 @@
         if (![revealController.frontViewController isKindOfClass:[ViewControllerRetiro class]])
 		{
             ViewControllerRetiro *retiro =[[ViewControllerRetiro alloc] init];
-            
-            
-            
             [revealController setFrontViewController:retiro animated:YES];
-
-			
 		}
 		// Seems the user attempts to 'switch' to exactly the same controller he came from!
 		else

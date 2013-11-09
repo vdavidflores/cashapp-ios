@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		220890DC182858BC00AE4889 /* ViewControllerTarjetaNueva.m in Sources */ = {isa = PBXBuildFile; fileRef = 220890DA182858BC00AE4889 /* ViewControllerTarjetaNueva.m */; };
+		220890DD182858BC00AE4889 /* ViewControllerTarjetaNueva.xib in Resources */ = {isa = PBXBuildFile; fileRef = 220890DB182858BC00AE4889 /* ViewControllerTarjetaNueva.xib */; };
 		220B1B851815BAED0049B519 /* historyLogoSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 220B1B751815BAED0049B519 /* historyLogoSelected.png */; };
 		220B1B871815BAED0049B519 /* historyLogoUnselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 220B1B771815BAED0049B519 /* historyLogoUnselected.png */; };
 		220B1B891815BAED0049B519 /* scanerLogoSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 220B1B791815BAED0049B519 /* scanerLogoSelected.png */; };
@@ -28,8 +30,10 @@
 		220B1BAD1816D4890049B519 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B1BAB1816D4890049B519 /* TPKeyboardAvoidingTableView.m */; };
 		220B1BB21816E57A0049B519 /* iToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B1BB01816E57A0049B519 /* iToast.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		220B1BB31816E57A0049B519 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 220B1BB11816E57A0049B519 /* README.md */; };
-		221A36B8181EF96B009C5AC0 /* ViewControllerDeposito.m in Sources */ = {isa = PBXBuildFile; fileRef = 221A36B6181EF96B009C5AC0 /* ViewControllerDeposito.m */; };
-		221A36B9181EF96B009C5AC0 /* ViewControllerDeposito.xib in Resources */ = {isa = PBXBuildFile; fileRef = 221A36B7181EF96B009C5AC0 /* ViewControllerDeposito.xib */; };
+		221A36BD18231931009C5AC0 /* ViewControllerDeposito.m in Sources */ = {isa = PBXBuildFile; fileRef = 221A36BB18231931009C5AC0 /* ViewControllerDeposito.m */; };
+		221A36BE18231931009C5AC0 /* ViewControllerDeposito.xib in Resources */ = {isa = PBXBuildFile; fileRef = 221A36BC18231931009C5AC0 /* ViewControllerDeposito.xib */; };
+		221A36C218232265009C5AC0 /* ViewControllerCodigoOXXO.m in Sources */ = {isa = PBXBuildFile; fileRef = 221A36C018232265009C5AC0 /* ViewControllerCodigoOXXO.m */; };
+		221A36C318232265009C5AC0 /* ViewControllerCodigoOXXO.xib in Resources */ = {isa = PBXBuildFile; fileRef = 221A36C118232265009C5AC0 /* ViewControllerCodigoOXXO.xib */; };
 		2233120F181060CB001FD603 /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22331209181060CB001FD603 /* libzbar.a */; };
 		22331210181060CB001FD603 /* zbar-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 2233120B181060CB001FD603 /* zbar-back.png */; };
 		22331211181060CB001FD603 /* zbar-help.html in Resources */ = {isa = PBXBuildFile; fileRef = 2233120C181060CB001FD603 /* zbar-help.html */; };
@@ -108,6 +112,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		220890D9182858BC00AE4889 /* ViewControllerTarjetaNueva.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewControllerTarjetaNueva.h; path = ../ViewControllerTarjetaNueva.h; sourceTree = "<group>"; };
+		220890DA182858BC00AE4889 /* ViewControllerTarjetaNueva.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewControllerTarjetaNueva.m; path = ../ViewControllerTarjetaNueva.m; sourceTree = "<group>"; };
+		220890DB182858BC00AE4889 /* ViewControllerTarjetaNueva.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewControllerTarjetaNueva.xib; path = ../ViewControllerTarjetaNueva.xib; sourceTree = "<group>"; };
 		220B1B751815BAED0049B519 /* historyLogoSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = historyLogoSelected.png; sourceTree = "<group>"; };
 		220B1B771815BAED0049B519 /* historyLogoUnselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = historyLogoUnselected.png; sourceTree = "<group>"; };
 		220B1B791815BAED0049B519 /* scanerLogoSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scanerLogoSelected.png; sourceTree = "<group>"; };
@@ -132,9 +139,12 @@
 		220B1BAF1816E57A0049B519 /* iToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iToast.h; sourceTree = "<group>"; };
 		220B1BB01816E57A0049B519 /* iToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iToast.m; sourceTree = "<group>"; };
 		220B1BB11816E57A0049B519 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		221A36B5181EF96B009C5AC0 /* ViewControllerDeposito.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerDeposito.h; sourceTree = "<group>"; };
-		221A36B6181EF96B009C5AC0 /* ViewControllerDeposito.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerDeposito.m; sourceTree = "<group>"; };
-		221A36B7181EF96B009C5AC0 /* ViewControllerDeposito.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerDeposito.xib; sourceTree = "<group>"; };
+		221A36BA18231931009C5AC0 /* ViewControllerDeposito.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerDeposito.h; sourceTree = "<group>"; };
+		221A36BB18231931009C5AC0 /* ViewControllerDeposito.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerDeposito.m; sourceTree = "<group>"; };
+		221A36BC18231931009C5AC0 /* ViewControllerDeposito.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerDeposito.xib; sourceTree = "<group>"; };
+		221A36BF18232264009C5AC0 /* ViewControllerCodigoOXXO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerCodigoOXXO.h; sourceTree = "<group>"; };
+		221A36C018232265009C5AC0 /* ViewControllerCodigoOXXO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerCodigoOXXO.m; sourceTree = "<group>"; };
+		221A36C118232265009C5AC0 /* ViewControllerCodigoOXXO.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerCodigoOXXO.xib; sourceTree = "<group>"; };
 		223311F5181060CB001FD603 /* Decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Decoder.h; sourceTree = "<group>"; };
 		223311F6181060CB001FD603 /* Exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exception.h; sourceTree = "<group>"; };
 		223311F7181060CB001FD603 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
@@ -446,6 +456,15 @@
 		2295FED118077D9D002FF865 /* kupay */ = {
 			isa = PBXGroup;
 			children = (
+				220890D9182858BC00AE4889 /* ViewControllerTarjetaNueva.h */,
+				220890DA182858BC00AE4889 /* ViewControllerTarjetaNueva.m */,
+				220890DB182858BC00AE4889 /* ViewControllerTarjetaNueva.xib */,
+				221A36BA18231931009C5AC0 /* ViewControllerDeposito.h */,
+				221A36BB18231931009C5AC0 /* ViewControllerDeposito.m */,
+				221A36BC18231931009C5AC0 /* ViewControllerDeposito.xib */,
+				221A36BF18232264009C5AC0 /* ViewControllerCodigoOXXO.h */,
+				221A36C018232265009C5AC0 /* ViewControllerCodigoOXXO.m */,
+				221A36C118232265009C5AC0 /* ViewControllerCodigoOXXO.xib */,
 				22DD5E95181EC9AD004803D3 /* ViewControllerDesenlaze.h */,
 				22DD5E96181EC9AD004803D3 /* ViewControllerDesenlaze.m */,
 				22DD5E97181EC9AD004803D3 /* ViewControllerDesenlaze.xib */,
@@ -464,9 +483,6 @@
 				22DD5E7A181EB982004803D3 /* RearViewController.xib */,
 				22DD5E77181EB480004803D3 /* RearViewController.h */,
 				22DD5E78181EB480004803D3 /* RearViewController.m */,
-				221A36B5181EF96B009C5AC0 /* ViewControllerDeposito.h */,
-				221A36B6181EF96B009C5AC0 /* ViewControllerDeposito.m */,
-				221A36B7181EF96B009C5AC0 /* ViewControllerDeposito.xib */,
 				22DD5E75181EB282004803D3 /* RevealController.m */,
 				22DD5E74181EB282004803D3 /* RevealController.h */,
 				229150CD1809F63300D0A715 /* ViewControllerConsultar.h */,
@@ -603,7 +619,7 @@
 			files = (
 				229150F41809F8B200D0A715 /* opciones.png in Resources */,
 				229150F31809F8B200D0A715 /* mdm.png in Resources */,
-				221A36B9181EF96B009C5AC0 /* ViewControllerDeposito.xib in Resources */,
+				221A36BE18231931009C5AC0 /* ViewControllerDeposito.xib in Resources */,
 				220B1B871815BAED0049B519 /* historyLogoUnselected.png in Resources */,
 				22DD5E94181EC985004803D3 /* ViewControllerSoporte.xib in Resources */,
 				220B1B8F1815BAED0049B519 /* tabhostbg.png in Resources */,
@@ -616,6 +632,7 @@
 				220B1B8D1815BAED0049B519 /* selectedTab.png in Resources */,
 				229150EF1809F8B200D0A715 /* home.png in Resources */,
 				229150F11809F8B200D0A715 /* ku72.png in Resources */,
+				221A36C318232265009C5AC0 /* ViewControllerCodigoOXXO.xib in Resources */,
 				220B1B8B1815BAED0049B519 /* scanerLogoUnselected.png in Resources */,
 				229150E81809F8B200D0A715 /* benviar.png in Resources */,
 				22331210181060CB001FD603 /* zbar-back.png in Resources */,
@@ -655,6 +672,7 @@
 				22DD5E8F181EC96E004803D3 /* ViewControllerPerfil.xib in Resources */,
 				220B1BA61816CE800049B519 /* gothicb.ttf in Resources */,
 				220B1B911815BAED0049B519 /* transferLogoSelected.png in Resources */,
+				220890DD182858BC00AE4889 /* ViewControllerTarjetaNueva.xib in Resources */,
 				229150EC1809F8B200D0A715 /* comp2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -677,6 +695,7 @@
 				220B1BB21816E57A0049B519 /* iToast.m in Sources */,
 				22DD5E93181EC985004803D3 /* ViewControllerSoporte.m in Sources */,
 				22DD5E8E181EC96E004803D3 /* ViewControllerPerfil.m in Sources */,
+				221A36C218232265009C5AC0 /* ViewControllerCodigoOXXO.m in Sources */,
 				22DD5E79181EB480004803D3 /* RearViewController.m in Sources */,
 				220B1BAC1816D4890049B519 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				220B1BAD1816D4890049B519 /* TPKeyboardAvoidingTableView.m in Sources */,
@@ -687,8 +706,9 @@
 				2295FF0218077E41002FF865 /* ViewControllerEscanear.m in Sources */,
 				2295FEDC18077D9E002FF865 /* AppDelegate.m in Sources */,
 				2295FED818077D9E002FF865 /* main.m in Sources */,
-				221A36B8181EF96B009C5AC0 /* ViewControllerDeposito.m in Sources */,
+				221A36BD18231931009C5AC0 /* ViewControllerDeposito.m in Sources */,
 				22DD5E76181EB282004803D3 /* RevealController.m in Sources */,
+				220890DC182858BC00AE4889 /* ViewControllerTarjetaNueva.m in Sources */,
 				2295FEFD18077E09002FF865 /* ViewControllerTransferir.m in Sources */,
 				22DD5E73181EB20A004803D3 /* ZUUIRevealController.m in Sources */,
 				229150CB1809F2BE00D0A715 /* ViewControllerMain.m in Sources */,
