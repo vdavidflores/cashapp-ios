@@ -7,6 +7,7 @@
 //
 
 #import "ViewControllerPregunta.h"
+#import "ViewControllerRegDatos.h"
 
 @interface ViewControllerPregunta ()
 
@@ -36,7 +37,7 @@
     [[self view] bringSubviewToFront:imageView];
 
     //now fade out splash image
-    [NSThread sleepForTimeInterval:5.0];
+   // [NSThread sleepForTimeInterval:5.0];
     [UIView transitionWithView:self.view duration:3.0f options:UIViewAnimationOptionTransitionNone animations:^(void){imageView.alpha=0.0f;} completion:^(BOOL finished){[imageView removeFromSuperview];}];    // Do any additional setup after loading the view from its nib.
 }
 
@@ -50,5 +51,13 @@
 }
 
 - (IBAction)onNo:(id)sender {
+    ViewControllerRegDatos *regd = [[ViewControllerRegDatos alloc] init];
+    UINavigationController * nc = [[UINavigationController alloc] initWithRootViewController:
+                                   regd ];
+    
+    
+    [nc setNavigationBarHidden:YES];
+    
+    [self presentViewController:nc animated:YES completion:nil];
 }
 @end
