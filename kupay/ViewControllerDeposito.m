@@ -136,7 +136,7 @@
     }
 
     cell.textLabel.text = @"Tarjeta N";
-    cell.editingAccessoryView = self.editButtonItem;
+  //  cell.editingAccessoryView = self.editButtonItem;
     return cell;
 }
 - (UITableViewCell *)makeLensListCell: (NSString *)identifier

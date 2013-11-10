@@ -8,6 +8,7 @@
 #import "iToast.h"
 #import "ViewControllerRegDatos.h"
 #import "ViewControllerPregunta.h"
+#import "ViewControllerRegSeguridad.h"
 
 @interface ViewControllerRegDatos ()
 
@@ -197,10 +198,17 @@
                             if(![self.anoTextField.text isEqualToString:@""] && [self.anoTextField.text length] == 4  && [[self.anoTextField text] integerValue] >= 1920 && [[self.anoTextField text] integerValue] <= [yearString intValue]){
                                 self.anoTextField.backgroundColor=[UIColor whiteColor];
                                 
-                                if(![self.paisTextField.text isEqualToString:@""] ){
+                                if(![self.paisTextField.text isEqualToString:@""] && [self.paisTextField.text length] >= 2 ){
                                     self.paisTextField.backgroundColor=[UIColor whiteColor];
                                     
                                     
+                                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Confirma tus Datos" message:[NSString stringWithFormat:@"Es importante que tus datos sean auténticos para poder garantizarte un buen servicio. \n\nIMPORTANTE-El correo que ingresaste electrónico será ligado a tu cuenta y solo podrá registrarse UNA VEZ. Si alguien ha transferido saldo a este correo lo recibirás en cuanto lo valides. \n \nLos datos que quieres registrar son: \nNombre: %@ \nApellido: %@ \nCORREO: %@ \nTelefono: %@\nFecha de nacimiento: %@-%@-%@ \nPais de residencia: %@ \n\n",[self.nombreTextField text], [self.apellidoTextField text], [self.correoTextField text], [self.telefonoTextField text],[self.diaTextField text],[self.mesTextField text],[self.anoTextField text], [self.paisTextField text]]delegate:self  cancelButtonTitle:@"Cancelar" otherButtonTitles:@"Validar",nil];
+                                    alert.tag = 777;
+                                    [alert show];
+
+                                    
+                                   /* ViewControllerRegSeguridad *vcs = [[ViewControllerRegSeguridad alloc]init];
+                                    [[self navigationController] pushViewController:vcs animated:YES];*/
                                     
                                     
                                 }else{
