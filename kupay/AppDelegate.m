@@ -10,32 +10,71 @@
 #import "RevealController.h"
 #import "ViewControllerMain.h"
 #import "RearViewController.h"
+#import "ViewControllerPregunta.h"
 @implementation AppDelegate
 
 
-@synthesize viewController;
+@synthesize viewController, db;
 
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *docsPath = [paths objectAtIndex:0];
+    NSString *path = [docsPath stringByAppendingPathComponent:@"database.kupay"];
+    
+    self.db = [FMDatabase databaseWithPath:path];
+    
+    [self.db open];
+    
+    bool cratus = [db executeUpdate:@"create table USR(id text, kuPrivKey text, kuPubKey text, ultimoToken text)"];
+    
+    
+    NSLog(@"Base creada: %@", (cratus) ? @"YES" : @"NO");
+    if (cratus){
+        [db executeUpdate:@"INSERT INTO USR (id,kuPrivKey,kuPubKey,ultimoToken) values (?,?,?,?)",@"ku",@"ku",@"ku",@"ku"];
+        NSLog(@"fila inseratada");
+    }
+    FMResultSet *res = [db executeQuery:@"select id from USR"];
+    NSString *idnt = nil;
+    int i = 0;
+    while ([res next]) {
+        idnt = [res stringForColumn:@"id"];
+        i++;
+    }
+    NSLog(@"fillas en bdd: %d " ,i );
+    if (![idnt isEqualToString:@"ku"]){
+        NSLog(@"%@", @"El usuario ya estaba logeado");
+        ViewControllerMain *frontViewController = [[ViewControllerMain alloc] init];
+        RearViewController *rearViewController = [[RearViewController alloc] init];
+        
+        
+        RevealController *revealController = [[RevealController alloc] initWithFrontViewController:frontViewController rearViewController:rearViewController];
+        self.viewController = revealController;
+        self.window.rootViewController = self.viewController;
+
+
+    }else{
+        NSLog(@" %@ %@", @"no no estaba logeado ident es ", idnt);
+ 
+        ViewControllerPregunta *vcp = [[ViewControllerPregunta alloc] init];
+        self.window.rootViewController = vcp;
+    }
+    
     // Override point for customization after application launch.
     
     
    // [[UITabBar appearance] setBackgroundColor:[[UIColor alloc] initWithRed:197 green:30 blue:79 alpha:100]];
        //                                          ViewControllerMain *vc = [[ViewControllerMain alloc] init];
     
-    ViewControllerMain *frontViewController = [[ViewControllerMain alloc] init];
-    RearViewController *rearViewController = [[RearViewController alloc] init];
-    
-    
-    RevealController *revealController = [[RevealController alloc] initWithFrontViewController:frontViewController rearViewController:rearViewController];
-    self.viewController = revealController;
+ 
   
-    self.window.rootViewController = self.viewController;
     
-    self.window.backgroundColor = [UIColor grayColor];
+
     [self.window makeKeyAndVisible];
    
     return YES;

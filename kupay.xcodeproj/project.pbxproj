@@ -99,6 +99,21 @@
 		22DD5E94181EC985004803D3 /* ViewControllerSoporte.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22DD5E92181EC985004803D3 /* ViewControllerSoporte.xib */; };
 		22DD5E98181EC9AD004803D3 /* ViewControllerDesenlaze.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DD5E96181EC9AD004803D3 /* ViewControllerDesenlaze.m */; };
 		22DD5E99181EC9AD004803D3 /* ViewControllerDesenlaze.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22DD5E97181EC9AD004803D3 /* ViewControllerDesenlaze.xib */; };
+		22FBB0B1182EE4D5002DBC40 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FBB0A8182EE4D5002DBC40 /* FMDatabase.m */; };
+		22FBB0B2182EE4D5002DBC40 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FBB0AA182EE4D5002DBC40 /* FMDatabaseAdditions.m */; };
+		22FBB0B3182EE4D5002DBC40 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FBB0AC182EE4D5002DBC40 /* FMDatabasePool.m */; };
+		22FBB0B4182EE4D5002DBC40 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FBB0AE182EE4D5002DBC40 /* FMDatabaseQueue.m */; };
+		22FBB0B5182EE4D5002DBC40 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FBB0B0182EE4D5002DBC40 /* FMResultSet.m */; };
+		22FBB0B7182EE4E5002DBC40 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FBB0B6182EE4E5002DBC40 /* libsqlite3.dylib */; };
+		22FBB0BA182EE518002DBC40 /* KuBDD.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FBB0B9182EE518002DBC40 /* KuBDD.m */; };
+		22FBB0BD182EFA31002DBC40 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FBB0BB182EFA31002DBC40 /* splash.png */; };
+		22FBB0BE182EFA31002DBC40 /* splash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FBB0BC182EFA31002DBC40 /* splash@2x.png */; };
+		22FBB0C5182EFAA2002DBC40 /* ViewControllerPregunta.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FBB0C3182EFAA2002DBC40 /* ViewControllerPregunta.m */; };
+		22FBB0C6182EFAA2002DBC40 /* ViewControllerPregunta.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22FBB0C4182EFAA2002DBC40 /* ViewControllerPregunta.xib */; };
+		22FBB0CB182F018C002DBC40 /* botonBlancoBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FBB0C7182F018C002DBC40 /* botonBlancoBg.png */; };
+		22FBB0CC182F018C002DBC40 /* botonBlancoBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FBB0C8182F018C002DBC40 /* botonBlancoBg@2x.png */; };
+		22FBB0CD182F018C002DBC40 /* linea.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FBB0C9182F018C002DBC40 /* linea.png */; };
+		22FBB0CE182F018C002DBC40 /* linea@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FBB0CA182F018C002DBC40 /* linea@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -246,6 +261,28 @@
 		22DD5E95181EC9AD004803D3 /* ViewControllerDesenlaze.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerDesenlaze.h; sourceTree = "<group>"; };
 		22DD5E96181EC9AD004803D3 /* ViewControllerDesenlaze.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerDesenlaze.m; sourceTree = "<group>"; };
 		22DD5E97181EC9AD004803D3 /* ViewControllerDesenlaze.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerDesenlaze.xib; sourceTree = "<group>"; };
+		22FBB0A7182EE4D5002DBC40 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		22FBB0A8182EE4D5002DBC40 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		22FBB0A9182EE4D5002DBC40 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		22FBB0AA182EE4D5002DBC40 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		22FBB0AB182EE4D5002DBC40 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		22FBB0AC182EE4D5002DBC40 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		22FBB0AD182EE4D5002DBC40 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		22FBB0AE182EE4D5002DBC40 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		22FBB0AF182EE4D5002DBC40 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		22FBB0B0182EE4D5002DBC40 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		22FBB0B6182EE4E5002DBC40 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		22FBB0B8182EE518002DBC40 /* KuBDD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KuBDD.h; path = kupay/KuBDD.h; sourceTree = SOURCE_ROOT; };
+		22FBB0B9182EE518002DBC40 /* KuBDD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KuBDD.m; path = kupay/KuBDD.m; sourceTree = SOURCE_ROOT; };
+		22FBB0BB182EFA31002DBC40 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
+		22FBB0BC182EFA31002DBC40 /* splash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash@2x.png"; sourceTree = "<group>"; };
+		22FBB0C2182EFAA2002DBC40 /* ViewControllerPregunta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerPregunta.h; sourceTree = "<group>"; };
+		22FBB0C3182EFAA2002DBC40 /* ViewControllerPregunta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerPregunta.m; sourceTree = "<group>"; };
+		22FBB0C4182EFAA2002DBC40 /* ViewControllerPregunta.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerPregunta.xib; sourceTree = "<group>"; };
+		22FBB0C7182F018C002DBC40 /* botonBlancoBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = botonBlancoBg.png; sourceTree = "<group>"; };
+		22FBB0C8182F018C002DBC40 /* botonBlancoBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "botonBlancoBg@2x.png"; sourceTree = "<group>"; };
+		22FBB0C9182F018C002DBC40 /* linea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linea.png; sourceTree = "<group>"; };
+		22FBB0CA182F018C002DBC40 /* linea@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "linea@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +290,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22FBB0B7182EE4E5002DBC40 /* libsqlite3.dylib in Frameworks */,
 				2233120F181060CB001FD603 /* libzbar.a in Frameworks */,
 				2233121F18106191001FD603 /* libiconv.dylib in Frameworks */,
 				2233121D18106177001FD603 /* QuartzCore.framework in Frameworks */,
@@ -369,6 +407,12 @@
 		229150D21809F8B200D0A715 /* imgs */ = {
 			isa = PBXGroup;
 			children = (
+				22FBB0C7182F018C002DBC40 /* botonBlancoBg.png */,
+				22FBB0C8182F018C002DBC40 /* botonBlancoBg@2x.png */,
+				22FBB0C9182F018C002DBC40 /* linea.png */,
+				22FBB0CA182F018C002DBC40 /* linea@2x.png */,
+				22FBB0BB182EFA31002DBC40 /* splash.png */,
+				22FBB0BC182EFA31002DBC40 /* splash@2x.png */,
 				220B1B951815C28F0049B519 /* historyLogoSelected@2x.png */,
 				220B1B961815C28F0049B519 /* historyLogoUnselected@2x.png */,
 				220B1B971815C28F0049B519 /* scanerLogoSelected@2x.png */,
@@ -414,6 +458,7 @@
 		2295FEBF18077D9D002FF865 = {
 			isa = PBXGroup;
 			children = (
+				22FBB0A6182EE4D5002DBC40 /* FMDB */,
 				22DD5E70181EB20A004803D3 /* ZUUIRevealController */,
 				220B1BAE1816E57A0049B519 /* toast */,
 				220B1BA71816D4890049B519 /* TPKeyboardAvoiding */,
@@ -439,6 +484,7 @@
 		2295FECA18077D9D002FF865 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22FBB0B6182EE4E5002DBC40 /* libsqlite3.dylib */,
 				2233121E18106191001FD603 /* libiconv.dylib */,
 				2233121C18106177001FD603 /* QuartzCore.framework */,
 				2233121A1810616E001FD603 /* CoreVideo.framework */,
@@ -456,6 +502,11 @@
 		2295FED118077D9D002FF865 /* kupay */ = {
 			isa = PBXGroup;
 			children = (
+				22FBB0B8182EE518002DBC40 /* KuBDD.h */,
+				22FBB0B9182EE518002DBC40 /* KuBDD.m */,
+				22FBB0C2182EFAA2002DBC40 /* ViewControllerPregunta.h */,
+				22FBB0C3182EFAA2002DBC40 /* ViewControllerPregunta.m */,
+				22FBB0C4182EFAA2002DBC40 /* ViewControllerPregunta.xib */,
 				220890D9182858BC00AE4889 /* ViewControllerTarjetaNueva.h */,
 				220890DA182858BC00AE4889 /* ViewControllerTarjetaNueva.m */,
 				220890DB182858BC00AE4889 /* ViewControllerTarjetaNueva.xib */,
@@ -542,6 +593,23 @@
 			path = ZUUIRevealController;
 			sourceTree = "<group>";
 		};
+		22FBB0A6182EE4D5002DBC40 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				22FBB0A7182EE4D5002DBC40 /* FMDatabase.h */,
+				22FBB0A8182EE4D5002DBC40 /* FMDatabase.m */,
+				22FBB0A9182EE4D5002DBC40 /* FMDatabaseAdditions.h */,
+				22FBB0AA182EE4D5002DBC40 /* FMDatabaseAdditions.m */,
+				22FBB0AB182EE4D5002DBC40 /* FMDatabasePool.h */,
+				22FBB0AC182EE4D5002DBC40 /* FMDatabasePool.m */,
+				22FBB0AD182EE4D5002DBC40 /* FMDatabaseQueue.h */,
+				22FBB0AE182EE4D5002DBC40 /* FMDatabaseQueue.m */,
+				22FBB0AF182EE4D5002DBC40 /* FMResultSet.h */,
+				22FBB0B0182EE4D5002DBC40 /* FMResultSet.m */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -625,8 +693,10 @@
 				220B1B8F1815BAED0049B519 /* tabhostbg.png in Resources */,
 				229150F01809F8B200D0A715 /* ku.png in Resources */,
 				229150ED1809F8B200D0A715 /* compm.png in Resources */,
+				22FBB0BE182EFA31002DBC40 /* splash@2x.png in Resources */,
 				220B1BB31816E57A0049B519 /* README.md in Resources */,
 				22DD5E99181EC9AD004803D3 /* ViewControllerDesenlaze.xib in Resources */,
+				22FBB0C6182EFAA2002DBC40 /* ViewControllerPregunta.xib in Resources */,
 				229150F21809F8B200D0A715 /* kucolor.png in Resources */,
 				22331213181060CB001FD603 /* zbar-samples.png in Resources */,
 				220B1B8D1815BAED0049B519 /* selectedTab.png in Resources */,
@@ -648,6 +718,7 @@
 				229150FC1809F8B200D0A715 /* vent2.png in Resources */,
 				229150EE1809F8B200D0A715 /* fondocam.png in Resources */,
 				2295FF0318077E41002FF865 /* ViewControllerEscanear.xib in Resources */,
+				22FBB0CB182F018C002DBC40 /* botonBlancoBg.png in Resources */,
 				229150F91809F8B200D0A715 /* tranm.png in Resources */,
 				220B1BA11815C28F0049B519 /* selectedTab@2x.png in Resources */,
 				220B1BA21815C28F0049B519 /* tabhostbg@2x.png in Resources */,
@@ -661,7 +732,10 @@
 				22DD5E8A181EC956004803D3 /* ViewControllerLLaveKu.xib in Resources */,
 				229150F51809F8B200D0A715 /* pin.png in Resources */,
 				220B1B9F1815C28F0049B519 /* scanerLogoSelected@2x.png in Resources */,
+				22FBB0CD182F018C002DBC40 /* linea.png in Resources */,
+				22FBB0BD182EFA31002DBC40 /* splash.png in Resources */,
 				229150FB1809F8B200D0A715 /* vent.png in Resources */,
+				22FBB0CE182F018C002DBC40 /* linea@2x.png in Resources */,
 				229150E91809F8B200D0A715 /* blanco.png in Resources */,
 				229150EB1809F8B200D0A715 /* comp.png in Resources */,
 				2295FEDE18077D9E002FF865 /* Images.xcassets in Resources */,
@@ -670,6 +744,7 @@
 				2295FEFE18077E09002FF865 /* ViewControllerTransferir.xib in Resources */,
 				220B1BA31815C28F0049B519 /* transferLogoSelected@2x.png in Resources */,
 				22DD5E8F181EC96E004803D3 /* ViewControllerPerfil.xib in Resources */,
+				22FBB0CC182F018C002DBC40 /* botonBlancoBg@2x.png in Resources */,
 				220B1BA61816CE800049B519 /* gothicb.ttf in Resources */,
 				220B1B911815BAED0049B519 /* transferLogoSelected.png in Resources */,
 				220890DD182858BC00AE4889 /* ViewControllerTarjetaNueva.xib in Resources */,
@@ -694,11 +769,16 @@
 			files = (
 				220B1BB21816E57A0049B519 /* iToast.m in Sources */,
 				22DD5E93181EC985004803D3 /* ViewControllerSoporte.m in Sources */,
+				22FBB0BA182EE518002DBC40 /* KuBDD.m in Sources */,
 				22DD5E8E181EC96E004803D3 /* ViewControllerPerfil.m in Sources */,
+				22FBB0B3182EE4D5002DBC40 /* FMDatabasePool.m in Sources */,
+				22FBB0B1182EE4D5002DBC40 /* FMDatabase.m in Sources */,
 				221A36C218232265009C5AC0 /* ViewControllerCodigoOXXO.m in Sources */,
 				22DD5E79181EB480004803D3 /* RearViewController.m in Sources */,
 				220B1BAC1816D4890049B519 /* TPKeyboardAvoidingScrollView.m in Sources */,
+				22FBB0B2182EE4D5002DBC40 /* FMDatabaseAdditions.m in Sources */,
 				220B1BAD1816D4890049B519 /* TPKeyboardAvoidingTableView.m in Sources */,
+				22FBB0C5182EFAA2002DBC40 /* ViewControllerPregunta.m in Sources */,
 				22DD5E84181EC924004803D3 /* ViewControllerRetiro.m in Sources */,
 				22DD5E98181EC9AD004803D3 /* ViewControllerDesenlaze.m in Sources */,
 				22DD5E89181EC956004803D3 /* ViewControllerLLaveKu.m in Sources */,
@@ -706,7 +786,9 @@
 				2295FF0218077E41002FF865 /* ViewControllerEscanear.m in Sources */,
 				2295FEDC18077D9E002FF865 /* AppDelegate.m in Sources */,
 				2295FED818077D9E002FF865 /* main.m in Sources */,
+				22FBB0B4182EE4D5002DBC40 /* FMDatabaseQueue.m in Sources */,
 				221A36BD18231931009C5AC0 /* ViewControllerDeposito.m in Sources */,
+				22FBB0B5182EE4D5002DBC40 /* FMResultSet.m in Sources */,
 				22DD5E76181EB282004803D3 /* RevealController.m in Sources */,
 				220890DC182858BC00AE4889 /* ViewControllerTarjetaNueva.m in Sources */,
 				2295FEFD18077E09002FF865 /* ViewControllerTransferir.m in Sources */,
