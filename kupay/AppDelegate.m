@@ -36,7 +36,7 @@
     
     NSLog(@"Base creada: %@", (cratus) ? @"YES" : @"NO");
     if (cratus){
-        [db executeUpdate:@"INSERT INTO USR (id,kuPrivKey,kuPubKey,ultimoToken) values (?,?,?,?)",@"ku",@"ku",@"ku",@"ku"];
+        [db executeUpdate:@"INSERT INTO USR (id,kuPrivKey,kuPubKey,ultimoToken) values (?,?,?,?)",@"uno@kupay.com",@"123456789012345",@"ku",@"ku"];
         NSLog(@"fila inseratada");
     }
     FMResultSet *res = [db executeQuery:@"select id from USR"];

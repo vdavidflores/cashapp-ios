@@ -10,14 +10,14 @@
 
 //#import "AKTabBarController.h"
 #import "ZUUIRevealController.h"
+#import "ASIFormDataRequest.h"
 
-@interface ViewControllerMain : UITabBarController   {
+@interface ViewControllerMain : UITabBarController {
     IBOutlet UITabBarController *tabbar;
-  
 }
 @property (strong, nonatomic) UILabel *saldo;
-
-
+@property (strong, nonatomic)  UIButton *referscar;
+@property (nonatomic, retain) ASIFormDataRequest *request;
 
 
 @end

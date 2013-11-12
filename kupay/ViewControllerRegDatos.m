@@ -10,12 +10,13 @@
 #import "ViewControllerPregunta.h"
 #import "ViewControllerRegSeguridad.h"
 
-@interface ViewControllerRegDatos ()
 
+@interface ViewControllerRegDatos ()
+-(IBAction)enrespuesta:(ASIFormDataRequest *) elrequest;
 @end
 
 @implementation ViewControllerRegDatos
-@synthesize paises;
+@synthesize paises,request;
 @synthesize nombreTextField;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -206,9 +207,7 @@
                                     alert.tag = 777;
                                     [alert show];
 
-                                    
-                                   /* ViewControllerRegSeguridad *vcs = [[ViewControllerRegSeguridad alloc]init];
-                                    [[self navigationController] pushViewController:vcs animated:YES];*/
+                                 
                                     
                                     
                                 }else{
@@ -264,5 +263,80 @@
     NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
     return [emailTest evaluateWithObject:email];
+}
+
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if ([alertView tag]== 777 && buttonIndex == 1){
+        
+        //Empezar el request
+        [request cancel];
+        [self setRequest:[ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"http://kupay.tk/kuCloudAppDev/index.php"]]];
+        
+        NSMutableDictionary *nameElements = [NSMutableDictionary dictionary];
+        
+        [nameElements setObject:[self.correoTextField text] forKey:@"email"];
+        
+       // [nameElements setObject:@"1234" forKey:@"password"];
+        NSError *error = nil;
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:nameElements
+                                                           options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
+                                                             error:&error];
+        NSString* jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        NSLog(@"DATA: %@", jsonString);
+        
+        [request setPostValue:@"10" forKey:@"ACCION"];
+        [request setPostValue:jsonString forKey:@"DATA"];
+        [request setTimeOutSeconds:20];
+        
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_4_0
+        [request setShouldContinueWhenAppEntersBackground:YES];
+#endif
+        
+        [request setDelegate:self];
+        
+        [request setDidFinishSelector:@selector(enrespuesta:)];
+        [request startAsynchronous];
+        
+       self.validandoDialog = [[UIAlertView alloc] initWithTitle:@"Validando datos" message:@"Espera un momento \n\n\n\n"
+                                             delegate:self
+                                    cancelButtonTitle:@"Cancelar"
+                                    otherButtonTitles:nil, nil];
+        
+        UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        spinner.center = CGPointMake(139.5, 95.5); // .5 so it doesn't blur
+        self.validandoDialog.tag = 450;
+        [self.validandoDialog addSubview:spinner];
+        [spinner startAnimating];
+        [self.validandoDialog show];
+        
+           }
+}
+-(IBAction)enrespuesta:(ASIFormDataRequest *) elrequest{
+    NSString *result = elrequest.responseString;
+    NSError *error = nil;NSLog(@"respuesta es: %@",result);
+  
+    NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:[result dataUsingEncoding:NSUTF8StringEncoding] options:0 error:&error];
+
+        
+
+       
+        NSLog(@"estatus: %@", [dataDictionary[@"DATOS"] objectForKey:@"estatus"]);
+        if ([[dataDictionary[@"DATOS"] objectForKey:@"estatus"] isEqualToString:@"no_registrado"]&& [[dataDictionary[@"DATOS"] objectForKey:@"estatus"] isEqualToString:@"0"]) {
+                  if ([self.validandoDialog isVisible]) [self.validandoDialog dismissWithClickedButtonIndex:-1 animated:YES];
+
+                  ViewControllerRegSeguridad *vcs = [[ViewControllerRegSeguridad alloc]init];
+                  [[self navigationController] pushViewController:vcs animated:YES];
+             }else{
+                 NSLog(@"textField"); // this will show which textField did end editing ...
+                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Correo no disponible" message:@"Lo sentimos. Este correo, no esta disponible por favor intenta con otro."delegate:self  cancelButtonTitle:@"Acepar"
+                                                       otherButtonTitles:nil,nil];
+                 alert.tag = 4945;
+                 [alert show];
+             }
+        
+
+    
+
 }
 @end

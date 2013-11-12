@@ -11,9 +11,9 @@
 @interface KuBDD : NSObject
 @property (nonatomic, retain) FMDatabase *db;
 
--(BOOL)crearBddConNomre:(NSString*)bdd enPath:(NSString*)path;
--(BOOL)abrirBdd:(NSString*)bdd;
+-(BOOL)abrirBDDenPath:(NSString*)path;
 -(BOOL)cerrarBdd;
-
+-(NSString*)obtenerDatoConKey:(NSString *)key deLaTabla:(NSString*)tabla;
+-(void)actualizarCampo:(NSString*)campo conDato:(NSString*)dato;
 
 @end

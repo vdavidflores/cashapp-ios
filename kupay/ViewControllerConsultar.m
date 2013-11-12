@@ -8,15 +8,15 @@
 
 #import "ViewControllerConsultar.h"
 #import "iToast.h"
-
+#import "KuBDD.h"
 
 @interface ViewControllerConsultar ()
-
+-(IBAction)enrespuesta:(ASIFormDataRequest *) elrequest;
 @end
 
 @implementation ViewControllerConsultar
 
-@synthesize content;
+@synthesize content,request;
 
 
 - (NSString *)tabTitle
@@ -32,7 +32,7 @@
     UIAlertView *alert=[[UIAlertView alloc]initWithFrame:CGRectMake(50.0, 20.0, 100.0f, 400.0f)];
     alert.title=@"Tiket de operación";
     
-    alert.message=[NSString stringWithFormat:@" %@ \n ", [[item objectForKey:@"operacionId"] substringToIndex:5]];
+    alert.message=[NSString stringWithFormat:@" %@ \n ", [[item objectForKey:@"IDKEY"] substringToIndex:5]];
     
     alert.delegate=self.content;
     [alert addButtonWithTitle:@"OK"];
@@ -55,7 +55,7 @@
     concepto.numberOfLines = 2;
     concepto.backgroundColor =[UIColor clearColor];
     concepto.textColor = [UIColor whiteColor];
-    [concepto setText:[NSString stringWithFormat:@"concepto: %@", [item objectForKey:@"concepto"]]];
+    [concepto setText:[NSString stringWithFormat:@"concepto: %@", [item objectForKey:@"CONCEPTO"]]];
     [alert addSubview:concepto];
 
     
@@ -108,34 +108,34 @@ static NSString *CellIdentifier = @"MyIdentifier";
     
 
     
-    switch ([[item objectForKey:@"tipo"] integerValue]) {
+    switch ([[item objectForKey:@"TIPO"] integerValue]) {
         case 1:
-            cell.textLabel.text = [NSString stringWithFormat:@"Abono de %@$%@",[item objectForKey:@"polo"],[item objectForKey:@"monto"]];
-            cell.detailTextLabel.text = [item objectForKey:@"fecha"];
+            cell.textLabel.text = [NSString stringWithFormat:@"Abono de %@$%@",[item objectForKey:@"POLO"],[item objectForKey:@"MONTO"]];
+            cell.detailTextLabel.text = [item objectForKey:@"FECHA"];
             cell.imageView.image = [UIImage imageNamed:@"mdm"];
             break;
         case 2:
-            cell.textLabel.text = [NSString stringWithFormat:@"Compra de %@$%@",[item objectForKey:@"polo"],[item objectForKey:@"monto"]];
-            cell.detailTextLabel.text = [item objectForKey:@"fecha"];
+            cell.textLabel.text = [NSString stringWithFormat:@"Compra de %@$%@",[item objectForKey:@"POLO"],[item objectForKey:@"MONTO"]];
+            cell.detailTextLabel.text = [item objectForKey:@"FECHA"];
             cell.imageView.image = [UIImage imageNamed:@"compm"];
             break;
             
         case 3:
-            cell.textLabel.text = [NSString stringWithFormat:@"Transferencia de %@$%@",[item objectForKey:@"polo"],[item objectForKey:@"monto"]];
-            cell.detailTextLabel.text = [item objectForKey:@"fecha"];
+            cell.textLabel.text = [NSString stringWithFormat:@"Transferencia de %@$%@",[item objectForKey:@"POLO"],[item objectForKey:@"MONTO"]];
+            cell.detailTextLabel.text = [item objectForKey:@"FECHA"];
             cell.imageView.image = [UIImage imageNamed:@"tranm"];
             break;
         case 5:
-            cell.textLabel.text = [NSString stringWithFormat:@"Compra de %@$%@",[item objectForKey:@"polo"],[item objectForKey:@"monto"]];
-            cell.detailTextLabel.text = [NSString stringWithFormat:@" %@ \n %@ ",[item objectForKey:@"fecha"], @"dsfas"];
+            cell.textLabel.text = [NSString stringWithFormat:@"Compra de %@$%@",[item objectForKey:@"POLO"],[item objectForKey:@"MONTO"]];
+            cell.detailTextLabel.text = [NSString stringWithFormat:@" %@ \n %@ ",[item objectForKey:@"FECHA"], @"---"];
             cell.imageView.image = [UIImage imageNamed:@"compm"];
             break;
 
             
         default:
         
-            cell.textLabel.text = [NSString stringWithFormat:@"Movimiento desconosidp de %@$%@",[item objectForKey:@"polo"],[item objectForKey:@"monto"]];
-            cell.detailTextLabel.text = [item objectForKey:@"fecha"];
+            cell.textLabel.text = [NSString stringWithFormat:@"Movimiento desconosidp de %@$%@",[item objectForKey:@"POLO"],[item objectForKey:@"MONTO"]];
+            cell.detailTextLabel.text = [item objectForKey:@"FECHA"];
             cell.imageView.image = [UIImage imageNamed:@"mdm"];
             
             break;
@@ -165,57 +165,81 @@ return cell;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+     NSLog(@"CONSULTA");
+  
+  
+    [self pullData];
     
     
-    NSString *json =  @"{"
-    @"  \"data\": ["
-    @"{"
-    @"    \"tipo\": \"1\" , "
-     @"    \"monto\": \"23\" , "
-    @"    \"fecha\": \"hoy\" , "
-          @"    \"operacionId\": \"23sm4348u5ij34bhij34b5jk4\" , "
-    @"    \"concepto\": \"abono en oxxo\" , "
-    @"    \"polo\": \"-\"  "
-    @"},"
-    @"{"
-    @"    \"tipo\": \"2\" , "
-    @"    \"monto\": \"434\" , "
-    @"    \"fecha\": \"hoy\" , "
-      @"    \"operacionId\": \"f4ds45534m5ijk34bn5bn34jk\" , "
-    @"    \"concepto\": \"transferencia a usuario\" , "
-    @"    \"polo\": \"+\"  "
-    @"},"
-    @"{"
-    @"    \"tipo\": \"3\" , "
-    @"    \"monto\": \"31\" , "
-    @"    \"fecha\": \"hoy\" , "
-    @"    \"operacionId\": \"3h5gb45mkn34knjk34n5340\" , "
-     @"    \"concepto\": \"transferencia a usuario\" , "
-    @"    \"polo\": \"-\"  "
-    @"},"
-    @"{"
-    @"    \"tipo\": \"1\" , "
-    @"    \"monto\": \"31\" , "
-    @"    \"fecha\": \"hoy\" , "
-    @"    \"operacionId\": \"45jn334mnj5hb34jb45jk\" , "
-     @"    \"concepto\": \"tarjeta de abono\" , "
-    @"    \"polo\": \"+\"  "
-    @"}"
-     @"]"
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
+    [self.tableview addSubview:refreshControl];
     
-    @"}";
-     NSError *error = nil;
-    NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:[json dataUsingEncoding:NSUTF8StringEncoding] options:0 error:&error];
     
-    self.content = [dataDictionary objectForKey:@"data"];;
+    
    
 }
 
+-(void)pullData{
+    KuBDD *bdd = [[KuBDD alloc] init];
+    [bdd abrirBDDenPath:@"database.kupay"];
+    NSString *imei = [bdd obtenerDatoConKey:@"kuPrivKey" deLaTabla:@"USR"];
+    NSString *usr = [bdd obtenerDatoConKey:@"id" deLaTabla:@"USR"];
+    
+    NSLog(@"DATOS EN BDD %@, %@", imei, usr);
+    [request cancel];
+    [self setRequest:[ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"http://kupay.tk/kuCloudAppDev/index.php"]]];
+    
+    NSMutableDictionary *nameElements = [NSMutableDictionary dictionary];
+    
+    [nameElements setObject:usr forKey:@"usr"];
+    [nameElements setObject:[@"1234" init] forKey:@"pin"];
+    [nameElements setObject:imei forKey:@"imei"];
+    [nameElements setObject:@"1" forKey:@"dias"];
+    
+    NSError *error = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:nameElements
+                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
+                                                         error:&error];
+    NSString* jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    NSLog(@"DATA: %@", jsonString);
+    
+    [request setPostValue:@"7" forKey:@"ACCION"];
+    [request setPostValue:jsonString forKey:@"DATA"];
+    [request setTimeOutSeconds:20];
+    
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_4_0
+    [request setShouldContinueWhenAppEntersBackground:YES];
+#endif
+    
+    [request setDelegate:self];
+    
+    [request setDidFinishSelector:@selector(enrespuesta:)];
+    [request setTag:390];
+    [request startAsynchronous];
+}
+
+-(void)refresh:(UIRefreshControl *)refreshControl {
+    [self pullData];
+    [refreshControl endRefreshing];
+}
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+-(IBAction)enrespuesta:(ASIFormDataRequest *) elrequest{
+    NSError *error =nil;
+    NSString * response = elrequest.responseString;
+    NSLog(response);
+    NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:[response dataUsingEncoding:NSUTF8StringEncoding] options:0 error:&error];
+    if ([[dataDictionary objectForKey:@"RESULTADO"] isEqualToString:@"SOLICITUD_EXITOSA"]){
+      
+    self.content =   [dataDictionary[@"DATOS"] objectForKey:@"OPERACIONES"];
+        [self.tableview reloadData];
+    }
+    
+  }
 
 @end

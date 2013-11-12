@@ -12,13 +12,15 @@
 #import "ViewControllerEscanear.h"
 #import "ViewControllerTransferir.h"
 #import "ViewControllerConsultar.h"
-@interface ViewControllerMain ()
+#import "KuBDD.h"
 
+@interface ViewControllerMain ()
+-(IBAction)enrespuesta:(ASIFormDataRequest *) elrequest;
 @end
 
 
 @implementation ViewControllerMain
-@synthesize saldo;
+@synthesize saldo,referscar,request;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -69,7 +71,7 @@
         topBar.backgroundColor =  [UIColor colorWithRed:197.0/255.0 green:30.0/255.0 blue:79.0/255.0 alpha:1.0];
         
         //Boton refrescar
-        UIButton *referscar = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        referscar = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         [referscar addTarget:self action:@selector(handlereferscar) forControlEvents:UIControlEventTouchUpInside];
         [referscar setBackgroundImage:[UIImage imageNamed:@"refresh"] forState:UIControlStateNormal];
          [referscar setFrame:CGRectMake(self.view.frame.size.width-50, 12, 36, 32)];
@@ -98,6 +100,7 @@
         [topBar addSubview:referscar];
         
         [self.view addSubview:topBar];
+        [self handlereferscar];
 
     }
     return self;
@@ -105,7 +108,43 @@
 
 - (void) handlereferscar
 {
+    KuBDD *bdd = [[KuBDD alloc] init];
+    [bdd abrirBDDenPath:@"database.kupay"];
+    NSString *imei = [bdd obtenerDatoConKey:@"kuPrivKey" deLaTabla:@"USR"];
+    NSString *usr = [bdd obtenerDatoConKey:@"id" deLaTabla:@"USR"];
+    [bdd cerrarBdd];
+    NSLog(@"DATOS EN BDD %@, %@", imei, usr);
+    [request cancel];
+    [self setRequest:[ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"http://kupay.tk/kuCloudAppDev/index.php"]]];
     
+    NSMutableDictionary *nameElements = [NSMutableDictionary dictionary];
+    
+   [nameElements setObject:usr forKey:@"emisor"];
+     [nameElements setObject:[@"1234" init] forKey:@"pin"];
+    [nameElements setObject:imei forKey:@"imei"];
+    
+    NSError *error = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:nameElements
+                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
+                                                         error:&error];
+    NSString* jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    NSLog(@"DATA: %@", jsonString);
+    
+    [request setPostValue:@"5" forKey:@"ACCION"];
+    [request setPostValue:jsonString forKey:@"DATA"];
+    [request setTimeOutSeconds:20];
+    
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_4_0
+    [request setShouldContinueWhenAppEntersBackground:YES];
+#endif
+    
+    [request setDelegate:self];
+    
+    [request setDidFinishSelector:@selector(enrespuesta:)];
+    [request setTag:390];
+    [request startAsynchronous];
+    
+
 }
 
 - (void) handlenavicon
@@ -141,6 +180,24 @@
 {
 	return (toInterfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
+-(IBAction)enrespuesta:(ASIFormDataRequest *) elrequest{
+     NSString *result = elrequest.responseString;
+     NSError *error = nil;NSLog(@"respuesta es: %@",result);
+     NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:[result dataUsingEncoding:NSUTF8StringEncoding] options:0 error:&error];
+    
+    if ([dataDictionary[@"RESULTADO"] isEqualToString:@"ACTUALIZACION_CC_EXITOSA"]){
+        switch (elrequest.tag) {
+            case 390:
+                
+                [self.saldo setText:[NSString stringWithFormat:@"$%@",[dataDictionary[@"DATOS"] objectForKey:@"SALDO"]]];
+                break;
+                
+            default:
+                break;
+        }
+    }
+   
 
+}
 
 @end

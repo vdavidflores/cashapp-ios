@@ -16,10 +16,39 @@
     
     self = [super init];
     if (self){
-    }
-    
+        
+
+        }
   	return self;
+}
+
+
+
+-(BOOL)abrirBDDenPath:(NSString*)path{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *docsPath = [paths objectAtIndex:0];
+    NSString *path_ = [docsPath stringByAppendingPathComponent:path];
+    self.db = [FMDatabase databaseWithPath:path_];
+    [self.db open];
+    return YES;
+}
+-(BOOL)cerrarBdd{
+    [self.db close];
+    return YES;
+}
+
+-(NSString*)obtenerDatoConKey:(NSString *)key deLaTabla:(NSString *)tabla{
+    NSString *result = nil;
     
+     FMResultSet *res = [self.db executeQuery:[NSString stringWithFormat:@"SELECT %@ FROM %@",key,tabla]];
+    while ([res next]) {
+        result = [res stringForColumn:key];
+    }
+    return result;
+}
+
+-(void)actualizarCampo:(NSString*)campo conDato:(NSString*)dato{
+    [self.db executeUpdate:[NSString stringWithFormat: @"UPDATE taxicell SET %@='%@'",campo,dato]];
 }
 
 @end
