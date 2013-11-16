@@ -18,6 +18,6 @@
 @property (strong, nonatomic) UILabel *saldo;
 @property (strong, nonatomic)  UIButton *referscar;
 @property (nonatomic, retain) ASIFormDataRequest *request;
-
-
+-(void)cambiarSaldo:(NSString *)saldoN;
+-(void)actualizarSaldo;
 @end

@@ -36,14 +36,14 @@
     
     NSLog(@"Base creada: %@", (cratus) ? @"YES" : @"NO");
     if (cratus){
-        [db executeUpdate:@"INSERT INTO USR (id,kuPrivKey,kuPubKey,ultimoToken) values (?,?,?,?)",@"uno@kupay.com",@"123456789012345",@"ku",@"ku"];
+        [db executeUpdate:@"INSERT INTO USR (id,kuPrivKey,kuPubKey,ultimoToken) values (?,?,?,?)",@"tres@kupay.com",@"123456789012345",@"ku",@"ku"];
         NSLog(@"fila inseratada");
     }
     FMResultSet *res = [db executeQuery:@"select id from USR"];
     NSString *idnt = nil;
     int i = 0;
     while ([res next]) {
-        idnt = [res stringForColumn:@"id"];
+        idnt = [res stringForColumn:@"id"];-
         i++;
     }
     NSLog(@"fillas en bdd: %d " ,i );

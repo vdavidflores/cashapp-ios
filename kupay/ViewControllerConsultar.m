@@ -100,7 +100,7 @@ static NSString *CellIdentifier = @"MyIdentifier";
     cell.textLabel.textColor = [UIColor whiteColor];
     cell.detailTextLabel.textColor = [UIColor whiteColor];
 
-  
+    cell.textLabel.font=[UIFont boldSystemFontOfSize:16.0];
   
     
     

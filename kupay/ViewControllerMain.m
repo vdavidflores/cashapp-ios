@@ -16,6 +16,7 @@
 
 @interface ViewControllerMain ()
 -(IBAction)enrespuesta:(ASIFormDataRequest *) elrequest;
++(void)cambiarSaldo:(NSString *)saldo;
 @end
 
 
@@ -27,6 +28,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         //se añaden los views controlers a el tabbar
+        
+      
         
         ViewControllerEscanear *escanear = [[ViewControllerEscanear alloc]  initWithNibName:@"ViewControllerEscanear" bundle:nil];
         ViewControllerTransferir *transferir = [[ViewControllerTransferir alloc]  initWithNibName:@"ViewControllerTransferir" bundle:nil];
@@ -101,6 +104,9 @@
         
         [self.view addSubview:topBar];
         [self handlereferscar];
+        
+        
+ 
 
     }
     return self;
@@ -188,8 +194,8 @@
     if ([dataDictionary[@"RESULTADO"] isEqualToString:@"ACTUALIZACION_CC_EXITOSA"]){
         switch (elrequest.tag) {
             case 390:
-                
-                [self.saldo setText:[NSString stringWithFormat:@"$%@",[dataDictionary[@"DATOS"] objectForKey:@"SALDO"]]];
+                NSLog(@"actualizando SALDO....");
+                self.saldo.text=[NSString stringWithFormat:@"$%@",[dataDictionary[@"DATOS"] objectForKey:@"SALDO"]];
                 break;
                 
             default:
@@ -198,6 +204,12 @@
     }
    
 
+}
+-(void)actualizarSaldo{
+    [self handlereferscar];
+}
+-(void)cambiarSaldo:(NSString *)saldoN{
+    [self.saldo setText:[NSString stringWithFormat:@"$%@",saldoN]];
 }
 
 @end

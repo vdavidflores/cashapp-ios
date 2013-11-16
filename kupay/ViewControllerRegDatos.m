@@ -322,7 +322,7 @@
 
        
         NSLog(@"estatus: %@", [dataDictionary[@"DATOS"] objectForKey:@"estatus"]);
-        if ([[dataDictionary[@"DATOS"] objectForKey:@"estatus"] isEqualToString:@"no_registrado"]&& [[dataDictionary[@"DATOS"] objectForKey:@"estatus"] isEqualToString:@"0"]) {
+        if ([[dataDictionary[@"DATOS"] objectForKey:@"estatus"] isEqualToString:@"no_registrado"] || [[dataDictionary[@"DATOS"] objectForKey:@"estatus"] isEqualToString:@"0"]) {
                   if ([self.validandoDialog isVisible]) [self.validandoDialog dismissWithClickedButtonIndex:-1 animated:YES];
 
                   ViewControllerRegSeguridad *vcs = [[ViewControllerRegSeguridad alloc]init];
