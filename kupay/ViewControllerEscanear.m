@@ -228,7 +228,7 @@
                 UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Transferencia fallida" message:@"No cuentas con saldo suficiente para relizar esta operación" delegate:self  cancelButtonTitle:@"Aceptar" otherButtonTitles:nil, nil];
                 alert.tag =	234534;
                 [alert show];
-            }else if([[dataDictionary[@"DATOS"] objectForKey:@"CAUSA_FALLA"] isEqualToString:@"USUARIO_INVALIDO"]){
+            }else if([[dataDictionary[@"DATOS"] objectForKey:@"CAUSA_FALLA"] isEqualToString:@"USUARIO_INVALIDO"]||[[dataDictionary[@"DATOS"] objectForKey:@"CAUSA"] isEqualToString:@"USUARIO_INVALIDO"]){
                 NSLog(@"no marmaja");
                 UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Transferencia fallida" message:@"Usuario invalido, verifica tu pin" delegate:self  cancelButtonTitle:@"Aceptar" otherButtonTitles:nil, nil];
                 alert.tag =	234534;
