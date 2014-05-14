@@ -16,7 +16,7 @@
 @end
 
 @implementation ViewControllerRegDatos
-@synthesize paises,request;
+@synthesize request;
 @synthesize nombreTextField;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -30,16 +30,12 @@
 
 - (void)viewDidLoad
 {
-    self.paises = [NSArray arrayWithObjects:@"Mexico", @"Chile", @"Peru",nil];
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor colorWithRed:197.0/255.0 green:30.0/255.0 blue:79.0/255.0 alpha:1.0]];
     
     //Se añade el top bar
-    [self addtop];
-    UIView* dummyView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, 1)];
-    self.paisTextField.delegate = self;
-    self.paisTextField.inputView = dummyView;
-    self.paisTextField.tag = 666;
+  //  [self addtop];
+
     
     
     // Do any additional setup after loading the view from its nib.
@@ -52,8 +48,8 @@
 }
 
 
--(void)addtop{
-    CGRect frame = CGRectMake(0.0f, 0.0f, self.view.frame.size.width, 70.0f);
+-(void)addtop{		
+    CGRect frame = CGRectMake(0.0f, 20.0f, self.view.frame.size.width, 70.0f);
     UIView *topBar = [[UIView alloc] initWithFrame:frame];
     topBar.backgroundColor =  [UIColor whiteColor];
     
@@ -96,69 +92,9 @@
     
     [self.view addSubview:topBar];
 }
-
-- (void)textFieldDidBeginEditing:(UITextField *)textField
-{
-    NSLog(@"textField"); // this will show which textField did end editing ...
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Indica tu pais de residencia" message:@"click for submission \n\n\n\n "delegate:self  cancelButtonTitle:@"Acepar"
-                                          otherButtonTitles:nil,nil];
-    
-    UITableView *table = [[UITableView alloc]initWithFrame:CGRectMake(10, 40, 264, 120)];
-    table.delegate = self;
-    table.dataSource = self;
-    [alert addSubview:table];
-    
-    [alert show];
-}
-
-
-
 //DElegado de listView para
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
 
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"MyIdentifier2";
-    
-    
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [self makeLensListCell: CellIdentifier];
-        cell.selectionStyle = UITableViewCellSelectionStyleGray;
-        
-    }
-    
-    cell.textLabel.text = [self.paises objectAtIndex:indexPath.row];
-   
-    return cell;
-}
-- (UITableViewCell *)makeLensListCell: (NSString *)identifier
-{
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
-    
-    return cell;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSInteger numberOfRows = paises.count;
-    return numberOfRows;
-}
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    self.paisTextField.text = [self.paises objectAtIndex:indexPath.row];
-}
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
-{
-    if(textField.tag == 666){
-        return FALSE;
-    }else{
-        return YES;
-    }
-}
 
 
 //////////////Fin del delegado
@@ -181,11 +117,6 @@
             {
                  self.correoTextField.backgroundColor=[UIColor whiteColor];
                 
-                
-                
-                if(![self.telefonoTextField.text isEqualToString:@""] && [self.telefonoTextField.text length] == 10){
-                    self.telefonoTextField.backgroundColor=[UIColor whiteColor];
-
                     if(![self.diaTextField.text isEqualToString:@""] && [self.diaTextField.text length] == 2 && [[self.diaTextField text] integerValue] > 0 && [[self.diaTextField text] integerValue] <= 31){
                         self.diaTextField.backgroundColor=[UIColor whiteColor];
                         
@@ -199,23 +130,9 @@
                             if(![self.anoTextField.text isEqualToString:@""] && [self.anoTextField.text length] == 4  && [[self.anoTextField text] integerValue] >= 1920 && [[self.anoTextField text] integerValue] <= [yearString intValue]){
                                 self.anoTextField.backgroundColor=[UIColor whiteColor];
                                 
-                                if(![self.paisTextField.text isEqualToString:@""] && [self.paisTextField.text length] >= 2 ){
-                                    self.paisTextField.backgroundColor=[UIColor whiteColor];
-                                    
-                                    
-                                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Confirma tus Datos" message:[NSString stringWithFormat:@"Es importante que tus datos sean auténticos para poder garantizarte un buen servicio. \n\nIMPORTANTE-El correo que ingresaste electrónico será ligado a tu cuenta y solo podrá registrarse UNA VEZ. Si alguien ha transferido saldo a este correo lo recibirás en cuanto lo valides. \n \nLos datos que quieres registrar son: \nNombre: %@ \nApellido: %@ \nCORREO: %@ \nTelefono: %@\nFecha de nacimiento: %@-%@-%@ \nPais de residencia: %@ \n\n",[self.nombreTextField text], [self.apellidoTextField text], [self.correoTextField text], [self.telefonoTextField text],[self.diaTextField text],[self.mesTextField text],[self.anoTextField text], [self.paisTextField text]]delegate:self  cancelButtonTitle:@"Cancelar" otherButtonTitles:@"Validar",nil];
-                                    alert.tag = 777;
-                                    [alert show];
-
-                                 
-                                    
-                                    
-                                }else{
-                                    self.paisTextField.backgroundColor=[UIColor yellowColor];
-                                    [self.paisTextField becomeFirstResponder];
-
-                                }
-
+                                
+                                [self call];
+                                
                             }else{
                                 self.anoTextField.backgroundColor=[UIColor yellowColor];
                                 [self.anoTextField becomeFirstResponder];
@@ -233,11 +150,7 @@
                         [self.diaTextField becomeFirstResponder];
                         [[[iToast makeText:@"Dia de nacimiento invaldo (2 digitos)"] setDuration:3000] show];
                     }
-                }else{
-                    self.telefonoTextField.backgroundColor=[UIColor yellowColor];
-                    [self.telefonoTextField becomeFirstResponder];
-                    [[[iToast makeText:@"telefono invaldo, Se requieren 10 digitos"] setDuration:3000] show];
-                }
+                
  
             }else{
                 self.correoTextField.backgroundColor=[UIColor yellowColor];
@@ -267,51 +180,58 @@
 
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if ([alertView tag]== 777 && buttonIndex == 1){
+    if ([alertView tag]== 400 && buttonIndex == 0){
         
-        //Empezar el request
-        [request cancel];
-        [self setRequest:[ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"http://kupay.tk/kuCloudAppDev/index.php"]]];
-        
-        NSMutableDictionary *nameElements = [NSMutableDictionary dictionary];
-        
-        [nameElements setObject:[self.correoTextField text] forKey:@"email"];
-        
-       // [nameElements setObject:@"1234" forKey:@"password"];
-        NSError *error = nil;
-        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:nameElements
-                                                           options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
-                                                             error:&error];
-        NSString* jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-        NSLog(@"DATA: %@", jsonString);
-        
-        [request setPostValue:@"10" forKey:@"ACCION"];
-        [request setPostValue:jsonString forKey:@"DATA"];
-        [request setTimeOutSeconds:20];
-        
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_4_0
-        [request setShouldContinueWhenAppEntersBackground:YES];
-#endif
-        
-        [request setDelegate:self];
-        
-        [request setDidFinishSelector:@selector(enrespuesta:)];
-        [request startAsynchronous];
-        
-       self.validandoDialog = [[UIAlertView alloc] initWithTitle:@"Validando datos" message:@"Espera un momento \n\n\n\n"
-                                             delegate:self
-                                    cancelButtonTitle:@"Cancelar"
-                                    otherButtonTitles:nil, nil];
-        
-        UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-        spinner.center = CGPointMake(139.5, 95.5); // .5 so it doesn't blur
-        self.validandoDialog.tag = 450;
-        [self.validandoDialog addSubview:spinner];
-        [spinner startAnimating];
-        [self.validandoDialog show];
-        
-           }
+        ViewControllerRegSeguridad *vcs = [[ViewControllerRegSeguridad alloc]init];
+        [[self navigationController] pushViewController:vcs animated:YES];
+    
+    }
 }
+
+-(void)call{
+    [request cancel];
+    [self setRequest:[ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"http://cashapp.mx/kuCloudAppDev/index.php"]]];
+    
+    NSMutableDictionary *nameElements = [NSMutableDictionary dictionary];
+    
+    [nameElements setObject:[self.correoTextField text] forKey:@"email"];
+    [nameElements setObject:[self.nombreTextField text] forKey:@"nombre"];
+    [nameElements setObject:[self.apellidoTextField text] forKey:@"apellido"];
+    NSString *fecha = [NSString stringWithFormat:@"%@-%@-%@" ,[self.anoTextField text], [self.mesTextField text], [self.diaTextField text]];
+    [nameElements setObject:fecha forKey:@"fechaNas"];
+    NSError *error = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:nameElements
+                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
+                                                         error:&error];
+    NSString* jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    NSLog(@"DATA: %@", jsonString);
+    
+    [request setPostValue:@"2" forKey:@"ACCION"];
+    [request setPostValue:jsonString forKey:@"DATA"];
+    [request setTimeOutSeconds:20];
+    
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_4_0
+    [request setShouldContinueWhenAppEntersBackground:YES];
+#endif
+    
+    [request setDelegate:self];
+    
+    [request setDidFinishSelector:@selector(enrespuesta:)];
+    [request startAsynchronous];
+    
+    self.validandoDialog = [[UIAlertView alloc] initWithTitle:@"Registrando usuario" message:@"cuenta hasta 10! ...1.2. \n\n\n\n"
+                                                     delegate:self
+                                            cancelButtonTitle:nil
+                                            otherButtonTitles:nil, nil];
+    
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    spinner.center = CGPointMake(139.5, 95.5); // .5 so it doesn't blur
+    self.validandoDialog.tag = 450;
+    [self.validandoDialog addSubview:spinner];
+    [spinner startAnimating];
+    [self.validandoDialog show];
+}
+
 -(IBAction)enrespuesta:(ASIFormDataRequest *) elrequest{
     NSString *result = elrequest.responseString;
     NSError *error = nil;NSLog(@"respuesta es: %@",result);
@@ -321,15 +241,18 @@
         
 
        
-        NSLog(@"estatus: %@", [dataDictionary[@"DATOS"] objectForKey:@"estatus"]);
-        if ([[dataDictionary[@"DATOS"] objectForKey:@"estatus"] isEqualToString:@"no_registrado"] || [[dataDictionary[@"DATOS"] objectForKey:@"estatus"] isEqualToString:@"0"]) {
+        NSLog(@"estatus: %@", [dataDictionary objectForKey:@"RESULTADO"]);
+        if ([[dataDictionary objectForKey:@"RESULTADO"] isEqualToString:@"EXITO"] ) {
                   if ([self.validandoDialog isVisible]) [self.validandoDialog dismissWithClickedButtonIndex:-1 animated:YES];
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Registro exitoso!" message:@"Gracias por registrarte en Cashapp. recibirás un email de confirmación."delegate:self  cancelButtonTitle:@"Acepar"
+                                                  otherButtonTitles:nil,nil];
+            alert.tag = 400;
+            [alert show];
 
-                  ViewControllerRegSeguridad *vcs = [[ViewControllerRegSeguridad alloc]init];
-                  [[self navigationController] pushViewController:vcs animated:YES];
              }else{
                  NSLog(@"textField"); // this will show which textField did end editing ...
-                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Correo no disponible" message:@"Lo sentimos. Este correo, no esta disponible por favor intenta con otro."delegate:self  cancelButtonTitle:@"Acepar"
+                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No Registrado" message:@"Lo sentimos. Este correo no se registro intenta con otro o mas tarde."delegate:self  cancelButtonTitle:@"Acepar"
                                                        otherButtonTitles:nil,nil];
                  alert.tag = 4945;
                  [alert show];
@@ -339,4 +262,7 @@
     
 
 }
+
+
+
 @end

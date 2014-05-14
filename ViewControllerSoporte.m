@@ -46,7 +46,7 @@
     //boton de navicon
     UIButton *navicon = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     // [navicon addTarget:self action:@selector(handlenavicon) forControlEvents:UIControlEventTouchUpInside];
-    [navicon setBackgroundImage:[UIImage imageNamed:@"opciones"] forState:UIControlStateNormal];
+    [navicon setBackgroundImage:[UIImage imageNamed:@"opciones"] forState:UIControlStateNormal];		
     [navicon setFrame:CGRectMake(0, 3, 65, 50)];
     [navicon addTarget:self.parentViewController action:@selector(revealToggle:) forControlEvents:UIControlEventTouchUpInside ];
     

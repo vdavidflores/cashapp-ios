@@ -17,14 +17,7 @@
 
 @implementation ViewControllerDeposito
 @synthesize segmentedControl;
--(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+
 
 - (void)viewDidLoad
 {
@@ -34,6 +27,7 @@
     
     [self kuTopbar];
     
+    self.tarjetas = [NSArray arrayWithObjects:@"Visa",@"La Master",@"Visa elctron", @"Viajes", nil];
     
     // Do any additional setup after loading the view from its nib.
 }
@@ -91,12 +85,13 @@
     [[self navigationController] pushViewController:codifgooxo animated:YES];
     }else{
   
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Selecciona la tarjeta a usar" message:@"click for submission \n\n\n\n "delegate:self  cancelButtonTitle:@"Acepar"
-                                              otherButtonTitles:@"Añadir otra",nil];
-        
-       UITableView *table = [[UITableView alloc]initWithFrame:CGRectMake(10, 40, 264, 120)];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Selecciona la tarjeta a usar (desliza para borrar)" message:@"click for submission \n\n\n \n\n\n\n\n\n"delegate:self  cancelButtonTitle:@"Cancelar"
+                                              otherButtonTitles:@"Aceptar",nil];
+     
+       UITableView *table = [[UITableView alloc]initWithFrame:CGRectMake(10, 70, 264, 175)];
         table.delegate = self;
         table.dataSource = self;
+        
         [alert addSubview:table];
         
         [alert show];
@@ -116,28 +111,62 @@
 
 
 
-//DElegado de listView para 
+//DElegado de listView para uitableview de loista de tarjetas
+
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"boorando!");
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+       
+        NSMutableArray *work_array = [NSMutableArray arrayWithArray:self.tarjetas];
+        [work_array removeObjectAtIndex:indexPath.row];
+        self.tarjetas = [NSArray arrayWithArray:work_array];
+        
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+   // [tableView setEditing:YES animated:YES];
+}
+-(void)rmove{
+    
+}
+
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+  //  SimpleEditableListAppDelegate *controller = (SimpleEditableListAppDelegate *)[[UIApplication sharedApplication] self];
+  //  if (indexPath.row == [controller countOfList]-1) {
+  //      return UITableViewCellEditingStyleInsert;
+  //  } else {
+        return UITableViewCellEditingStyleDelete;
+  //  }
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 2;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"MyIdentifier";
-    
-    
-    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [self makeLensListCell: CellIdentifier];
         cell.selectionStyle = UITableViewCellSelectionStyleGray;
        
     }
-
-    cell.textLabel.text = @"Tarjeta N";
-  //  cell.editingAccessoryView = self.editButtonItem;
+    
+    if (indexPath.section==1) {
+    cell.backgroundColor = [UIColor clearColor];
+    cell.textLabel.text = [self.tarjetas objectAtIndex:indexPath.row];  //  cell.editingAccessoryView = self.editButtonItem;
     return cell;
+    }else{
+        cell.textLabel.text = @"Añadir nueva";
+        return cell;
+
+    }
 }
 - (UITableViewCell *)makeLensListCell: (NSString *)identifier
 {
@@ -147,9 +176,27 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSInteger numberOfRows = 5;
-    return numberOfRows;
+    
+    if (section==0)
+    {
+        return 1;
+    }
+    else{
+        NSInteger numberOfRows = [self.tarjetas count];
+        return numberOfRows;
+    }
+    
+    
+}
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0) {
+        return NO;
+    }
+        return YES;
 }
 
+-(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return @"Borrar";
+}
 
 @end

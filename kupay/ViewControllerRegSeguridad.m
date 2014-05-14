@@ -27,7 +27,7 @@
 {
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor colorWithRed:197.0/255.0 green:30.0/255.0 blue:79.0/255.0 alpha:1.0]];
-    [self addtop];
+   // [self addtop];
     // Do any additional setup after loading the view from its nib.
 }
 

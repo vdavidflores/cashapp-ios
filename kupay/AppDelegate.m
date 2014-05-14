@@ -25,7 +25,7 @@
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *docsPath = [paths objectAtIndex:0];
-    NSString *path = [docsPath stringByAppendingPathComponent:@"database.kupay"];
+    NSString *path = [docsPath stringByAppendingPathComponent:@"database.kupay"];	
     
     self.db = [FMDatabase databaseWithPath:path];
     
@@ -33,17 +33,18 @@
     
     bool cratus = [db executeUpdate:@"create table USR(id text, kuPrivKey text, kuPubKey text, ultimoToken text)"];
     
+    //[db executeUpdate:@"create table TARJETA(id text, kuPrivKey text, kuPubKey text, ultimoToken text)"];
     
     NSLog(@"Base creada: %@", (cratus) ? @"YES" : @"NO");
     if (cratus){
-        [db executeUpdate:@"INSERT INTO USR (id,kuPrivKey,kuPubKey,ultimoToken) values (?,?,?,?)",@"tres@kupay.com",@"123456789012345",@"ku",@"ku"];
+        [db executeUpdate:@"INSERT INTO USR (id,kuPrivKey,kuPubKey,ultimoToken) values (?,?,?,?)",@"ku",@"ku",@"ku",@"ku"];
         NSLog(@"fila inseratada");
     }
     FMResultSet *res = [db executeQuery:@"select id from USR"];
     NSString *idnt = nil;
     int i = 0;
     while ([res next]) {
-        idnt = [res stringForColumn:@"id"];-
+        idnt = [res stringForColumn:@"id"];
         i++;
     }
     NSLog(@"fillas en bdd: %d " ,i );

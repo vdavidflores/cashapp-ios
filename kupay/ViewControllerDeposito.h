@@ -12,5 +12,6 @@
 @interface ViewControllerDeposito : UIViewController <UITableViewDataSource, UITableViewDelegate>
 - (IBAction)Aceptoar:(id)sender;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+@property (strong,nonatomic) NSArray *tarjetas;
 
 @end

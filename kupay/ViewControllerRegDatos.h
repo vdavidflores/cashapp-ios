@@ -9,17 +9,14 @@
 #import <UIKit/UIKit.h>
 #import	"ASIFormDataRequest.h"
 
-@interface ViewControllerRegDatos : UIViewController<UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface ViewControllerRegDatos : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *anoTextField;
 @property (weak, nonatomic) IBOutlet UITextField *mesTextField;
 @property (weak, nonatomic) IBOutlet UITextField *diaTextField;
-@property (weak, nonatomic) IBOutlet UITextField *telefonoTextField;
 @property (weak, nonatomic) IBOutlet UITextField *correoTextField;
 @property (weak, nonatomic) IBOutlet UITextField *apellidoTextField;
 @property (weak, nonatomic) IBOutlet UITextField *nombreTextField;
-@property (weak, nonatomic) IBOutlet UITextField *paisTextField;
 @property (strong,nonatomic) UIAlertView *validandoDialog;
-@property (strong,nonatomic) NSArray *paises;
 - (IBAction)onCancelar:(id)sender;
 - (IBAction)onAceptar:(id)sender;
 @property (nonatomic, retain) ASIFormDataRequest *request;
