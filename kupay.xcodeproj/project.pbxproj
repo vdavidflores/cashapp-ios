@@ -28,8 +28,6 @@
 		220B1BA61816CE800049B519 /* gothicb.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 220B1BA51816CE800049B519 /* gothicb.ttf */; };
 		220B1BAC1816D4890049B519 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B1BA91816D4890049B519 /* TPKeyboardAvoidingScrollView.m */; };
 		220B1BAD1816D4890049B519 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B1BAB1816D4890049B519 /* TPKeyboardAvoidingTableView.m */; };
-		220B1BB21816E57A0049B519 /* iToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B1BB01816E57A0049B519 /* iToast.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		220B1BB31816E57A0049B519 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 220B1BB11816E57A0049B519 /* README.md */; };
 		221A36BD18231931009C5AC0 /* ViewControllerDeposito.m in Sources */ = {isa = PBXBuildFile; fileRef = 221A36BB18231931009C5AC0 /* ViewControllerDeposito.m */; };
 		221A36BE18231931009C5AC0 /* ViewControllerDeposito.xib in Resources */ = {isa = PBXBuildFile; fileRef = 221A36BC18231931009C5AC0 /* ViewControllerDeposito.xib */; };
 		221A36C218232265009C5AC0 /* ViewControllerCodigoOXXO.m in Sources */ = {isa = PBXBuildFile; fileRef = 221A36C018232265009C5AC0 /* ViewControllerCodigoOXXO.m */; };
@@ -144,6 +142,7 @@
 		22FBB0CC182F018C002DBC40 /* botonBlancoBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FBB0C8182F018C002DBC40 /* botonBlancoBg@2x.png */; };
 		22FBB0CD182F018C002DBC40 /* linea.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FBB0C9182F018C002DBC40 /* linea.png */; };
 		22FBB0CE182F018C002DBC40 /* linea@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FBB0CA182F018C002DBC40 /* linea@2x.png */; };
+		882D1B0D192406E500D7CC76 /* iToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 882D1B0C192406E500D7CC76 /* iToast.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,9 +180,6 @@
 		220B1BA91816D4890049B519 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
 		220B1BAA1816D4890049B519 /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
 		220B1BAB1816D4890049B519 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
-		220B1BAF1816E57A0049B519 /* iToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iToast.h; sourceTree = "<group>"; };
-		220B1BB01816E57A0049B519 /* iToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iToast.m; sourceTree = "<group>"; };
-		220B1BB11816E57A0049B519 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		221A36BA18231931009C5AC0 /* ViewControllerDeposito.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerDeposito.h; sourceTree = "<group>"; };
 		221A36BB18231931009C5AC0 /* ViewControllerDeposito.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerDeposito.m; sourceTree = "<group>"; };
 		221A36BC18231931009C5AC0 /* ViewControllerDeposito.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerDeposito.xib; sourceTree = "<group>"; };
@@ -358,6 +354,8 @@
 		22FBB0C8182F018C002DBC40 /* botonBlancoBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "botonBlancoBg@2x.png"; sourceTree = "<group>"; };
 		22FBB0C9182F018C002DBC40 /* linea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linea.png; sourceTree = "<group>"; };
 		22FBB0CA182F018C002DBC40 /* linea@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "linea@2x.png"; sourceTree = "<group>"; };
+		882D1B0B192406E500D7CC76 /* iToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iToast.h; sourceTree = "<group>"; };
+		882D1B0C192406E500D7CC76 /* iToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iToast.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -406,17 +404,6 @@
 			);
 			name = TPKeyboardAvoiding;
 			path = kupay/TPKeyboardAvoiding;
-			sourceTree = "<group>";
-		};
-		220B1BAE1816E57A0049B519 /* toast */ = {
-			isa = PBXGroup;
-			children = (
-				220B1BAF1816E57A0049B519 /* iToast.h */,
-				220B1BB01816E57A0049B519 /* iToast.m */,
-				220B1BB11816E57A0049B519 /* README.md */,
-			);
-			name = toast;
-			path = kupay/toast;
 			sourceTree = "<group>";
 		};
 		223311F1181060CB001FD603 /* ZBarSDK */ = {
@@ -586,11 +573,11 @@
 		2295FEBF18077D9D002FF865 = {
 			isa = PBXGroup;
 			children = (
+				882D1B0A192406E500D7CC76 /* toast */,
 				2233E19D183040460046C751 /* Reachability */,
 				2233E1801830403F0046C751 /* ClassesHTTP */,
 				22FBB0A6182EE4D5002DBC40 /* FMDB */,
 				22DD5E70181EB20A004803D3 /* ZUUIRevealController */,
-				220B1BAE1816E57A0049B519 /* toast */,
 				220B1BA71816D4890049B519 /* TPKeyboardAvoiding */,
 				220B1BA51816CE800049B519 /* gothicb.ttf */,
 				223311F1181060CB001FD603 /* ZBarSDK */,
@@ -750,6 +737,15 @@
 			path = FMDB;
 			sourceTree = "<group>";
 		};
+		882D1B0A192406E500D7CC76 /* toast */ = {
+			isa = PBXGroup;
+			children = (
+				882D1B0B192406E500D7CC76 /* iToast.h */,
+				882D1B0C192406E500D7CC76 /* iToast.m */,
+			);
+			path = toast;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -835,7 +831,6 @@
 				229150F01809F8B200D0A715 /* ku.png in Resources */,
 				229150ED1809F8B200D0A715 /* compm.png in Resources */,
 				22FBB0BE182EFA31002DBC40 /* splash@2x.png in Resources */,
-				220B1BB31816E57A0049B519 /* README.md in Resources */,
 				22DD5E99181EC9AD004803D3 /* ViewControllerDesenlaze.xib in Resources */,
 				22FBB0C6182EFAA2002DBC40 /* ViewControllerPregunta.xib in Resources */,
 				229150F21809F8B200D0A715 /* kucolor.png in Resources */,
@@ -922,12 +917,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				220B1BB21816E57A0049B519 /* iToast.m in Sources */,
 				22DD5E93181EC985004803D3 /* ViewControllerSoporte.m in Sources */,
 				2233E1961830403F0046C751 /* ASIDataCompressor.m in Sources */,
 				22FBB0BA182EE518002DBC40 /* KuBDD.m in Sources */,
 				2233E17E183036310046C751 /* ViewControllerRegSeguridad.m in Sources */,
 				22DD5E8E181EC96E004803D3 /* ViewControllerPerfil.m in Sources */,
+				882D1B0D192406E500D7CC76 /* iToast.m in Sources */,
 				22FBB0B3182EE4D5002DBC40 /* FMDatabasePool.m in Sources */,
 				22FBB0B1182EE4D5002DBC40 /* FMDatabase.m in Sources */,
 				2233E1951830403F0046C751 /* ASIAuthenticationDialog.m in Sources */,

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>AE624589-28F6-4C7C-8E95-90CE213995AA</string>
+	<key>IDESourceControlProjectName</key>
+	<string>kupay</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C0730A5F-FC58-414B-805D-8046BDABE41C</key>
+		<string>file://localhost/Users/KU/Dropbox/Ku-Pay/appMovil/cashappIOS.git/</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>kupay.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C0730A5F-FC58-414B-805D-8046BDABE41C</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>file://localhost/Users/KU/Dropbox/Ku-Pay/appMovil/cashappIOS.git/</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C0730A5F-FC58-414B-805D-8046BDABE41C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C0730A5F-FC58-414B-805D-8046BDABE41C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>cashappIOS</string>
+		</dict>
+	</array>
+</dict>
+</plist>
