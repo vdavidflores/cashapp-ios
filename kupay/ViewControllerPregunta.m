@@ -8,6 +8,7 @@
 
 #import "ViewControllerPregunta.h"
 #import "ViewControllerRegDatos.h"
+#import "ViewControllerEnlaze.h"
 
 @interface ViewControllerPregunta ()
 
@@ -48,6 +49,13 @@
 }
 
 - (IBAction)onSi:(id)sender {
+   ViewControllerEnlaze *seg = [[ViewControllerEnlaze alloc] init];
+    UINavigationController * nc = [[UINavigationController alloc] initWithRootViewController:seg ];
+    
+    
+    [nc setNavigationBarHidden:YES];
+    
+    [self presentViewController:nc animated:YES completion:nil];
 }
 
 - (IBAction)onNo:(id)sender {

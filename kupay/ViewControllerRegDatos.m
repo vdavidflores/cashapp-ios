@@ -8,7 +8,7 @@
 #import "iToast.h"
 #import "ViewControllerRegDatos.h"
 #import "ViewControllerPregunta.h"
-#import "ViewControllerRegSeguridad.h"
+#import "ViewControllerEnlaze.h"
 
 
 @interface ViewControllerRegDatos ()
@@ -182,7 +182,7 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if ([alertView tag]== 400 && buttonIndex == 0){
         
-        ViewControllerRegSeguridad *vcs = [[ViewControllerRegSeguridad alloc]init];
+        ViewControllerEnlaze *vcs = [[ViewControllerEnlaze alloc]init];
         [[self navigationController] pushViewController:vcs animated:YES];
     
     }

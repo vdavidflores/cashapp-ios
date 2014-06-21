@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ZBarSDK.h"
 #import	"ASIFormDataRequest.h"
-@interface ViewControllerEscanear : UIViewController <ZBarReaderDelegate>{
+@interface ViewControllerEscanear : UIViewController <ZBarReaderViewDelegate>{
     ZBarReaderView * _reader;
 }
 

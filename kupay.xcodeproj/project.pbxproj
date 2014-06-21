@@ -32,7 +32,6 @@
 		221A36BE18231931009C5AC0 /* ViewControllerDeposito.xib in Resources */ = {isa = PBXBuildFile; fileRef = 221A36BC18231931009C5AC0 /* ViewControllerDeposito.xib */; };
 		221A36C218232265009C5AC0 /* ViewControllerCodigoOXXO.m in Sources */ = {isa = PBXBuildFile; fileRef = 221A36C018232265009C5AC0 /* ViewControllerCodigoOXXO.m */; };
 		221A36C318232265009C5AC0 /* ViewControllerCodigoOXXO.xib in Resources */ = {isa = PBXBuildFile; fileRef = 221A36C118232265009C5AC0 /* ViewControllerCodigoOXXO.xib */; };
-		2233120F181060CB001FD603 /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22331209181060CB001FD603 /* libzbar.a */; };
 		22331210181060CB001FD603 /* zbar-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 2233120B181060CB001FD603 /* zbar-back.png */; };
 		22331211181060CB001FD603 /* zbar-help.html in Resources */ = {isa = PBXBuildFile; fileRef = 2233120C181060CB001FD603 /* zbar-help.html */; };
 		22331212181060CB001FD603 /* zbar-helpicons.png in Resources */ = {isa = PBXBuildFile; fileRef = 2233120D181060CB001FD603 /* zbar-helpicons.png */; };
@@ -44,8 +43,6 @@
 		2233121D18106177001FD603 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2233121C18106177001FD603 /* QuartzCore.framework */; };
 		2233121F18106191001FD603 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2233121E18106191001FD603 /* libiconv.dylib */; };
 		2233E17A1830156A0046C751 /* transparente.png in Resources */ = {isa = PBXBuildFile; fileRef = 2233E1791830156A0046C751 /* transparente.png */; };
-		2233E17E183036310046C751 /* ViewControllerRegSeguridad.m in Sources */ = {isa = PBXBuildFile; fileRef = 2233E17C183036310046C751 /* ViewControllerRegSeguridad.m */; };
-		2233E17F183036310046C751 /* ViewControllerRegSeguridad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2233E17D183036310046C751 /* ViewControllerRegSeguridad.xib */; };
 		2233E1951830403F0046C751 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 2233E1821830403F0046C751 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2233E1961830403F0046C751 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2233E1851830403F0046C751 /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2233E1971830403F0046C751 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2233E1871830403F0046C751 /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -142,7 +139,11 @@
 		22FBB0CC182F018C002DBC40 /* botonBlancoBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FBB0C8182F018C002DBC40 /* botonBlancoBg@2x.png */; };
 		22FBB0CD182F018C002DBC40 /* linea.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FBB0C9182F018C002DBC40 /* linea.png */; };
 		22FBB0CE182F018C002DBC40 /* linea@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FBB0CA182F018C002DBC40 /* linea@2x.png */; };
-		882D1B0D192406E500D7CC76 /* iToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 882D1B0C192406E500D7CC76 /* iToast.m */; };
+		882D1B0D192406E500D7CC76 /* iToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 882D1B0C192406E500D7CC76 /* iToast.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		885C58A2192AF0F300BD26F6 /* ViewControllerEnlaze.m in Sources */ = {isa = PBXBuildFile; fileRef = 885C58A0192AF0F300BD26F6 /* ViewControllerEnlaze.m */; };
+		885C58A3192AF0F300BD26F6 /* ViewControllerEnlaze.xib in Resources */ = {isa = PBXBuildFile; fileRef = 885C58A1192AF0F300BD26F6 /* ViewControllerEnlaze.xib */; };
+		885F096C1954A0F00075A0C6 /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22331209181060CB001FD603 /* libzbar.a */; };
+		885F09781954EA670075A0C6 /* KUSoket.m in Sources */ = {isa = PBXBuildFile; fileRef = 885F09771954EA670075A0C6 /* KUSoket.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -218,9 +219,6 @@
 		2233121C18106177001FD603 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2233121E18106191001FD603 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		2233E1791830156A0046C751 /* transparente.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transparente.png; sourceTree = "<group>"; };
-		2233E17B183036310046C751 /* ViewControllerRegSeguridad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerRegSeguridad.h; sourceTree = "<group>"; };
-		2233E17C183036310046C751 /* ViewControllerRegSeguridad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerRegSeguridad.m; sourceTree = "<group>"; };
-		2233E17D183036310046C751 /* ViewControllerRegSeguridad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerRegSeguridad.xib; sourceTree = "<group>"; };
 		2233E1811830403F0046C751 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		2233E1821830403F0046C751 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
 		2233E1831830403F0046C751 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
@@ -356,6 +354,11 @@
 		22FBB0CA182F018C002DBC40 /* linea@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "linea@2x.png"; sourceTree = "<group>"; };
 		882D1B0B192406E500D7CC76 /* iToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iToast.h; sourceTree = "<group>"; };
 		882D1B0C192406E500D7CC76 /* iToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iToast.m; sourceTree = "<group>"; };
+		885C589F192AF0F300BD26F6 /* ViewControllerEnlaze.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerEnlaze.h; sourceTree = "<group>"; };
+		885C58A0192AF0F300BD26F6 /* ViewControllerEnlaze.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerEnlaze.m; sourceTree = "<group>"; };
+		885C58A1192AF0F300BD26F6 /* ViewControllerEnlaze.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerEnlaze.xib; sourceTree = "<group>"; };
+		885F09761954EA670075A0C6 /* KUSoket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KUSoket.h; path = kupay/KUSoket.h; sourceTree = "<group>"; };
+		885F09771954EA670075A0C6 /* KUSoket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KUSoket.m; path = kupay/KUSoket.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -363,21 +366,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2233121718106158001FD603 /* CoreMedia.framework in Frameworks */,
 				2233E1A8183040C70046C751 /* libz.dylib in Frameworks */,
 				2295FECE18077D9D002FF865 /* CoreGraphics.framework in Frameworks */,
 				2233E1A6183040910046C751 /* MobileCoreServices.framework in Frameworks */,
 				2233E1A4183040870046C751 /* SystemConfiguration.framework in Frameworks */,
 				2233E1A2183040690046C751 /* CFNetwork.framework in Frameworks */,
 				22FBB0B7182EE4E5002DBC40 /* libsqlite3.dylib in Frameworks */,
-				2233120F181060CB001FD603 /* libzbar.a in Frameworks */,
 				2233121F18106191001FD603 /* libiconv.dylib in Frameworks */,
 				2233121D18106177001FD603 /* QuartzCore.framework in Frameworks */,
 				2233121B1810616E001FD603 /* CoreVideo.framework in Frameworks */,
 				2233121918106162001FD603 /* CoreAudio.framework in Frameworks */,
-				2233121718106158001FD603 /* CoreMedia.framework in Frameworks */,
 				2233121518106147001FD603 /* AVFoundation.framework in Frameworks */,
 				2295FED018077D9D002FF865 /* UIKit.framework in Frameworks */,
 				2295FECC18077D9D002FF865 /* Foundation.framework in Frameworks */,
+				885F096C1954A0F00075A0C6 /* libzbar.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,6 +576,8 @@
 		2295FEBF18077D9D002FF865 = {
 			isa = PBXGroup;
 			children = (
+				885F09761954EA670075A0C6 /* KUSoket.h */,
+				885F09771954EA670075A0C6 /* KUSoket.m */,
 				882D1B0A192406E500D7CC76 /* toast */,
 				2233E19D183040460046C751 /* Reachability */,
 				2233E1801830403F0046C751 /* ClassesHTTP */,
@@ -623,9 +628,9 @@
 		2295FED118077D9D002FF865 /* kupay */ = {
 			isa = PBXGroup;
 			children = (
-				2233E17B183036310046C751 /* ViewControllerRegSeguridad.h */,
-				2233E17C183036310046C751 /* ViewControllerRegSeguridad.m */,
-				2233E17D183036310046C751 /* ViewControllerRegSeguridad.xib */,
+				885C589F192AF0F300BD26F6 /* ViewControllerEnlaze.h */,
+				885C58A0192AF0F300BD26F6 /* ViewControllerEnlaze.m */,
+				885C58A1192AF0F300BD26F6 /* ViewControllerEnlaze.xib */,
 				22F685EF182F15A800ABDE3D /* ViewControllerRegDatos.h */,
 				22F685F0182F15A800ABDE3D /* ViewControllerRegDatos.m */,
 				22F685F1182F15A800ABDE3D /* ViewControllerRegDatos.xib */,
@@ -790,7 +795,7 @@
 		2295FEC018077D9D002FF865 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = ku;
 				TargetAttributes = {
 					2295FEE218077D9E002FF865 = {
@@ -834,6 +839,7 @@
 				22DD5E99181EC9AD004803D3 /* ViewControllerDesenlaze.xib in Resources */,
 				22FBB0C6182EFAA2002DBC40 /* ViewControllerPregunta.xib in Resources */,
 				229150F21809F8B200D0A715 /* kucolor.png in Resources */,
+				885C58A3192AF0F300BD26F6 /* ViewControllerEnlaze.xib in Resources */,
 				22331213181060CB001FD603 /* zbar-samples.png in Resources */,
 				220B1B8D1815BAED0049B519 /* selectedTab.png in Resources */,
 				229150EF1809F8B200D0A715 /* home.png in Resources */,
@@ -849,7 +855,6 @@
 				220B1B891815BAED0049B519 /* scanerLogoSelected.png in Resources */,
 				22DD5E85181EC924004803D3 /* ViewControllerRetiro.xib in Resources */,
 				220B1BA01815C28F0049B519 /* scanerLogoUnselected@2x.png in Resources */,
-				2233E17F183036310046C751 /* ViewControllerRegSeguridad.xib in Resources */,
 				229150F61809F8B200D0A715 /* refresh.png in Resources */,
 				229150FA1809F8B200D0A715 /* venm.png in Resources */,
 				22F685EC182F157A00ABDE3D /* seguridad@2x.png in Resources */,
@@ -920,11 +925,11 @@
 				22DD5E93181EC985004803D3 /* ViewControllerSoporte.m in Sources */,
 				2233E1961830403F0046C751 /* ASIDataCompressor.m in Sources */,
 				22FBB0BA182EE518002DBC40 /* KuBDD.m in Sources */,
-				2233E17E183036310046C751 /* ViewControllerRegSeguridad.m in Sources */,
 				22DD5E8E181EC96E004803D3 /* ViewControllerPerfil.m in Sources */,
 				882D1B0D192406E500D7CC76 /* iToast.m in Sources */,
 				22FBB0B3182EE4D5002DBC40 /* FMDatabasePool.m in Sources */,
 				22FBB0B1182EE4D5002DBC40 /* FMDatabase.m in Sources */,
+				885C58A2192AF0F300BD26F6 /* ViewControllerEnlaze.m in Sources */,
 				2233E1951830403F0046C751 /* ASIAuthenticationDialog.m in Sources */,
 				221A36C218232265009C5AC0 /* ViewControllerCodigoOXXO.m in Sources */,
 				2233E1A0183040460046C751 /* Reachability.m in Sources */,
@@ -946,6 +951,7 @@
 				22FBB0B5182EE4D5002DBC40 /* FMResultSet.m in Sources */,
 				22DD5E76181EB282004803D3 /* RevealController.m in Sources */,
 				220890DC182858BC00AE4889 /* ViewControllerTarjetaNueva.m in Sources */,
+				885F09781954EA670075A0C6 /* KUSoket.m in Sources */,
 				2295FEFD18077E09002FF865 /* ViewControllerTransferir.m in Sources */,
 				2233E19C1830403F0046C751 /* ASINetworkQueue.m in Sources */,
 				22DD5E73181EB20A004803D3 /* ZUUIRevealController.m in Sources */,
@@ -1000,7 +1006,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1039,7 +1044,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1082,6 +1086,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/KU/Documents/kupay/ZBarSDK,
+					"$(PROJECT_DIR)/ZBarSDK",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1103,6 +1108,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/KU/Documents/kupay/ZBarSDK,
+					"$(PROJECT_DIR)/ZBarSDK",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1113,7 +1119,6 @@
 		2295FEF818077D9E002FF865 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/kupay.app/kupay";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1136,7 +1141,6 @@
 		2295FEF918077D9E002FF865 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/kupay.app/kupay";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
