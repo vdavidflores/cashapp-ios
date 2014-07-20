@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import	"ASIFormDataRequest.h"
-@interface ViewControllerTransferir : UIViewController
+#import "kupay/KUSoket.h"
+@interface ViewControllerTransferir : UIViewController<KUSoketDelegate>
 - (IBAction)onEnviar:(id)sender;
 - (IBAction)onParaInfo:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *campoPara;
@@ -16,6 +17,7 @@
 @property (strong, nonatomic) UIAlertView *transfiriendoDialog;
 @property (nonatomic, retain) ASIFormDataRequest *request;
 @property (strong,nonatomic) NSString *pin;
+@property (atomic,retain) KUSoket *transferReq;
 @property (strong, nonatomic) UIAlertView * pinalert ;
 
 @end

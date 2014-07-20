@@ -15,7 +15,7 @@
 @end
 
 @implementation ViewControllerTransferir
-@synthesize campoPara,campoCantidad,request;
+@synthesize campoPara,campoCantidad,request, transferReq;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -138,8 +138,8 @@
     NSString *usr = [bdd obtenerDatoConKey:@"id" deLaTabla:@"USR"];
     
     NSLog(@"DATOS EN BDD %@, %@", imei, usr);
-    [request cancel];
-    [self setRequest:[ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"http://kupay.tk/kuCloudAppDev/index.php"]]];
+ //   [request cancel];
+ //    [self setRequest:[ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"http://kupay.tk/kuCloudAppDev/index.php"]]];
     
     NSMutableDictionary *nameElements = [NSMutableDictionary dictionary];
     
@@ -148,8 +148,10 @@
     [nameElements setObject:[self.campoCantidad text] forKey:@"cantidad"];
     [nameElements setObject:self.pin forKey:@"pin"];
     [nameElements setObject:imei forKey:@"imei"];
-
-    NSError *error = nil;
+    transferReq = [[KUSoket alloc] init];
+    transferReq.delegate = self;
+    [transferReq startRequestForAction:@"1" andData:nameElements];
+/*  NSError *error = nil;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:nameElements
                                                        options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
                                                          error:&error];
@@ -169,6 +171,7 @@
     [request setDidFinishSelector:@selector(enrespuesta:)];
     [request setTag:390];
     [request startAsynchronous];
+ */
 }
 
 -(IBAction)enrespuesta:(ASIFormDataRequest *) elrequest{
@@ -215,6 +218,43 @@
         
     }
 
+}
+-(void)processCompletedWhitResult:(NSDictionary *)result inAcction:(NSNumber *)acction{
+     [self.transfiriendoDialog dismissWithClickedButtonIndex:-1 animated:YES];
+    if ([acction integerValue] == 1) {
+        if([[result objectForKey:@"RESULTADO"] isEqualToString:@"TRANSACCION_EXITOSA"]){
+            ViewControllerMain *myTBC = (ViewControllerMain *)self.tabBarController;
+            [myTBC actualizarSaldo];
+            UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Transferencia exitosa" message:@"Tu transferencia se ha realizado exitosamente" delegate:self  cancelButtonTitle:@"Aceptar" otherButtonTitles:nil, nil];
+            alert.tag =	2765;
+            [alert show];
+        }else if([[result objectForKey:@"RESULTADO"] isEqualToString:@"FALLA"]){
+            NSLog(@"transaccion fallida");
+            if([[result[@"DATOS"] objectForKey:@"CAUSA_FALLA"] isEqualToString:@"FONDOS_INUFICIENTES"]){
+                NSLog(@"no marmaja");
+                UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Transferencia fallida" message:@"No cuentas con saldo suficiente para relizar esta operación" delegate:self  cancelButtonTitle:@"Aceptar" otherButtonTitles:nil, nil];
+                alert.tag =	43564;
+                [alert show];
+            }else if([[result[@"DATOS"] objectForKey:@"CAUSA_FALLA"] isEqualToString:@"USUARIO_INVALIDO"]){
+                NSLog(@"usuario malo malo.");
+                UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Transferencia fallida" message:@"Datos de seguridad invalidos, verifica tu pin" delegate:self  cancelButtonTitle:@"Aceptar" otherButtonTitles:nil, nil];
+                alert.tag =	123443;
+                [alert show];
+            }else if([[result[@"DATOS"] objectForKey:@"CAUSA_FALLA"] isEqualToString:@"FALLA_MENSAJE"]){
+                NSLog(@"nose q pedo.");
+                
+                UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Transferencia fallida" message:[result[@"DATOS"] objectForKey:@"MENSAJE"] delegate:self  cancelButtonTitle:@"Aceptar" otherButtonTitles:nil, nil];
+                alert.tag =	34523;
+                [alert show];
+            }else {
+                NSLog(@"menos se q pedo.");
+                UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Transferencia fallida" message:@"Algo salio mal pero tu saldo esta intacto, intenta con mas suerte! =)" delegate:self  cancelButtonTitle:@"Aceptar" otherButtonTitles:nil, nil];
+                alert.tag =	3242;
+                [alert show];
+                
+            }
+        }
+    }
 }
 
 @end

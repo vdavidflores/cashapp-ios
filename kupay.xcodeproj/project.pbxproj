@@ -25,7 +25,6 @@
 		220B1BA21815C28F0049B519 /* tabhostbg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 220B1B9A1815C28F0049B519 /* tabhostbg@2x.png */; };
 		220B1BA31815C28F0049B519 /* transferLogoSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 220B1B9B1815C28F0049B519 /* transferLogoSelected@2x.png */; };
 		220B1BA41815C28F0049B519 /* transferLogoUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 220B1B9C1815C28F0049B519 /* transferLogoUnselected@2x.png */; };
-		220B1BA61816CE800049B519 /* gothicb.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 220B1BA51816CE800049B519 /* gothicb.ttf */; };
 		220B1BAC1816D4890049B519 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B1BA91816D4890049B519 /* TPKeyboardAvoidingScrollView.m */; };
 		220B1BAD1816D4890049B519 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B1BAB1816D4890049B519 /* TPKeyboardAvoidingTableView.m */; };
 		221A36BD18231931009C5AC0 /* ViewControllerDeposito.m in Sources */ = {isa = PBXBuildFile; fileRef = 221A36BB18231931009C5AC0 /* ViewControllerDeposito.m */; };
@@ -83,10 +82,8 @@
 		2295FECC18077D9D002FF865 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2295FECB18077D9D002FF865 /* Foundation.framework */; };
 		2295FECE18077D9D002FF865 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2295FECD18077D9D002FF865 /* CoreGraphics.framework */; };
 		2295FED018077D9D002FF865 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2295FECF18077D9D002FF865 /* UIKit.framework */; };
-		2295FED618077D9E002FF865 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2295FED418077D9E002FF865 /* InfoPlist.strings */; };
 		2295FED818077D9E002FF865 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2295FED718077D9E002FF865 /* main.m */; };
 		2295FEDC18077D9E002FF865 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2295FEDB18077D9E002FF865 /* AppDelegate.m */; };
-		2295FEDE18077D9E002FF865 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2295FEDD18077D9E002FF865 /* Images.xcassets */; };
 		2295FEE518077D9E002FF865 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2295FEE418077D9E002FF865 /* XCTest.framework */; };
 		2295FEE618077D9E002FF865 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2295FECB18077D9D002FF865 /* Foundation.framework */; };
 		2295FEE718077D9E002FF865 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2295FECF18077D9D002FF865 /* UIKit.framework */; };
@@ -104,10 +101,6 @@
 		22DD5E85181EC924004803D3 /* ViewControllerRetiro.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22DD5E83181EC924004803D3 /* ViewControllerRetiro.xib */; };
 		22DD5E89181EC956004803D3 /* ViewControllerLLaveKu.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DD5E87181EC956004803D3 /* ViewControllerLLaveKu.m */; };
 		22DD5E8A181EC956004803D3 /* ViewControllerLLaveKu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22DD5E88181EC956004803D3 /* ViewControllerLLaveKu.xib */; };
-		22DD5E8E181EC96E004803D3 /* ViewControllerPerfil.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DD5E8C181EC96E004803D3 /* ViewControllerPerfil.m */; };
-		22DD5E8F181EC96E004803D3 /* ViewControllerPerfil.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22DD5E8D181EC96E004803D3 /* ViewControllerPerfil.xib */; };
-		22DD5E93181EC985004803D3 /* ViewControllerSoporte.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DD5E91181EC985004803D3 /* ViewControllerSoporte.m */; };
-		22DD5E94181EC985004803D3 /* ViewControllerSoporte.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22DD5E92181EC985004803D3 /* ViewControllerSoporte.xib */; };
 		22DD5E98181EC9AD004803D3 /* ViewControllerDesenlaze.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DD5E96181EC9AD004803D3 /* ViewControllerDesenlaze.m */; };
 		22DD5E99181EC9AD004803D3 /* ViewControllerDesenlaze.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22DD5E97181EC9AD004803D3 /* ViewControllerDesenlaze.xib */; };
 		22F685E3182F157A00ABDE3D /* datos.png in Resources */ = {isa = PBXBuildFile; fileRef = 22F685D7182F157A00ABDE3D /* datos.png */; };
@@ -139,11 +132,18 @@
 		22FBB0CC182F018C002DBC40 /* botonBlancoBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FBB0C8182F018C002DBC40 /* botonBlancoBg@2x.png */; };
 		22FBB0CD182F018C002DBC40 /* linea.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FBB0C9182F018C002DBC40 /* linea.png */; };
 		22FBB0CE182F018C002DBC40 /* linea@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FBB0CA182F018C002DBC40 /* linea@2x.png */; };
+		88028F9C1963563900A18383 /* ViewControllerCobrar.m in Sources */ = {isa = PBXBuildFile; fileRef = 88028F9A1963563900A18383 /* ViewControllerCobrar.m */; };
+		88028F9D1963563900A18383 /* ViewControllerCobrar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88028F9B1963563900A18383 /* ViewControllerCobrar.xib */; };
 		882D1B0D192406E500D7CC76 /* iToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 882D1B0C192406E500D7CC76 /* iToast.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		885C58A2192AF0F300BD26F6 /* ViewControllerEnlaze.m in Sources */ = {isa = PBXBuildFile; fileRef = 885C58A0192AF0F300BD26F6 /* ViewControllerEnlaze.m */; };
 		885C58A3192AF0F300BD26F6 /* ViewControllerEnlaze.xib in Resources */ = {isa = PBXBuildFile; fileRef = 885C58A1192AF0F300BD26F6 /* ViewControllerEnlaze.xib */; };
 		885F096C1954A0F00075A0C6 /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22331209181060CB001FD603 /* libzbar.a */; };
 		885F09781954EA670075A0C6 /* KUSoket.m in Sources */ = {isa = PBXBuildFile; fileRef = 885F09771954EA670075A0C6 /* KUSoket.m */; };
+		88ADAA5819563E8600E65F8D /* NSData+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 88ADAA5719563E8600E65F8D /* NSData+MD5.m */; };
+		88DB7B5E197B4D6D00672F4F /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88DB7B5D197B4D6D00672F4F /* Images-2.xcassets */; };
+		88E4AFF4197B383800FC2DC9 /* ViewControllerInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 88E4AFF2197B383800FC2DC9 /* ViewControllerInfo.m */; };
+		88E4AFF5197B383800FC2DC9 /* ViewControllerInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88E4AFF3197B383800FC2DC9 /* ViewControllerInfo.xib */; };
+		88E4AFF7197B4A1B00FC2DC9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 88E4AFF6197B4A1B00FC2DC9 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -176,7 +176,6 @@
 		220B1B9A1815C28F0049B519 /* tabhostbg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabhostbg@2x.png"; sourceTree = "<group>"; };
 		220B1B9B1815C28F0049B519 /* transferLogoSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transferLogoSelected@2x.png"; sourceTree = "<group>"; };
 		220B1B9C1815C28F0049B519 /* transferLogoUnselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transferLogoUnselected@2x.png"; sourceTree = "<group>"; };
-		220B1BA51816CE800049B519 /* gothicb.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = gothicb.ttf; path = kupay/gothicb.ttf; sourceTree = "<group>"; };
 		220B1BA81816D4890049B519 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
 		220B1BA91816D4890049B519 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
 		220B1BAA1816D4890049B519 /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
@@ -276,12 +275,10 @@
 		2295FECD18077D9D002FF865 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2295FECF18077D9D002FF865 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2295FED318077D9E002FF865 /* kupay-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "kupay-Info.plist"; sourceTree = "<group>"; };
-		2295FED518077D9E002FF865 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2295FED718077D9E002FF865 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2295FED918077D9E002FF865 /* kupay-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "kupay-Prefix.pch"; sourceTree = "<group>"; };
 		2295FEDA18077D9E002FF865 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2295FEDB18077D9E002FF865 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2295FEDD18077D9E002FF865 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2295FEE318077D9E002FF865 /* kupayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kupayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2295FEE418077D9E002FF865 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		2295FEEC18077D9E002FF865 /* kupayTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "kupayTests-Info.plist"; sourceTree = "<group>"; };
@@ -306,12 +303,6 @@
 		22DD5E86181EC956004803D3 /* ViewControllerLLaveKu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerLLaveKu.h; sourceTree = "<group>"; };
 		22DD5E87181EC956004803D3 /* ViewControllerLLaveKu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerLLaveKu.m; sourceTree = "<group>"; };
 		22DD5E88181EC956004803D3 /* ViewControllerLLaveKu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerLLaveKu.xib; sourceTree = "<group>"; };
-		22DD5E8B181EC96E004803D3 /* ViewControllerPerfil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerPerfil.h; sourceTree = "<group>"; };
-		22DD5E8C181EC96E004803D3 /* ViewControllerPerfil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerPerfil.m; sourceTree = "<group>"; };
-		22DD5E8D181EC96E004803D3 /* ViewControllerPerfil.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerPerfil.xib; sourceTree = "<group>"; };
-		22DD5E90181EC985004803D3 /* ViewControllerSoporte.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewControllerSoporte.h; path = ../ViewControllerSoporte.h; sourceTree = "<group>"; };
-		22DD5E91181EC985004803D3 /* ViewControllerSoporte.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewControllerSoporte.m; path = ../ViewControllerSoporte.m; sourceTree = "<group>"; };
-		22DD5E92181EC985004803D3 /* ViewControllerSoporte.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewControllerSoporte.xib; path = ../ViewControllerSoporte.xib; sourceTree = "<group>"; };
 		22DD5E95181EC9AD004803D3 /* ViewControllerDesenlaze.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerDesenlaze.h; sourceTree = "<group>"; };
 		22DD5E96181EC9AD004803D3 /* ViewControllerDesenlaze.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerDesenlaze.m; sourceTree = "<group>"; };
 		22DD5E97181EC9AD004803D3 /* ViewControllerDesenlaze.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerDesenlaze.xib; sourceTree = "<group>"; };
@@ -352,6 +343,9 @@
 		22FBB0C8182F018C002DBC40 /* botonBlancoBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "botonBlancoBg@2x.png"; sourceTree = "<group>"; };
 		22FBB0C9182F018C002DBC40 /* linea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linea.png; sourceTree = "<group>"; };
 		22FBB0CA182F018C002DBC40 /* linea@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "linea@2x.png"; sourceTree = "<group>"; };
+		88028F991963563900A18383 /* ViewControllerCobrar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerCobrar.h; sourceTree = "<group>"; };
+		88028F9A1963563900A18383 /* ViewControllerCobrar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerCobrar.m; sourceTree = "<group>"; };
+		88028F9B1963563900A18383 /* ViewControllerCobrar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerCobrar.xib; sourceTree = "<group>"; };
 		882D1B0B192406E500D7CC76 /* iToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iToast.h; sourceTree = "<group>"; };
 		882D1B0C192406E500D7CC76 /* iToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iToast.m; sourceTree = "<group>"; };
 		885C589F192AF0F300BD26F6 /* ViewControllerEnlaze.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerEnlaze.h; sourceTree = "<group>"; };
@@ -359,6 +353,13 @@
 		885C58A1192AF0F300BD26F6 /* ViewControllerEnlaze.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerEnlaze.xib; sourceTree = "<group>"; };
 		885F09761954EA670075A0C6 /* KUSoket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KUSoket.h; path = kupay/KUSoket.h; sourceTree = "<group>"; };
 		885F09771954EA670075A0C6 /* KUSoket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KUSoket.m; path = kupay/KUSoket.m; sourceTree = "<group>"; };
+		88ADAA5619563E8600E65F8D /* NSData+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+MD5.h"; path = "kupay/NSData+MD5.h"; sourceTree = "<group>"; };
+		88ADAA5719563E8600E65F8D /* NSData+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+MD5.m"; path = "kupay/NSData+MD5.m"; sourceTree = "<group>"; };
+		88DB7B5D197B4D6D00672F4F /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
+		88E4AFF1197B383800FC2DC9 /* ViewControllerInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerInfo.h; sourceTree = "<group>"; };
+		88E4AFF2197B383800FC2DC9 /* ViewControllerInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerInfo.m; sourceTree = "<group>"; };
+		88E4AFF3197B383800FC2DC9 /* ViewControllerInfo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerInfo.xib; sourceTree = "<group>"; };
+		88E4AFF6197B4A1B00FC2DC9 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -576,6 +577,8 @@
 		2295FEBF18077D9D002FF865 = {
 			isa = PBXGroup;
 			children = (
+				88ADAA5619563E8600E65F8D /* NSData+MD5.h */,
+				88ADAA5719563E8600E65F8D /* NSData+MD5.m */,
 				885F09761954EA670075A0C6 /* KUSoket.h */,
 				885F09771954EA670075A0C6 /* KUSoket.m */,
 				882D1B0A192406E500D7CC76 /* toast */,
@@ -584,7 +587,6 @@
 				22FBB0A6182EE4D5002DBC40 /* FMDB */,
 				22DD5E70181EB20A004803D3 /* ZUUIRevealController */,
 				220B1BA71816D4890049B519 /* TPKeyboardAvoiding */,
-				220B1BA51816CE800049B519 /* gothicb.ttf */,
 				223311F1181060CB001FD603 /* ZBarSDK */,
 				229150D21809F8B200D0A715 /* imgs */,
 				2295FED118077D9D002FF865 /* kupay */,
@@ -651,12 +653,6 @@
 				22DD5E95181EC9AD004803D3 /* ViewControllerDesenlaze.h */,
 				22DD5E96181EC9AD004803D3 /* ViewControllerDesenlaze.m */,
 				22DD5E97181EC9AD004803D3 /* ViewControllerDesenlaze.xib */,
-				22DD5E90181EC985004803D3 /* ViewControllerSoporte.h */,
-				22DD5E91181EC985004803D3 /* ViewControllerSoporte.m */,
-				22DD5E92181EC985004803D3 /* ViewControllerSoporte.xib */,
-				22DD5E8B181EC96E004803D3 /* ViewControllerPerfil.h */,
-				22DD5E8C181EC96E004803D3 /* ViewControllerPerfil.m */,
-				22DD5E8D181EC96E004803D3 /* ViewControllerPerfil.xib */,
 				22DD5E86181EC956004803D3 /* ViewControllerLLaveKu.h */,
 				22DD5E87181EC956004803D3 /* ViewControllerLLaveKu.m */,
 				22DD5E88181EC956004803D3 /* ViewControllerLLaveKu.xib */,
@@ -681,8 +677,14 @@
 				2295FEDB18077D9E002FF865 /* AppDelegate.m */,
 				229150C81809F2BE00D0A715 /* ViewControllerMain.h */,
 				229150C91809F2BE00D0A715 /* ViewControllerMain.m */,
-				2295FEDD18077D9E002FF865 /* Images.xcassets */,
+				88028F991963563900A18383 /* ViewControllerCobrar.h */,
+				88028F9A1963563900A18383 /* ViewControllerCobrar.m */,
+				88028F9B1963563900A18383 /* ViewControllerCobrar.xib */,
 				2295FED218077D9D002FF865 /* Supporting Files */,
+				88E4AFF1197B383800FC2DC9 /* ViewControllerInfo.h */,
+				88E4AFF2197B383800FC2DC9 /* ViewControllerInfo.m */,
+				88E4AFF3197B383800FC2DC9 /* ViewControllerInfo.xib */,
+				88DB7B5D197B4D6D00672F4F /* Images-2.xcassets */,
 			);
 			path = kupay;
 			sourceTree = "<group>";
@@ -690,8 +692,8 @@
 		2295FED218077D9D002FF865 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				88E4AFF6197B4A1B00FC2DC9 /* InfoPlist.strings */,
 				2295FED318077D9E002FF865 /* kupay-Info.plist */,
-				2295FED418077D9E002FF865 /* InfoPlist.strings */,
 				2295FED718077D9E002FF865 /* main.m */,
 				2295FED918077D9E002FF865 /* kupay-Prefix.pch */,
 			);
@@ -830,7 +832,6 @@
 				229150F31809F8B200D0A715 /* mdm.png in Resources */,
 				221A36BE18231931009C5AC0 /* ViewControllerDeposito.xib in Resources */,
 				220B1B871815BAED0049B519 /* historyLogoUnselected.png in Resources */,
-				22DD5E94181EC985004803D3 /* ViewControllerSoporte.xib in Resources */,
 				220B1B8F1815BAED0049B519 /* tabhostbg.png in Resources */,
 				22F685EA182F157A00ABDE3D /* enlaceS@2x.png in Resources */,
 				229150F01809F8B200D0A715 /* ku.png in Resources */,
@@ -853,6 +854,7 @@
 				22331210181060CB001FD603 /* zbar-back.png in Resources */,
 				229150EA1809F8B200D0A715 /* ccbg.png in Resources */,
 				220B1B891815BAED0049B519 /* scanerLogoSelected.png in Resources */,
+				88E4AFF5197B383800FC2DC9 /* ViewControllerInfo.xib in Resources */,
 				22DD5E85181EC924004803D3 /* ViewControllerRetiro.xib in Resources */,
 				220B1BA01815C28F0049B519 /* scanerLogoUnselected@2x.png in Resources */,
 				229150F61809F8B200D0A715 /* refresh.png in Resources */,
@@ -865,6 +867,7 @@
 				229150F81809F8B200D0A715 /* tran2.png in Resources */,
 				229150FC1809F8B200D0A715 /* vent2.png in Resources */,
 				229150EE1809F8B200D0A715 /* fondocam.png in Resources */,
+				88028F9D1963563900A18383 /* ViewControllerCobrar.xib in Resources */,
 				22F685E3182F157A00ABDE3D /* datos.png in Resources */,
 				22F685EB182F157A00ABDE3D /* seguridad.png in Resources */,
 				2295FF0318077E41002FF865 /* ViewControllerEscanear.xib in Resources */,
@@ -876,10 +879,10 @@
 				22331211181060CB001FD603 /* zbar-help.html in Resources */,
 				220B1BA41815C28F0049B519 /* transferLogoUnselected@2x.png in Resources */,
 				22DD5E7B181EB982004803D3 /* RearViewController.xib in Resources */,
-				2295FED618077D9E002FF865 /* InfoPlist.strings in Resources */,
 				22331212181060CB001FD603 /* zbar-helpicons.png in Resources */,
 				22F685F3182F15A800ABDE3D /* ViewControllerRegDatos.xib in Resources */,
 				220B1B851815BAED0049B519 /* historyLogoSelected.png in Resources */,
+				88E4AFF7197B4A1B00FC2DC9 /* InfoPlist.strings in Resources */,
 				220B1B9E1815C28F0049B519 /* historyLogoUnselected@2x.png in Resources */,
 				22DD5E8A181EC956004803D3 /* ViewControllerLLaveKu.xib in Resources */,
 				22F685E6182F157A00ABDE3D /* datosS@2x.png in Resources */,
@@ -893,14 +896,12 @@
 				22FBB0CE182F018C002DBC40 /* linea@2x.png in Resources */,
 				229150E91809F8B200D0A715 /* blanco.png in Resources */,
 				229150EB1809F8B200D0A715 /* comp.png in Resources */,
-				2295FEDE18077D9E002FF865 /* Images.xcassets in Resources */,
 				229150F71809F8B200D0A715 /* tran.png in Resources */,
 				229150D11809F63300D0A715 /* ViewControllerConsultar.xib in Resources */,
 				2295FEFE18077E09002FF865 /* ViewControllerTransferir.xib in Resources */,
 				220B1BA31815C28F0049B519 /* transferLogoSelected@2x.png in Resources */,
-				22DD5E8F181EC96E004803D3 /* ViewControllerPerfil.xib in Resources */,
+				88DB7B5E197B4D6D00672F4F /* Images-2.xcassets in Resources */,
 				22FBB0CC182F018C002DBC40 /* botonBlancoBg@2x.png in Resources */,
-				220B1BA61816CE800049B519 /* gothicb.ttf in Resources */,
 				220B1B911815BAED0049B519 /* transferLogoSelected.png in Resources */,
 				220890DD182858BC00AE4889 /* ViewControllerTarjetaNueva.xib in Resources */,
 				229150EC1809F8B200D0A715 /* comp2.png in Resources */,
@@ -922,11 +923,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22DD5E93181EC985004803D3 /* ViewControllerSoporte.m in Sources */,
 				2233E1961830403F0046C751 /* ASIDataCompressor.m in Sources */,
 				22FBB0BA182EE518002DBC40 /* KuBDD.m in Sources */,
-				22DD5E8E181EC96E004803D3 /* ViewControllerPerfil.m in Sources */,
 				882D1B0D192406E500D7CC76 /* iToast.m in Sources */,
+				88028F9C1963563900A18383 /* ViewControllerCobrar.m in Sources */,
 				22FBB0B3182EE4D5002DBC40 /* FMDatabasePool.m in Sources */,
 				22FBB0B1182EE4D5002DBC40 /* FMDatabase.m in Sources */,
 				885C58A2192AF0F300BD26F6 /* ViewControllerEnlaze.m in Sources */,
@@ -941,6 +941,8 @@
 				2233E1991830403F0046C751 /* ASIFormDataRequest.m in Sources */,
 				22DD5E84181EC924004803D3 /* ViewControllerRetiro.m in Sources */,
 				22DD5E98181EC9AD004803D3 /* ViewControllerDesenlaze.m in Sources */,
+				88E4AFF4197B383800FC2DC9 /* ViewControllerInfo.m in Sources */,
+				88ADAA5819563E8600E65F8D /* NSData+MD5.m in Sources */,
 				22DD5E89181EC956004803D3 /* ViewControllerLLaveKu.m in Sources */,
 				229150D01809F63300D0A715 /* ViewControllerConsultar.m in Sources */,
 				2295FF0218077E41002FF865 /* ViewControllerEscanear.m in Sources */,
@@ -983,14 +985,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2295FED418077D9E002FF865 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2295FED518077D9E002FF865 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		2295FEED18077D9E002FF865 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1082,7 +1076,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "kupay/kupay-Prefix.pch";
 				INFOPLIST_FILE = "kupay/kupay-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/KU/Documents/kupay/ZBarSDK,
@@ -1104,7 +1098,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "kupay/kupay-Prefix.pch";
 				INFOPLIST_FILE = "kupay/kupay-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/KU/Documents/kupay/ZBarSDK,
