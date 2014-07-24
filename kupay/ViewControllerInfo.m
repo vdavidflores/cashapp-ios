@@ -13,6 +13,7 @@
 @end
 
 @implementation ViewControllerInfo
+@synthesize textview;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -20,6 +21,8 @@
     if (self) {
         // Custom initialization
         [self.view  setBackgroundColor:[[ UIColor alloc] initWithRed:197.0/255.0 green:30.0/255.0 blue:79.0/255.0 alpha:1.0]];
+        textview.textColor =  [UIColor whiteColor];
+        textview.backgroundColor = [UIColor clearColor];
         
         [self kuTopbar];
     }
@@ -61,7 +64,7 @@
     titulo.textColor = [UIColor whiteColor];
     titulo.numberOfLines = 0;
     titulo.backgroundColor =[UIColor clearColor];
-    titulo.text = @"Deposito";
+    titulo.text = @"Información de Cashapp";
     titulo.font = [titulo.font fontWithSize:20.0];
     
     [topBar addSubview:titulo];

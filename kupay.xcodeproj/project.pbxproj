@@ -139,11 +139,19 @@
 		885C58A3192AF0F300BD26F6 /* ViewControllerEnlaze.xib in Resources */ = {isa = PBXBuildFile; fileRef = 885C58A1192AF0F300BD26F6 /* ViewControllerEnlaze.xib */; };
 		885F096C1954A0F00075A0C6 /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22331209181060CB001FD603 /* libzbar.a */; };
 		885F09781954EA670075A0C6 /* KUSoket.m in Sources */ = {isa = PBXBuildFile; fileRef = 885F09771954EA670075A0C6 /* KUSoket.m */; };
+		886312F2197EF0D400360F80 /* generarboton.png in Resources */ = {isa = PBXBuildFile; fileRef = 886312F1197EF0D400360F80 /* generarboton.png */; };
+		886312F61980956400360F80 /* ViewControllerQR.mm in Sources */ = {isa = PBXBuildFile; fileRef = 886312F41980956400360F80 /* ViewControllerQR.mm */; };
+		886312F71980956400360F80 /* ViewControllerQR.xib in Resources */ = {isa = PBXBuildFile; fileRef = 886312F51980956400360F80 /* ViewControllerQR.xib */; };
+		8863130219809EF500360F80 /* DataMatrix.mm in Sources */ = {isa = PBXBuildFile; fileRef = 886312FA19809EF500360F80 /* DataMatrix.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		8863130319809EF500360F80 /* libqrencoder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 886312FB19809EF500360F80 /* libqrencoder.a */; };
+		8863130419809EF500360F80 /* QR_Encode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 886312FC19809EF500360F80 /* QR_Encode.cpp */; };
+		8863130519809EF500360F80 /* QREncoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8863130119809EF500360F80 /* QREncoder.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		88ADAA5819563E8600E65F8D /* NSData+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 88ADAA5719563E8600E65F8D /* NSData+MD5.m */; };
 		88DB7B5E197B4D6D00672F4F /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88DB7B5D197B4D6D00672F4F /* Images-2.xcassets */; };
 		88E4AFF4197B383800FC2DC9 /* ViewControllerInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 88E4AFF2197B383800FC2DC9 /* ViewControllerInfo.m */; };
 		88E4AFF5197B383800FC2DC9 /* ViewControllerInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88E4AFF3197B383800FC2DC9 /* ViewControllerInfo.xib */; };
 		88E4AFF7197B4A1B00FC2DC9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 88E4AFF6197B4A1B00FC2DC9 /* InfoPlist.strings */; };
+		88EBF0B8197DC14700CD9A97 /* desenlazarboton.png in Resources */ = {isa = PBXBuildFile; fileRef = 88EBF0B7197DC14700CD9A97 /* desenlazarboton.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -353,6 +361,19 @@
 		885C58A1192AF0F300BD26F6 /* ViewControllerEnlaze.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerEnlaze.xib; sourceTree = "<group>"; };
 		885F09761954EA670075A0C6 /* KUSoket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KUSoket.h; path = kupay/KUSoket.h; sourceTree = "<group>"; };
 		885F09771954EA670075A0C6 /* KUSoket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KUSoket.m; path = kupay/KUSoket.m; sourceTree = "<group>"; };
+		886312F1197EF0D400360F80 /* generarboton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = generarboton.png; sourceTree = "<group>"; };
+		886312F31980956400360F80 /* ViewControllerQR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerQR.h; sourceTree = "<group>"; };
+		886312F41980956400360F80 /* ViewControllerQR.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewControllerQR.mm; sourceTree = "<group>"; };
+		886312F51980956400360F80 /* ViewControllerQR.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerQR.xib; sourceTree = "<group>"; };
+		886312F919809EF500360F80 /* DataMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataMatrix.h; sourceTree = "<group>"; };
+		886312FA19809EF500360F80 /* DataMatrix.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DataMatrix.mm; sourceTree = "<group>"; };
+		886312FB19809EF500360F80 /* libqrencoder.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libqrencoder.a; sourceTree = "<group>"; };
+		886312FC19809EF500360F80 /* QR_Encode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QR_Encode.cpp; sourceTree = "<group>"; };
+		886312FD19809EF500360F80 /* QR_Encode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QR_Encode.h; sourceTree = "<group>"; };
+		886312FE19809EF500360F80 /* QRCodeEncoderObjectiveCAtGithub-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "QRCodeEncoderObjectiveCAtGithub-Prefix.pch"; sourceTree = "<group>"; };
+		886312FF19809EF500360F80 /* QREncoder-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "QREncoder-Prefix.pch"; sourceTree = "<group>"; };
+		8863130019809EF500360F80 /* QREncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QREncoder.h; sourceTree = "<group>"; };
+		8863130119809EF500360F80 /* QREncoder.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = QREncoder.mm; sourceTree = "<group>"; };
 		88ADAA5619563E8600E65F8D /* NSData+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+MD5.h"; path = "kupay/NSData+MD5.h"; sourceTree = "<group>"; };
 		88ADAA5719563E8600E65F8D /* NSData+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+MD5.m"; path = "kupay/NSData+MD5.m"; sourceTree = "<group>"; };
 		88DB7B5D197B4D6D00672F4F /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
@@ -360,6 +381,7 @@
 		88E4AFF2197B383800FC2DC9 /* ViewControllerInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerInfo.m; sourceTree = "<group>"; };
 		88E4AFF3197B383800FC2DC9 /* ViewControllerInfo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerInfo.xib; sourceTree = "<group>"; };
 		88E4AFF6197B4A1B00FC2DC9 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		88EBF0B7197DC14700CD9A97 /* desenlazarboton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = desenlazarboton.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -367,6 +389,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8863130319809EF500360F80 /* libqrencoder.a in Frameworks */,
 				2233121718106158001FD603 /* CoreMedia.framework in Frameworks */,
 				2233E1A8183040C70046C751 /* libz.dylib in Frameworks */,
 				2295FECE18077D9D002FF865 /* CoreGraphics.framework in Frameworks */,
@@ -513,6 +536,8 @@
 		229150D21809F8B200D0A715 /* imgs */ = {
 			isa = PBXGroup;
 			children = (
+				886312F1197EF0D400360F80 /* generarboton.png */,
+				88EBF0B7197DC14700CD9A97 /* desenlazarboton.png */,
 				2233E1791830156A0046C751 /* transparente.png */,
 				22F685D7182F157A00ABDE3D /* datos.png */,
 				22F685D8182F157A00ABDE3D /* datos@2x.png */,
@@ -577,6 +602,7 @@
 		2295FEBF18077D9D002FF865 = {
 			isa = PBXGroup;
 			children = (
+				886312F819809EF500360F80 /* QRCodeEncoder */,
 				88ADAA5619563E8600E65F8D /* NSData+MD5.h */,
 				88ADAA5719563E8600E65F8D /* NSData+MD5.m */,
 				885F09761954EA670075A0C6 /* KUSoket.h */,
@@ -685,6 +711,9 @@
 				88E4AFF2197B383800FC2DC9 /* ViewControllerInfo.m */,
 				88E4AFF3197B383800FC2DC9 /* ViewControllerInfo.xib */,
 				88DB7B5D197B4D6D00672F4F /* Images-2.xcassets */,
+				886312F31980956400360F80 /* ViewControllerQR.h */,
+				886312F41980956400360F80 /* ViewControllerQR.mm */,
+				886312F51980956400360F80 /* ViewControllerQR.xib */,
 			);
 			path = kupay;
 			sourceTree = "<group>";
@@ -751,6 +780,23 @@
 				882D1B0C192406E500D7CC76 /* iToast.m */,
 			);
 			path = toast;
+			sourceTree = "<group>";
+		};
+		886312F819809EF500360F80 /* QRCodeEncoder */ = {
+			isa = PBXGroup;
+			children = (
+				886312F919809EF500360F80 /* DataMatrix.h */,
+				886312FA19809EF500360F80 /* DataMatrix.mm */,
+				886312FB19809EF500360F80 /* libqrencoder.a */,
+				886312FC19809EF500360F80 /* QR_Encode.cpp */,
+				886312FD19809EF500360F80 /* QR_Encode.h */,
+				886312FE19809EF500360F80 /* QRCodeEncoderObjectiveCAtGithub-Prefix.pch */,
+				886312FF19809EF500360F80 /* QREncoder-Prefix.pch */,
+				8863130019809EF500360F80 /* QREncoder.h */,
+				8863130119809EF500360F80 /* QREncoder.mm */,
+			);
+			name = QRCodeEncoder;
+			path = QRCodeEncoderObjectiveCAtGithub;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -847,9 +893,11 @@
 				229150F11809F8B200D0A715 /* ku72.png in Resources */,
 				22F685E9182F157A00ABDE3D /* enlaceS.png in Resources */,
 				221A36C318232265009C5AC0 /* ViewControllerCodigoOXXO.xib in Resources */,
+				88EBF0B8197DC14700CD9A97 /* desenlazarboton.png in Resources */,
 				22F685E8182F157A00ABDE3D /* enlace@2x.png in Resources */,
 				220B1B8B1815BAED0049B519 /* scanerLogoUnselected.png in Resources */,
 				229150E81809F8B200D0A715 /* benviar.png in Resources */,
+				886312F71980956400360F80 /* ViewControllerQR.xib in Resources */,
 				22F685E4182F157A00ABDE3D /* datos@2x.png in Resources */,
 				22331210181060CB001FD603 /* zbar-back.png in Resources */,
 				229150EA1809F8B200D0A715 /* ccbg.png in Resources */,
@@ -864,6 +912,7 @@
 				22F685EE182F157A00ABDE3D /* seguridadS@2x.png in Resources */,
 				2233E17A1830156A0046C751 /* transparente.png in Resources */,
 				220B1B931815BAED0049B519 /* transferLogoUnselected.png in Resources */,
+				886312F2197EF0D400360F80 /* generarboton.png in Resources */,
 				229150F81809F8B200D0A715 /* tran2.png in Resources */,
 				229150FC1809F8B200D0A715 /* vent2.png in Resources */,
 				229150EE1809F8B200D0A715 /* fondocam.png in Resources */,
@@ -926,8 +975,10 @@
 				2233E1961830403F0046C751 /* ASIDataCompressor.m in Sources */,
 				22FBB0BA182EE518002DBC40 /* KuBDD.m in Sources */,
 				882D1B0D192406E500D7CC76 /* iToast.m in Sources */,
+				8863130519809EF500360F80 /* QREncoder.mm in Sources */,
 				88028F9C1963563900A18383 /* ViewControllerCobrar.m in Sources */,
 				22FBB0B3182EE4D5002DBC40 /* FMDatabasePool.m in Sources */,
+				886312F61980956400360F80 /* ViewControllerQR.mm in Sources */,
 				22FBB0B1182EE4D5002DBC40 /* FMDatabase.m in Sources */,
 				885C58A2192AF0F300BD26F6 /* ViewControllerEnlaze.m in Sources */,
 				2233E1951830403F0046C751 /* ASIAuthenticationDialog.m in Sources */,
@@ -956,8 +1007,10 @@
 				885F09781954EA670075A0C6 /* KUSoket.m in Sources */,
 				2295FEFD18077E09002FF865 /* ViewControllerTransferir.m in Sources */,
 				2233E19C1830403F0046C751 /* ASINetworkQueue.m in Sources */,
+				8863130219809EF500360F80 /* DataMatrix.mm in Sources */,
 				22DD5E73181EB20A004803D3 /* ZUUIRevealController.m in Sources */,
 				2233E1981830403F0046C751 /* ASIDownloadCache.m in Sources */,
+				8863130419809EF500360F80 /* QR_Encode.cpp in Sources */,
 				2233E1971830403F0046C751 /* ASIDataDecompressor.m in Sources */,
 				2233E19B1830403F0046C751 /* ASIInputStream.m in Sources */,
 				2233E19A1830403F0046C751 /* ASIHTTPRequest.m in Sources */,
@@ -1081,6 +1134,7 @@
 					"$(inherited)",
 					/Users/KU/Documents/kupay/ZBarSDK,
 					"$(PROJECT_DIR)/ZBarSDK",
+					"$(PROJECT_DIR)/QRCodeEncoderObjectiveCAtGithub",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1103,6 +1157,7 @@
 					"$(inherited)",
 					/Users/KU/Documents/kupay/ZBarSDK,
 					"$(PROJECT_DIR)/ZBarSDK",
+					"$(PROJECT_DIR)/QRCodeEncoderObjectiveCAtGithub",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
