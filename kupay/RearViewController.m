@@ -5,9 +5,8 @@
 #import "ViewControllerRetiro.h"
 #import "ViewControllerLLaveKu.h"
 #import "ViewControllerDeposito.h"
-#import "ViewControllerPerfil.h"
-#import "ViewControllerSoporte.h"
 #import "ViewControllerDesenlaze.h"
+#import "ViewControllerInfo.h"
 
 @interface RearViewController()
 @end
@@ -27,12 +26,12 @@
 {
 	static NSString *cellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+  
     if (cell == nil) {
         cell = [self makeLensListCell: cellIdentifier];
         cell.selectionStyle = UITableViewCellSelectionStyleGray;
-        
-        
     }
+    
     cell.textLabel.textColor = [UIColor whiteColor];
     cell.detailTextLabel.textColor = [UIColor whiteColor];
 
@@ -53,13 +52,18 @@
         cell.imageView.image = [UIImage imageNamed:@"mdm"];
 	}else if (indexPath.row == 3)
 	{
-		cell.textLabel.text = @"llave-Ku";
+		cell.textLabel.text = @"Código de Acceso";
         cell.imageView.image = [UIImage imageNamed:@"mdm"];
 	}else if (indexPath.row == 4)
 	{
-		cell.textLabel.text = @"Perfil";
+		cell.textLabel.text = @"Desenlazar";
         cell.imageView.image = [UIImage imageNamed:@"mdm"];
 	}else if (indexPath.row == 5)
+	{
+		cell.textLabel.text = @"Info Cashapp";
+        cell.imageView.image = [UIImage imageNamed:@"mdm"];
+	}
+    /*else if (indexPath.row == 5)
 	{
 		cell.textLabel.text = @"Soporte";
         cell.imageView.image = [UIImage imageNamed:@"mdm"];
@@ -67,12 +71,8 @@
 	{
 		cell.textLabel.text = @"Desenlazar equipo";
         cell.imageView.image = [UIImage imageNamed:@"mdm"];
-	}
+	}*/
 
-
-
-
-		
 	return cell;
 }
 
@@ -165,9 +165,9 @@
 		}
 	}else if (indexPath.row == 4)
 	{
-        if (![revealController.frontViewController isKindOfClass:[ViewControllerPerfil class]])
+        if (![revealController.frontViewController isKindOfClass:[ViewControllerDesenlaze class]])
 		{
-			ViewControllerPerfil *frontViewController = [[ViewControllerPerfil alloc] init];
+			ViewControllerDesenlaze *frontViewController = [[ViewControllerDesenlaze alloc] init];
 			[revealController setFrontViewController:frontViewController animated:NO];
 			
 		}
@@ -178,9 +178,9 @@
 		}
 	}else if (indexPath.row == 5)
 	{
-        if (![revealController.frontViewController isKindOfClass:[ViewControllerSoporte class]])
+        if (![revealController.frontViewController isKindOfClass:[ViewControllerInfo class]])
 		{
-			ViewControllerSoporte *frontViewController = [[ViewControllerSoporte alloc] init];
+			ViewControllerInfo *frontViewController = [[ViewControllerInfo alloc] init];
 			[revealController setFrontViewController:frontViewController animated:NO];
 			
 		}
@@ -189,7 +189,7 @@
 		{
 			[revealController revealToggle:self];
 		}
-	}else if (indexPath.row == 6)
+	}/*else if (indexPath.row == 6)
 	{
         if (![revealController.frontViewController isKindOfClass:[ViewControllerDesenlaze class]])
 		{
@@ -202,7 +202,7 @@
 		{
 			[revealController revealToggle:self];
 		}
-	}
+	}*/
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation

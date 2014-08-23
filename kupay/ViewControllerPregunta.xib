@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment defaultVersion="1552" identifier="iOS"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
@@ -15,18 +15,21 @@
             <rect key="frame" x="0.0" y="20" width="320" height="548"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Ya tienes cuenta Cashapp?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" id="2Tk-yz-xpq">
-                    <rect key="frame" x="40" y="207" width="241" height="23"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Ya tienes cuenta Cashapp?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Tk-yz-xpq">
+                    <rect key="frame" x="40" y="205" width="241" height="23"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                     <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="linea.png" id="IU3-YY-VMn">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="linea.png" translatesAutoresizingMaskIntoConstraints="NO" id="IU3-YY-VMn">
                     <rect key="frame" x="33" y="236" width="255" height="2"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="kpp-JU-4jQ"/>
+                    </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yZY-eu-ZGo">
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZY-eu-ZGo">
                     <rect key="frame" x="33" y="246" width="70" height="70"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="SI" backgroundImage="botonBlancoBg.png">
@@ -37,7 +40,7 @@
                         <action selector="onSi:" destination="-1" eventType="touchUpInside" id="8yn-D8-xlA"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Gye-O1-8EL">
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gye-O1-8EL">
                     <rect key="frame" x="218" y="246" width="70" height="70"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="NO" backgroundImage="botonBlancoBg.png">
@@ -50,6 +53,17 @@
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="0.16481140250000001" blue="0.22604673089999999" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="IU3-YY-VMn" firstAttribute="centerX" secondItem="1" secondAttribute="centerX" id="20H-Iu-uID"/>
+                <constraint firstItem="IU3-YY-VMn" firstAttribute="leading" secondItem="yZY-eu-ZGo" secondAttribute="leading" id="3Yw-c5-BIv"/>
+                <constraint firstItem="IU3-YY-VMn" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="33" id="5PF-4T-ffA"/>
+                <constraint firstItem="IU3-YY-VMn" firstAttribute="trailing" secondItem="Gye-O1-8EL" secondAttribute="trailing" id="8ok-Hw-ZzR"/>
+                <constraint firstItem="IU3-YY-VMn" firstAttribute="centerX" secondItem="2Tk-yz-xpq" secondAttribute="centerX" id="9PS-Dx-8lG"/>
+                <constraint firstItem="yZY-eu-ZGo" firstAttribute="top" secondItem="IU3-YY-VMn" secondAttribute="bottom" constant="8" symbolic="YES" id="TMU-hP-tIP"/>
+                <constraint firstItem="Gye-O1-8EL" firstAttribute="top" secondItem="IU3-YY-VMn" secondAttribute="bottom" constant="8" symbolic="YES" id="gTm-sL-44W"/>
+                <constraint firstItem="IU3-YY-VMn" firstAttribute="top" secondItem="1" secondAttribute="top" constant="236" id="hbp-wk-RCh"/>
+                <constraint firstItem="IU3-YY-VMn" firstAttribute="top" secondItem="2Tk-yz-xpq" secondAttribute="bottom" constant="8" symbolic="YES" id="jcD-Aq-rcG"/>
+            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>

@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ZUUIRevealController.h"
 @interface ViewControllerDesenlaze : UIViewController
+@property (weak, nonatomic) IBOutlet UITextView *textview;
+- (IBAction)onDesenlazar:(id)sender;
 
 @end

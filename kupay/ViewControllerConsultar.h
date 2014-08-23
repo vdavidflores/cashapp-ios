@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import	"ASIFormDataRequest.h"
-@interface ViewControllerConsultar : UIViewController <UITableViewDataSource, UITableViewDelegate>{
+#import "KUSoket.h"
+@interface ViewControllerConsultar : UIViewController <UITableViewDataSource, UITableViewDelegate, KUSoketDelegate>{
    }
 @property NSArray *fruits;
 @property (retain,nonatomic) NSArray *content;
 @property (strong, nonatomic) IBOutlet UITableView *tableview;
 @property (nonatomic, retain) ASIFormDataRequest *request;
+@property (atomic,retain) KUSoket *dataReq;
 @end

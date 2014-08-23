@@ -47,8 +47,8 @@
     return result;
 }
 
--(void)actualizarCampo:(NSString*)campo conDato:(NSString*)dato{
-    [self.db executeUpdate:[NSString stringWithFormat: @"UPDATE taxicell SET %@='%@'",campo,dato]];
+-(void)actualizarCampo:(NSString*)campo conDato:(NSString*)dato deLaTabla:(NSString*)tabla{
+    [self.db executeUpdate:[NSString stringWithFormat: @"UPDATE %@ SET %@='%@'",tabla,campo,dato]];
 }
 
 @end

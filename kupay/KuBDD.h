@@ -14,6 +14,6 @@
 -(BOOL)abrirBDDenPath:(NSString*)path;
 -(BOOL)cerrarBdd;
 -(NSString*)obtenerDatoConKey:(NSString *)key deLaTabla:(NSString*)tabla;
--(void)actualizarCampo:(NSString*)campo conDato:(NSString*)dato;
+-(void)actualizarCampo:(NSString*)campo conDato:(NSString*)dato deLaTabla:(NSString*)tabla;
 
 @end

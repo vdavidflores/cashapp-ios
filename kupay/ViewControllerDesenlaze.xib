@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment defaultVersion="1552" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewControllerDesenlaze">
             <connections>
+                <outlet property="textview" destination="YGR-fY-e2V" id="ko6-Gf-Aej"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -15,16 +16,45 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Desenelaze" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fa3-W7-o81">
-                    <rect key="frame" x="116" y="273" width="89" height="21"/>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Bl-Vx-8h2">
+                    <rect key="frame" x="79" y="325" width="163" height="51"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="163" id="2Ov-ru-KqR"/>
+                        <constraint firstAttribute="height" constant="51" id="4Pl-vH-QBa"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="desenlazarboton.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onDesenlazar:" destination="-1" eventType="touchUpInside" id="3CQ-nx-8Hk"/>
+                    </connections>
+                </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YGR-fY-e2V">
+                    <rect key="frame" x="20" y="109" width="280" height="156"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="280" id="9pD-x9-fzY"/>
+                    </constraints>
+                    <string key="text">Desenlazar celular implica en desenlazar tu cuenta Cashapp de este dispositivo, Recuerda que después de des enlazar tu cuenta solo la podrás enlazar a un solo nuevo dispositivo</string>
+                    <color key="textColor" red="0.96294101600000004" green="0.92597413549999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="0.045006145910000003" blue="0.17888632879999999" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="YGR-fY-e2V" firstAttribute="top" secondItem="1" secondAttribute="top" constant="109" id="Fyr-FN-96h"/>
+                <constraint firstItem="7Bl-Vx-8h2" firstAttribute="top" secondItem="YGR-fY-e2V" secondAttribute="bottom" constant="60" id="QS8-dd-jb5"/>
+                <constraint firstItem="7Bl-Vx-8h2" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="79" id="i6S-PH-icT"/>
+                <constraint firstAttribute="trailing" secondItem="7Bl-Vx-8h2" secondAttribute="trailing" constant="78" id="sc2-Tj-pxJ"/>
+            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
+    <resources>
+        <image name="desenlazarboton.png" width="672" height="212"/>
+    </resources>
 </document>

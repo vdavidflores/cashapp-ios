@@ -10,14 +10,15 @@
 
 //#import "AKTabBarController.h"
 #import "ZUUIRevealController.h"
-#import "ASIFormDataRequest.h"
 
-@interface ViewControllerMain : UITabBarController {
+#import "KUSoket.h"
+
+@interface ViewControllerMain : UITabBarController<KUSoketDelegate> {
     IBOutlet UITabBarController *tabbar;
 }
 @property (strong, nonatomic) UILabel *saldo;
 @property (strong, nonatomic)  UIButton *referscar;
-@property (nonatomic, retain) ASIFormDataRequest *request;
+@property (atomic,retain) KUSoket *saldoRequest;
 -(void)cambiarSaldo:(NSString *)saldoN;
 -(void)actualizarSaldo;
 @end

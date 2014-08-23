@@ -12,6 +12,7 @@
 #import "ViewControllerEscanear.h"
 #import "ViewControllerTransferir.h"
 #import "ViewControllerConsultar.h"
+#import "ViewControllerCobrar.h"
 #import "KuBDD.h"
 
 @interface ViewControllerMain ()
@@ -21,7 +22,7 @@
 
 
 @implementation ViewControllerMain
-@synthesize saldo,referscar,request;
+@synthesize saldo,referscar, saldoRequest;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,6 +35,8 @@
         ViewControllerEscanear *escanear = [[ViewControllerEscanear alloc]  initWithNibName:@"ViewControllerEscanear" bundle:nil];
         ViewControllerTransferir *transferir = [[ViewControllerTransferir alloc]  initWithNibName:@"ViewControllerTransferir" bundle:nil];
         ViewControllerConsultar *consultar = [[ViewControllerConsultar alloc]  initWithNibName:@"ViewControllerConsultar" bundle:nil];
+        ViewControllerCobrar *cobrar = [[ViewControllerCobrar alloc] initWithNibName:@"ViewControllerCobrar" bundle:nil];
+        [cobrar.tabBarItem setTitle:@"cobrar"];
         [consultar.tabBarItem setTitle:@"consultar"];
         [escanear.tabBarItem setTitle:@"escanear"];
         [transferir.tabBarItem setTitle:@"transferir"];
@@ -43,8 +46,10 @@
         [consultar.tabBarItem setSelectedImage:[UIImage imageNamed:@"historyLogoSelected"]];
         [transferir.tabBarItem setImage:[UIImage imageNamed:@"transferLogoUnselected"]];
         [transferir.tabBarItem setSelectedImage:[UIImage imageNamed:@"transferLogoSelected"]];
+        [cobrar.tabBarItem setImage:[UIImage imageNamed:@"transferLogoUnselected"]];
+        [cobrar.tabBarItem setSelectedImage:[UIImage imageNamed:@"transferLogoSelected"]];
         self.tabBarController.selectedIndex = 2;  //tabbar inicia en el elemento 3
-        NSArray* controlers = [NSArray arrayWithObjects:escanear,transferir,consultar,nil];
+        NSArray* controlers = [NSArray arrayWithObjects:escanear,transferir,cobrar,consultar,nil];
         [self setViewControllers:controlers];
         
         
@@ -120,35 +125,16 @@
     NSString *usr = [bdd obtenerDatoConKey:@"id" deLaTabla:@"USR"];
     [bdd cerrarBdd];
     NSLog(@"DATOS EN BDD %@, %@", imei, usr);
-    [request cancel];
-    [self setRequest:[ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"http://kupay.tk/kuCloudAppDev/index.php"]]];
     
     NSMutableDictionary *nameElements = [NSMutableDictionary dictionary];
     
    [nameElements setObject:usr forKey:@"emisor"];
-     [nameElements setObject:[@"1234" init] forKey:@"pin"];
-    [nameElements setObject:imei forKey:@"imei"];
-    
-    NSError *error = nil;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:nameElements
-                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
-                                                         error:&error];
-    NSString* jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-    NSLog(@"DATA: %@", jsonString);
-    
-    [request setPostValue:@"5" forKey:@"ACCION"];
-    [request setPostValue:jsonString forKey:@"DATA"];
-    [request setTimeOutSeconds:20];
-    
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_4_0
-    [request setShouldContinueWhenAppEntersBackground:YES];
-#endif
-    
-    [request setDelegate:self];
-    
-    [request setDidFinishSelector:@selector(enrespuesta:)];
-    [request setTag:390];
-    [request startAsynchronous];
+   [nameElements setObject:imei forKey:@"imei"];
+   
+    saldoRequest = [[KUSoket alloc] init];
+    saldoRequest.delegate = self;
+    [saldoRequest startRequestForAction:@"5" andData:nameElements];
+
     
 
 }
@@ -211,5 +197,11 @@
 -(void)cambiarSaldo:(NSString *)saldoN{
     [self.saldo setText:[NSString stringWithFormat:@"$%@",saldoN]];
 }
-
+-(void)processCompletedWhitResult:(NSDictionary *)result inAcction:(NSNumber *)acction{
+    if ([acction integerValue]==5) {
+        if ([[result objectForKey:@"RESULTADO"] isEqualToString:@"ACTUALIZACION_CC_EXITOSA"]) {
+             self.saldo.text=[NSString stringWithFormat:@"$%@",[result[@"DATOS"] objectForKey:@"SALDO"]];
+        }
+    }
+}
 @end
