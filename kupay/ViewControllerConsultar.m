@@ -9,6 +9,7 @@
 #import "ViewControllerConsultar.h"
 #import "iToast.h"
 #import "KuBDD.h"
+#import "kuTableViewCell.h"
 
 @interface ViewControllerConsultar ()
 -(IBAction)enrespuesta:(ASIFormDataRequest *) elrequest;
@@ -16,7 +17,7 @@
 
 @implementation ViewControllerConsultar
 
-@synthesize content,request;
+@synthesize content,request,dataReq;
 
 
 - (NSString *)tabTitle
@@ -27,56 +28,28 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
      NSDictionary *item = (NSDictionary *)[self.content objectAtIndex:indexPath.row];
-
+    NSLog(@"1");
     
     UIAlertView *alert=[[UIAlertView alloc]initWithFrame:CGRectMake(50.0, 20.0, 100.0f, 400.0f)];
-    alert.title=@"Tiket de operación";
+    alert.title=@"Ticket de operación";
     
-    alert.message=[NSString stringWithFormat:@" %@ \n ", [[item objectForKey:@"IDKEY"] substringToIndex:5]];
-    
+    alert.message=[NSString stringWithFormat:@"Concepto: %@ \nTicket: %@",[item objectForKey:@"CONCEPTO"], [[item objectForKey:@"IDKEY"] substringToIndex:5]];
+
+     NSLog(@"2");
     alert.delegate=self.content;
     [alert addButtonWithTitle:@"OK"];
-    
-    NSArray *subViewArray = alert.subviews;
-    for(int x=0;x<[subViewArray count];x++){
-        if([[[subViewArray objectAtIndex:x] class] isSubclassOfClass:[UILabel class]])
-        {
-            UILabel *label = [subViewArray objectAtIndex:x];
-            label.textAlignment = NSTextAlignmentLeft;
-            if ([subViewArray objectAtIndex:1]) {
-                label.font = [UIFont systemFontOfSize:40.0];
-                label.textAlignment = NSTextAlignmentCenter;
-            }
-        }
-        
-    }
-    UILabel *concepto = [[UILabel alloc] initWithFrame:CGRectMake(20.0f, 100.0f, 245.0f, 50.0f)];
-    concepto.textAlignment = NSTextAlignmentLeft;
-    concepto.numberOfLines = 2;
-    concepto.backgroundColor =[UIColor clearColor];
-    concepto.textColor = [UIColor whiteColor];
-    [concepto setText:[NSString stringWithFormat:@"concepto: %@", [item objectForKey:@"CONCEPTO"]]];
-    [alert addSubview:concepto];
-
-    
-    
-    
+     NSLog(@"3");
     
     [alert show];
-    
-    
-    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if(alertView.tag == 1){
         if(buttonIndex == 1){
-            
-            
         }
     }
-    
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -86,24 +59,33 @@
 #define SECONDLABEL_TAG 2
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-static NSString *CellIdentifier = @"MyIdentifier";
-    
 
+    static NSString *CellIdentifier = @"kuTableViewCell";
+    UITableViewCell *cell;
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-         cell = [self makeLensListCell: CellIdentifier];
-        cell.selectionStyle = UITableViewCellSelectionStyleGray;
-       
     
+    if ([[UIDevice currentDevice].systemVersion floatValue] >= 7.0) {
+      cell = (kuTableViewCell *) [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    } else{
+        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     }
+   
+    
+    if (cell == nil) {
+        
+        if ([[UIDevice currentDevice].systemVersion floatValue] >= 7.0) {
+             cell = [[kuTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        }else{
+             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        }
+    }
+    
+    
     cell.textLabel.textColor = [UIColor whiteColor];
     cell.detailTextLabel.textColor = [UIColor whiteColor];
+    cell.backgroundColor = [UIColor grayColor];
 
     cell.textLabel.font=[UIFont boldSystemFontOfSize:16.0];
-  
-    
-    
     NSDictionary *item = (NSDictionary *)[self.content objectAtIndex:indexPath.row];
     
 
@@ -112,7 +94,7 @@ static NSString *CellIdentifier = @"MyIdentifier";
         case 1:
             cell.textLabel.text = [NSString stringWithFormat:@"Abono de %@$%@",[item objectForKey:@"POLO"],[item objectForKey:@"MONTO"]];
             cell.detailTextLabel.text = [item objectForKey:@"FECHA"];
-            cell.imageView.image = [UIImage imageNamed:@"mdm"];
+           cell.imageView.image = [UIImage imageNamed:@"mdm"];
             break;
         case 2:
             cell.textLabel.text = [NSString stringWithFormat:@"Compra de %@$%@",[item objectForKey:@"POLO"],[item objectForKey:@"MONTO"]];
@@ -141,6 +123,9 @@ static NSString *CellIdentifier = @"MyIdentifier";
             break;
     }
     
+    
+  //  cell.imageView.frame = CGRectMake( 0, 0, 20, 20 );
+    
 return cell;
 }
 
@@ -162,12 +147,24 @@ return cell;
     return 65.0;
 }
 
+
+
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
      NSLog(@"CONSULTA");
+    
+    
+    
+    
+    if ([[UIDevice currentDevice].systemVersion floatValue] >= 7.0) {
+        self.tableview.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    }
   
-  
+    
+    
     [self pullData];
     
     
@@ -187,17 +184,19 @@ return cell;
     NSString *usr = [bdd obtenerDatoConKey:@"id" deLaTabla:@"USR"];
     
     NSLog(@"DATOS EN BDD %@, %@", imei, usr);
-    [request cancel];
-    [self setRequest:[ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"http://kupay.tk/kuCloudAppDev/index.php"]]];
+   // [request cancel];
+  //  [self setRequest:[ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"http://kupay.tk/kuCloudAppDev/index.php"]]];
     
     NSMutableDictionary *nameElements = [NSMutableDictionary dictionary];
     
     [nameElements setObject:usr forKey:@"usr"];
-    [nameElements setObject:[@"1234" init] forKey:@"pin"];
     [nameElements setObject:imei forKey:@"imei"];
     [nameElements setObject:@"1" forKey:@"dias"];
+    dataReq = [[KUSoket alloc] init];
+    dataReq.delegate = self;
+    [dataReq startRequestForAction:@"7" andData:nameElements];
     
-    NSError *error = nil;
+ /*   NSError *error = nil;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:nameElements
                                                        options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
                                                          error:&error];
@@ -216,7 +215,7 @@ return cell;
     
     [request setDidFinishSelector:@selector(enrespuesta:)];
     [request setTag:390];
-    [request startAsynchronous];
+    [request startAsynchronous];*/
 }
 
 -(void)refresh:(UIRefreshControl *)refreshControl {
@@ -232,7 +231,7 @@ return cell;
 -(IBAction)enrespuesta:(ASIFormDataRequest *) elrequest{
     NSError *error =nil;
     NSString * response = elrequest.responseString;
-    NSLog(response);
+  // NSLog(response);
     NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:[response dataUsingEncoding:NSUTF8StringEncoding] options:0 error:&error];
     if ([[dataDictionary objectForKey:@"RESULTADO"] isEqualToString:@"SOLICITUD_EXITOSA"]){
       
@@ -240,6 +239,16 @@ return cell;
         [self.tableview reloadData];
     }
     
-  }
+}
+
+-(void)processCompletedWhitResult:(NSDictionary *)result inAcction:(NSNumber *)acction{
+    if ([acction integerValue] == 7) {
+        if ([[result objectForKey:@"RESULTADO"] isEqualToString:@"SOLICITUD_EXITOSA"]){
+            self.content =   [result[@"DATOS"] objectForKey:@"OPERACIONES"];
+            [self.tableview reloadData];
+        }
+    }
+}
+
 
 @end
