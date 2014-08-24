@@ -16,8 +16,8 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="lT7-DC-4WO">
-                    <rect key="frame" x="0.0" y="53" width="320" height="471"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="lT7-DC-4WO">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="0.60218608810240959" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -30,9 +30,9 @@
             </subviews>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="lT7-DC-4WO" secondAttribute="trailing" id="KbZ-sO-eeD"/>
-                <constraint firstAttribute="bottom" secondItem="lT7-DC-4WO" secondAttribute="bottom" id="auB-pe-xdR"/>
                 <constraint firstItem="lT7-DC-4WO" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="geB-6d-WQg"/>
-                <constraint firstItem="lT7-DC-4WO" firstAttribute="top" secondItem="1" secondAttribute="top" constant="55" id="mae-oP-LdW"/>
+                <constraint firstItem="lT7-DC-4WO" firstAttribute="top" secondItem="1" secondAttribute="top" id="mcN-81-QDg"/>
+                <constraint firstAttribute="bottom" secondItem="lT7-DC-4WO" secondAttribute="bottom" id="yn0-GI-QuH"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

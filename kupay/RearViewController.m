@@ -9,6 +9,7 @@
 #import "ViewControllerInfo.h"
 #import "kuTableViewCell.h"
 #import "KuBDD.h"
+#import "CRNavigationController.h"
 
 @interface RearViewController()
 @end
@@ -115,7 +116,19 @@
 		if (![revealController.frontViewController isKindOfClass:[ViewControllerMain class]])
 		{
 			ViewControllerMain *frontViewController = [[ViewControllerMain alloc] init];
-			[revealController setFrontViewController:frontViewController animated:NO];
+			
+            CRNavigationController * navController = [[CRNavigationController alloc] initWithRootViewController:
+                                                      frontViewController ];
+            
+            [navController.navigationBar setBarTintColor:[UIColor colorWithRed:197.0/255.0 green:30.0/255.0 blue:79.0/255.0 alpha:1.0]];
+            
+            navController.navigationBar.tintColor = [UIColor whiteColor];
+            [navController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+            navController.navigationBar.translucent = NO;
+
+            
+            
+            [revealController setFrontViewController:navController animated:YES];
 			
 		}
 		// Seems the user attempts to 'switch' to exactly the same controller he came from!
@@ -134,13 +147,16 @@
             
             NSLog(@"cargando el deposito");
             ViewControllerDeposito *frontViewController = [[ViewControllerDeposito alloc] init];
-            UINavigationController * nc = [[UINavigationController alloc] initWithRootViewController:
-                                           frontViewController ];
+            CRNavigationController * navController = [[CRNavigationController alloc] initWithRootViewController:
+                                                      frontViewController ];
             
+            [navController.navigationBar setBarTintColor:[UIColor colorWithRed:197.0/255.0 green:30.0/255.0 blue:79.0/255.0 alpha:1.0]];
             
-			[nc setNavigationBarHidden:YES];
+            navController.navigationBar.tintColor = [UIColor whiteColor];
+            [navController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+            navController.navigationBar.translucent = NO;
           
-			[revealController setFrontViewController:nc animated:YES];
+			[revealController setFrontViewController:navController animated:YES];
 			
 		}
 		// Seems the user attempts to 'switch' to exactly the same controller he came from!
@@ -156,8 +172,21 @@
         
         if (![revealController.frontViewController isKindOfClass:[ViewControllerRetiro class]])
 		{
-            ViewControllerRetiro *retiro =[[ViewControllerRetiro alloc] init];
-            [revealController setFrontViewController:retiro animated:YES];
+            ViewControllerRetiro *frontViewController =[[ViewControllerRetiro alloc] init];
+            
+            
+            CRNavigationController * navController = [[CRNavigationController alloc] initWithRootViewController:
+                                                      frontViewController ];
+            
+            [navController.navigationBar setBarTintColor:[UIColor colorWithRed:197.0/255.0 green:30.0/255.0 blue:79.0/255.0 alpha:1.0]];
+            
+            navController.navigationBar.tintColor = [UIColor whiteColor];
+            [navController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+            navController.navigationBar.translucent = NO;
+            
+            
+            
+            [revealController setFrontViewController:navController animated:YES];
 		}
 		// Seems the user attempts to 'switch' to exactly the same controller he came from!
 		else
@@ -171,9 +200,18 @@
 		{
             ViewControllerLLaveKu *frontViewController =[[ViewControllerLLaveKu alloc] init];
             
+            CRNavigationController * navController = [[CRNavigationController alloc] initWithRootViewController:
+                                                      frontViewController ];
+            
+            [navController.navigationBar setBarTintColor:[UIColor colorWithRed:197.0/255.0 green:30.0/255.0 blue:79.0/255.0 alpha:1.0]];
+            
+            navController.navigationBar.tintColor = [UIColor whiteColor];
+            [navController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+            navController.navigationBar.translucent = NO;
+
             
             
-            [revealController setFrontViewController:frontViewController animated:YES];
+            [revealController setFrontViewController:navController animated:YES];
             
 			
 		}
@@ -187,7 +225,17 @@
         if (![revealController.frontViewController isKindOfClass:[ViewControllerDesenlaze class]])
 		{
 			ViewControllerDesenlaze *frontViewController = [[ViewControllerDesenlaze alloc] init];
-			[revealController setFrontViewController:frontViewController animated:NO];
+            
+            CRNavigationController * navController = [[CRNavigationController alloc] initWithRootViewController:
+                                                      frontViewController ];
+            
+            [navController.navigationBar setBarTintColor:[UIColor colorWithRed:197.0/255.0 green:30.0/255.0 blue:79.0/255.0 alpha:1.0]];
+            
+            navController.navigationBar.tintColor = [UIColor whiteColor];
+            [navController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+            navController.navigationBar.translucent = NO;
+
+			[revealController setFrontViewController:navController animated:YES];
 			
 		}
 		// Seems the user attempts to 'switch' to exactly the same controller he came from!
@@ -200,7 +248,18 @@
         if (![revealController.frontViewController isKindOfClass:[ViewControllerInfo class]])
 		{
 			ViewControllerInfo *frontViewController = [[ViewControllerInfo alloc] init];
-			[revealController setFrontViewController:frontViewController animated:NO];
+            CRNavigationController * navController = [[CRNavigationController alloc] initWithRootViewController:
+                                                      frontViewController ];
+            
+            [navController.navigationBar setBarTintColor:[UIColor colorWithRed:197.0/255.0 green:30.0/255.0 blue:79.0/255.0 alpha:1.0]];
+            
+            navController.navigationBar.tintColor = [UIColor whiteColor];
+            [navController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+            navController.navigationBar.translucent = NO;
+
+        
+            
+			[revealController setFrontViewController:navController animated:NO];
 			
 		}
 		// Seems the user attempts to 'switch' to exactly the same controller he came from!

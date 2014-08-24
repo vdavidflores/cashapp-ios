@@ -17,6 +17,7 @@
 #import "ViewControllerMain.h"
 #import "RearViewController.h"
 #import "ViewControllerPregunta.h"
+#import "CRNavigationController.h"
 
 @interface ViewControllerEnlaze ()
 
@@ -174,8 +175,18 @@
             ViewControllerMain *frontViewController = [[ViewControllerMain alloc] init];
             RearViewController *rearViewController = [[RearViewController alloc] init];
             
+            CRNavigationController * navController = [[CRNavigationController alloc] initWithRootViewController:
+                                                      frontViewController ];
             
-            RevealController *revealController = [[RevealController alloc] initWithFrontViewController:frontViewController rearViewController:rearViewController];
+            [navController.navigationBar setBarTintColor:[UIColor colorWithRed:197.0/255.0 green:30.0/255.0 blue:79.0/255.0 alpha:1.0]];
+            
+            navController.navigationBar.tintColor = [UIColor whiteColor];
+            [navController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+            navController.navigationBar.translucent = NO;
+
+            
+            
+            RevealController *revealController = [[RevealController alloc] initWithFrontViewController:navController rearViewController:rearViewController];
             
              [self presentViewController:revealController animated:YES completion:nil];
                        

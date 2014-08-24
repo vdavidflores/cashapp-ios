@@ -43,37 +43,11 @@
 -(void)kuTopbar{
     
     
-    CGRect frame = CGRectMake(0.0f, 0.0f, self.view.frame.size.width, 55.0f);
-    UIView *topBar = [[UIView alloc] initWithFrame:frame];
-    topBar.backgroundColor =  [UIColor colorWithRed:197.0/255.0 green:30.0/255.0 blue:79.0/255.0 alpha:1.0];
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"opciones"] style:UIBarButtonItemStyleBordered target:self.navigationController.parentViewController action:@selector(revealToggle:)];
     
     
-    //boton de navicon
-    UIButton *navicon = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    // [navicon addTarget:self action:@selector(handlenavicon) forControlEvents:UIControlEventTouchUpInside];
-    [navicon setBackgroundImage:[UIImage imageNamed:@"opciones"] forState:UIControlStateNormal];
-    [navicon setFrame:CGRectMake(0, 3, 65, 50)];
-    [navicon addTarget:self.navigationController.parentViewController action:@selector(revealToggle:) forControlEvents:UIControlEventTouchUpInside ];
-    
-    
-    
-    //saldo
-    UILabel* titulo = [[UILabel alloc] init];
-    titulo.frame = CGRectMake(0,0,150,50.0);
-    titulo.textAlignment = NSTextAlignmentCenter;
-    titulo.textColor = [UIColor whiteColor];
-    titulo.numberOfLines = 0;
-    titulo.backgroundColor =[UIColor clearColor];
-    titulo.text = @"Información de Cashapp";
-    titulo.font = [titulo.font fontWithSize:20.0];
-    
-    [topBar addSubview:titulo];
-    [titulo setCenter:CGPointMake(topBar.center.x, topBar.center.y)];
-    [topBar addSubview:navicon];
-    
-    [self.view addSubview:topBar];
-    
-
+    [self.navigationItem setLeftBarButtonItem:button];
+    [self.navigationItem setTitle:@"Información de Cashapp"];
     
     
 }
