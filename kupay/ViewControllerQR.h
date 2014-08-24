@@ -10,4 +10,6 @@
 
 @interface ViewControllerQR : UIViewController
 
+@property (nonatomic, retain) NSString *operacion;
+
 @end

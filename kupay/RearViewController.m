@@ -7,6 +7,8 @@
 #import "ViewControllerDeposito.h"
 #import "ViewControllerDesenlaze.h"
 #import "ViewControllerInfo.h"
+#import "kuTableViewCell.h"
+#import "KuBDD.h"
 
 @interface RearViewController()
 @end
@@ -19,21 +21,38 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return 7;
+	return 6;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 65.0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	static NSString *cellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-  
-    if (cell == nil) {
-        cell = [self makeLensListCell: cellIdentifier];
-        cell.selectionStyle = UITableViewCellSelectionStyleGray;
+	static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell;
+    
+    
+    if ([[UIDevice currentDevice].systemVersion floatValue] >= 7.0) {
+        cell = (kuTableViewCell *) [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    } else{
+        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     }
     
+    
+    if (cell == nil) {
+        
+        if ([[UIDevice currentDevice].systemVersion floatValue] >= 7.0) {
+            cell = [[kuTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        }else{
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        }
+    }
     cell.textLabel.textColor = [UIColor whiteColor];
     cell.detailTextLabel.textColor = [UIColor whiteColor];
+    cell.backgroundColor = [UIColor clearColor];
 
 	
 	if (indexPath.row == 0)
@@ -208,6 +227,19 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
 {
 	return (toInterfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+-(void)viewDidLoad{
+    [super viewDidLoad];
+    if ([[UIDevice currentDevice].systemVersion floatValue] >= 7.0) {
+        self.rearTableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    }
+    [self.view setBackgroundColor:[UIColor grayColor]];
+    
+    KuBDD *bdd = [[KuBDD alloc] init];
+    [bdd abrirBDDenPath:@"database.kupay"];
+    self.displayUSR.text = [bdd obtenerDatoConKey:@"id" deLaTabla:@"USR"];
+    [bdd cerrarBdd];
+
 }
 
 @end

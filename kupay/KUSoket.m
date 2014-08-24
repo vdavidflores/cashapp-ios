@@ -26,7 +26,7 @@
                                    selector:@selector(processCompleted) userInfo:nil repeats:NO];*/
     
     [request cancel];
-    [self setRequest:[ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"http://cashapp.mx/kuCloudAppDev/index.php"]]];
+    [self setRequest:[ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"https://cashapp.mx/kuCloudAppDev/index.php"]]];
     
   //  NSMutableDictionary *nameElements = [NSMutableDictionary dictionary];
     NSMutableDictionary *nameElements = data;
@@ -39,6 +39,12 @@
     
     [request setPostValue:action forKey:@"ACCION"];
     [request setPostValue:jsonString forKey:@"DATA"];
+    
+
+    request.shouldPresentCredentialsBeforeChallenge = YES;
+    [request addBasicAuthenticationHeaderWithUsername:@"cashapp"
+                                          andPassword:@"@Ganimedes648722883456995328"];
+    
     [request setTimeOutSeconds:20];
     
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_4_0

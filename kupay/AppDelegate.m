@@ -10,6 +10,8 @@
 #import "RevealController.h"
 #import "ViewControllerMain.h"
 #import "RearViewController.h"
+#import "CRNavigationBar.h"
+#import "CRNavigationController.h"
 #import "ViewControllerPregunta.h"
 @implementation AppDelegate
 
@@ -51,10 +53,26 @@
     if (![idnt isEqualToString:@"ku"]){
         NSLog(@"%@", @"El usuario ya estaba logeado");
         ViewControllerMain *frontViewController = [[ViewControllerMain alloc] init];
+        
+        CRNavigationController * navController = [[CRNavigationController alloc] initWithRootViewController:
+                                       frontViewController ];
+        
+        [navController.navigationBar setBarTintColor:[UIColor colorWithRed:197.0/255.0 green:30.0/255.0 blue:79.0/255.0 alpha:1.0]];
+        
+        navController.navigationBar.tintColor = [UIColor whiteColor];
+        [navController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+        navController.navigationBar.translucent = NO;
+
+        
         RearViewController *rearViewController = [[RearViewController alloc] init];
         
         
-        RevealController *revealController = [[RevealController alloc] initWithFrontViewController:frontViewController rearViewController:rearViewController];
+        RevealController *revealController = [[RevealController alloc] initWithFrontViewController:navController rearViewController:rearViewController];
+        
+        
+        
+        
+        
         self.viewController = revealController;
         self.window.rootViewController = self.viewController;
 

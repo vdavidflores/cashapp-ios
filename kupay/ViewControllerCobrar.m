@@ -79,7 +79,7 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     
     
-    if(alertView.tag == 450 && buttonIndex == 1){
+    if(alertView.tag == 450 && buttonIndex == 1 && ![[[self.pinalert textFieldAtIndex:0] text] isEqualToString:@""]){
         //LOADER TRANSFIRIENDO
         self.pin = [[self.pinalert textFieldAtIndex:0] text];
         generarReq = [[KUSoket alloc] init];
@@ -130,13 +130,18 @@
 -(void)processCompletedWhitResult:(NSDictionary *)result inAcction:(NSNumber *)acction{
     
     [generandoDialog dismissWithClickedButtonIndex:-1 animated:YES];
-    
-    if ([[result objectForKeyedSubscript:@"RESULTADO"] isEqualToString:@"EXITO"]) {
-        //[[[iToast makeText:@"Estoy chido"] setDuration:200] show];
+
+    if ([[result objectForKey:@"RESULTADO"] isEqualToString:@"EXITO"]) {
+        
         ViewControllerQR *qr = [[ViewControllerQR alloc] init];
-     //   [[self navigationController] pushViewController:qr animated:YES];
-        [self presentViewController:qr animated:NULL completion:nil];
-    }else if ([[result objectForKeyedSubscript:@"RESULTADO"] isEqualToString:@"FALLA"]){
+        qr.operacion = [result[@"DATOS"] objectForKey:@"OPERACION"];
+
+        [[self navigationController] pushViewController:qr animated:YES];
+    }else if ([[result objectForKey:@"RESULTADO"] isEqualToString:@"FALLA"]){
+        
+        UIAlertView *alertaFalla = [[UIAlertView alloc] initWithTitle:@"Error al crear el cargo" message:[result[@"DATOS"] objectForKey:@"MENSAJE"]delegate:self  cancelButtonTitle:@"Cancelar" otherButtonTitles:@"Aceptar", nil];
+        alertaFalla.tag =	459;
+        [alertaFalla show];
         
     }else{
         [[[iToast makeText:@"Algo salio mal :("] setDuration:200] show];

@@ -83,7 +83,7 @@
     
     cell.textLabel.textColor = [UIColor whiteColor];
     cell.detailTextLabel.textColor = [UIColor whiteColor];
-    cell.backgroundColor = [UIColor grayColor];
+    cell.backgroundColor = [UIColor clearColor];
 
     cell.textLabel.font=[UIFont boldSystemFontOfSize:16.0];
     NSDictionary *item = (NSDictionary *)[self.content objectAtIndex:indexPath.row];

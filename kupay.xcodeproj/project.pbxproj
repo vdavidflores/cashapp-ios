@@ -135,6 +135,10 @@
 		88028F9C1963563900A18383 /* ViewControllerCobrar.m in Sources */ = {isa = PBXBuildFile; fileRef = 88028F9A1963563900A18383 /* ViewControllerCobrar.m */; };
 		88028F9D1963563900A18383 /* ViewControllerCobrar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88028F9B1963563900A18383 /* ViewControllerCobrar.xib */; };
 		882D1B0D192406E500D7CC76 /* iToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 882D1B0C192406E500D7CC76 /* iToast.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		8830158419A9D39500296038 /* CRNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8830158119A9D39500296038 /* CRNavigationBar.m */; };
+		8830158519A9D39500296038 /* CRNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8830158319A9D39500296038 /* CRNavigationController.m */; };
+		8830158819A9DFDA00296038 /* opciones@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8830158619A9DFDA00296038 /* opciones@2x.png */; };
+		8830158919A9DFDA00296038 /* refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8830158719A9DFDA00296038 /* refresh@2x.png */; };
 		884C47F819A93D090027F0B2 /* kuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 884C47F719A93D090027F0B2 /* kuTableViewCell.m */; };
 		885C58A2192AF0F300BD26F6 /* ViewControllerEnlaze.m in Sources */ = {isa = PBXBuildFile; fileRef = 885C58A0192AF0F300BD26F6 /* ViewControllerEnlaze.m */; };
 		885C58A3192AF0F300BD26F6 /* ViewControllerEnlaze.xib in Resources */ = {isa = PBXBuildFile; fileRef = 885C58A1192AF0F300BD26F6 /* ViewControllerEnlaze.xib */; };
@@ -357,6 +361,12 @@
 		88028F9B1963563900A18383 /* ViewControllerCobrar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerCobrar.xib; sourceTree = "<group>"; };
 		882D1B0B192406E500D7CC76 /* iToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iToast.h; sourceTree = "<group>"; };
 		882D1B0C192406E500D7CC76 /* iToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iToast.m; sourceTree = "<group>"; };
+		8830158019A9D39500296038 /* CRNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRNavigationBar.h; sourceTree = "<group>"; };
+		8830158119A9D39500296038 /* CRNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRNavigationBar.m; sourceTree = "<group>"; };
+		8830158219A9D39500296038 /* CRNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRNavigationController.h; sourceTree = "<group>"; };
+		8830158319A9D39500296038 /* CRNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRNavigationController.m; sourceTree = "<group>"; };
+		8830158619A9DFDA00296038 /* opciones@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "opciones@2x.png"; sourceTree = "<group>"; };
+		8830158719A9DFDA00296038 /* refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh@2x.png"; sourceTree = "<group>"; };
 		884C47F619A93D090027F0B2 /* kuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kuTableViewCell.h; sourceTree = "<group>"; };
 		884C47F719A93D090027F0B2 /* kuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = kuTableViewCell.m; sourceTree = "<group>"; };
 		885C589F192AF0F300BD26F6 /* ViewControllerEnlaze.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerEnlaze.h; sourceTree = "<group>"; };
@@ -539,6 +549,8 @@
 		229150D21809F8B200D0A715 /* imgs */ = {
 			isa = PBXGroup;
 			children = (
+				8830158619A9DFDA00296038 /* opciones@2x.png */,
+				8830158719A9DFDA00296038 /* refresh@2x.png */,
 				886312F1197EF0D400360F80 /* generarboton.png */,
 				88EBF0B7197DC14700CD9A97 /* desenlazarboton.png */,
 				2233E1791830156A0046C751 /* transparente.png */,
@@ -605,6 +617,7 @@
 		2295FEBF18077D9D002FF865 = {
 			isa = PBXGroup;
 			children = (
+				8830157F19A9D39500296038 /* CRNavigation */,
 				886312F819809EF500360F80 /* QRCodeEncoder */,
 				88ADAA5619563E8600E65F8D /* NSData+MD5.h */,
 				88ADAA5719563E8600E65F8D /* NSData+MD5.m */,
@@ -787,6 +800,17 @@
 			path = toast;
 			sourceTree = "<group>";
 		};
+		8830157F19A9D39500296038 /* CRNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				8830158019A9D39500296038 /* CRNavigationBar.h */,
+				8830158119A9D39500296038 /* CRNavigationBar.m */,
+				8830158219A9D39500296038 /* CRNavigationController.h */,
+				8830158319A9D39500296038 /* CRNavigationController.m */,
+			);
+			path = CRNavigation;
+			sourceTree = "<group>";
+		};
 		886312F819809EF500360F80 /* QRCodeEncoder */ = {
 			isa = PBXGroup;
 			children = (
@@ -910,6 +934,7 @@
 				88E4AFF5197B383800FC2DC9 /* ViewControllerInfo.xib in Resources */,
 				22DD5E85181EC924004803D3 /* ViewControllerRetiro.xib in Resources */,
 				220B1BA01815C28F0049B519 /* scanerLogoUnselected@2x.png in Resources */,
+				8830158819A9DFDA00296038 /* opciones@2x.png in Resources */,
 				229150F61809F8B200D0A715 /* refresh.png in Resources */,
 				229150FA1809F8B200D0A715 /* venm.png in Resources */,
 				22F685EC182F157A00ABDE3D /* seguridad@2x.png in Resources */,
@@ -938,6 +963,7 @@
 				220B1B851815BAED0049B519 /* historyLogoSelected.png in Resources */,
 				88E4AFF7197B4A1B00FC2DC9 /* InfoPlist.strings in Resources */,
 				220B1B9E1815C28F0049B519 /* historyLogoUnselected@2x.png in Resources */,
+				8830158919A9DFDA00296038 /* refresh@2x.png in Resources */,
 				22DD5E8A181EC956004803D3 /* ViewControllerLLaveKu.xib in Resources */,
 				22F685E6182F157A00ABDE3D /* datosS@2x.png in Resources */,
 				22F685E7182F157A00ABDE3D /* enlace.png in Resources */,
@@ -977,6 +1003,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8830158419A9D39500296038 /* CRNavigationBar.m in Sources */,
 				2233E1961830403F0046C751 /* ASIDataCompressor.m in Sources */,
 				22FBB0BA182EE518002DBC40 /* KuBDD.m in Sources */,
 				882D1B0D192406E500D7CC76 /* iToast.m in Sources */,
@@ -1007,6 +1034,7 @@
 				2295FED818077D9E002FF865 /* main.m in Sources */,
 				22FBB0B4182EE4D5002DBC40 /* FMDatabaseQueue.m in Sources */,
 				221A36BD18231931009C5AC0 /* ViewControllerDeposito.m in Sources */,
+				8830158519A9D39500296038 /* CRNavigationController.m in Sources */,
 				22FBB0B5182EE4D5002DBC40 /* FMResultSet.m in Sources */,
 				22DD5E76181EB282004803D3 /* RevealController.m in Sources */,
 				220890DC182858BC00AE4889 /* ViewControllerTarjetaNueva.m in Sources */,

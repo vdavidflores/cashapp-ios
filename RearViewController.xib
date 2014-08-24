@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RearViewController">
             <connections>
+                <outlet property="displayUSR" destination="9wg-qD-vqJ" id="olW-y4-gYv"/>
                 <outlet property="rearTableView" destination="20" id="24"/>
                 <outlet property="view" destination="1" id="21"/>
             </connections>
@@ -16,8 +17,8 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="20">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="20">
+                    <rect key="frame" x="0.0" y="54" width="320" height="514"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="0.60218608809999996" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="0.73011577559999996" alpha="1" colorSpace="calibratedWhite"/>
@@ -29,8 +30,28 @@
                         <outlet property="delegate" destination="-1" id="23"/>
                     </connections>
                 </tableView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Usuario" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wg-qD-vqJ">
+                    <rect key="frame" x="20" y="25" width="236" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="236" id="MHK-UQ-yWg"/>
+                        <constraint firstAttribute="height" constant="21" id="RgK-vG-0rU"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.90762992527173914" green="0.74291104342551784" blue="0.21825230663781833" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="20" secondAttribute="trailing" id="SgY-UV-afT"/>
+                <constraint firstAttribute="bottom" secondItem="20" secondAttribute="bottom" id="XD0-a4-gKC"/>
+                <constraint firstItem="9wg-qD-vqJ" firstAttribute="top" secondItem="1" secondAttribute="top" constant="25" id="c7I-R8-fAc"/>
+                <constraint firstItem="20" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="dIb-Qd-XW6"/>
+                <constraint firstAttribute="trailing" secondItem="9wg-qD-vqJ" secondAttribute="trailing" constant="64" id="v4z-59-abH"/>
+                <constraint firstItem="20" firstAttribute="top" secondItem="9wg-qD-vqJ" secondAttribute="bottom" constant="8" id="wza-eW-AOF"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>

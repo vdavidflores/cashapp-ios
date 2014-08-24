@@ -73,44 +73,18 @@
         
         
         
-        //Se añade el top bar
-        CGRect frame = CGRectMake(0.0f, 0.0f, self.view.frame.size.width, 55.0f);
-        UIView *topBar = [[UIView alloc] initWithFrame:frame];
-        topBar.backgroundColor =  [UIColor colorWithRed:197.0/255.0 green:30.0/255.0 blue:79.0/255.0 alpha:1.0];
-        
-        //Boton refrescar
-        referscar = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        [referscar addTarget:self action:@selector(handlereferscar) forControlEvents:UIControlEventTouchUpInside];
-        [referscar setBackgroundImage:[UIImage imageNamed:@"refresh"] forState:UIControlStateNormal];
-         [referscar setFrame:CGRectMake(self.view.frame.size.width-50, 12, 36, 32)];
-       
-       //boton de navicon
-        UIButton *navicon = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        [navicon addTarget:self action:@selector(handlenavicon) forControlEvents:UIControlEventTouchUpInside];
-        [navicon setBackgroundImage:[UIImage imageNamed:@"opciones"] forState:UIControlStateNormal];
-        [navicon setFrame:CGRectMake(0, 3, 65, 50)];
-        [navicon addTarget:self.parentViewController action:@selector(revealToggle:) forControlEvents:UIControlEventTouchUpInside ];
+        UIBarButtonItem *buttonRigth = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"refresh"] style:UIBarButtonItemStyleBordered target:self action:@selector(handlereferscar)];
         
         
-        //saldo
-        saldo = [[UILabel alloc] init];
-        saldo.frame = CGRectMake(0,0,150,50.0);
-        saldo.textAlignment = NSTextAlignmentCenter;
-        saldo.textColor = [UIColor whiteColor];
-        saldo.numberOfLines = 0;
-        saldo.backgroundColor =[UIColor clearColor];
-        saldo.text = @"Sin conexión al servidor";
-        saldo.font = [saldo.font fontWithSize:20.0];
+        [self.navigationItem setRightBarButtonItem:buttonRigth];
 
-        [topBar addSubview:saldo];
-        [saldo setCenter:CGPointMake(topBar.center.x, topBar.center.y)];
-        [topBar addSubview:navicon];
-        [topBar addSubview:referscar];
         
-        [self.view addSubview:topBar];
+        UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"opciones"] style:UIBarButtonItemStyleBordered target:self.parentViewController action:@selector(revealToggle:)];
+        
+        
+        [self.navigationItem setLeftBarButtonItem:button];
+
         [self handlereferscar];
-        
-        
  
 
     }
@@ -195,12 +169,12 @@
     [self handlereferscar];
 }
 -(void)cambiarSaldo:(NSString *)saldoN{
-    [self.saldo setText:[NSString stringWithFormat:@"$%@",saldoN]];
+    self.navigationItem.title = [NSString stringWithFormat:@"$%@",saldoN];
 }
 -(void)processCompletedWhitResult:(NSDictionary *)result inAcction:(NSNumber *)acction{
     if ([acction integerValue]==5) {
         if ([[result objectForKey:@"RESULTADO"] isEqualToString:@"ACTUALIZACION_CC_EXITOSA"]) {
-             self.saldo.text=[NSString stringWithFormat:@"$%@",[result[@"DATOS"] objectForKey:@"SALDO"]];
+             self.navigationItem.title=[NSString stringWithFormat:@"$%@",[result[@"DATOS"] objectForKey:@"SALDO"]];
         }
     }
 }

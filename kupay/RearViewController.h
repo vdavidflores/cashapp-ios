@@ -38,5 +38,6 @@
 @property (nonatomic, retain) IBOutlet UITableView *rearTableView;
 
 // Public Methods:
+@property (weak, nonatomic) IBOutlet UILabel *displayUSR;
 
 @end
