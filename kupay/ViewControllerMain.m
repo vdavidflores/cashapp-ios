@@ -17,7 +17,7 @@
 
 @interface ViewControllerMain ()
 -(IBAction)enrespuesta:(ASIFormDataRequest *) elrequest;
-+(void)cambiarSaldo:(NSString *)saldo;
+-(void)cambiarSaldo:(NSString *)saldo;
 @end
 
 

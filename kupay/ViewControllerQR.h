@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewControllerQR : UIViewController
+@interface ViewControllerQR : UIViewController{
+    NSString *operacion;
+ 
+}
 
-@property (nonatomic, retain) NSString *operacion;
 
+@property (weak, nonatomic) IBOutlet UIImageView *imageFrame;
+-(void)cargarQRconoperacion:(NSString *)qr;
 @end

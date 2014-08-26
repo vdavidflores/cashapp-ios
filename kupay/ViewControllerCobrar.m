@@ -5,11 +5,12 @@
 //  Created by Codigo KU on 01/07/14.
 //  Copyright (c) 2014 ku. All rights reserved.
 //
-
+#import "ViewControllerQR.h"
 #import "ViewControllerCobrar.h"
 #import "iToast.h"
 #import "KuBDD.h"
-#import "ViewControllerQR.h"
+
+
 
 @interface ViewControllerCobrar ()
 
@@ -133,10 +134,17 @@
 
     if ([[result objectForKey:@"RESULTADO"] isEqualToString:@"EXITO"]) {
         
+        NSLog(@"El resultado es: %@",[result[@"DATOS"] objectForKey:@"OPERACION"]);
+        
+        
+        
+        NSLog(@"OPERACION-------%@",[result[@"DATOS"] objectForKey:@"OPERACION"] );
+        NSString *OP = [result[@"DATOS"] objectForKey:@"OPERACION"];
+        
         ViewControllerQR *qr = [[ViewControllerQR alloc] init];
-        qr.operacion = [result[@"DATOS"] objectForKey:@"OPERACION"];
-
+        [qr cargarQRconoperacion:OP];
         [[self navigationController] pushViewController:qr animated:YES];
+        
     }else if ([[result objectForKey:@"RESULTADO"] isEqualToString:@"FALLA"]){
         
         UIAlertView *alertaFalla = [[UIAlertView alloc] initWithTitle:@"Error al crear el cargo" message:[result[@"DATOS"] objectForKey:@"MENSAJE"]delegate:self  cancelButtonTitle:@"Cancelar" otherButtonTitles:@"Aceptar", nil];
@@ -146,8 +154,5 @@
     }else{
         [[[iToast makeText:@"Algo salio mal :("] setDuration:200] show];
     }
-    
-    
-    
 }
 @end
