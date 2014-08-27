@@ -23,5 +23,5 @@
 @property (nonatomic,strong) id delegate;
 @property (nonatomic, retain) ASIFormDataRequest *request;
 -(void)startRequestForAction:(NSString*)action andData:(NSMutableDictionary*)data; // Instance method
-
+-(void)stopRequest;
 @end

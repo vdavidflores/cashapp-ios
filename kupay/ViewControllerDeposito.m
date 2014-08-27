@@ -10,6 +10,9 @@
 #import "ViewControllerCodigoOXXO.h"
 #import "ViewControllerTarjetaNueva.h"
 #import "iToast.h"
+#import "KuBDD.h"
+#import "ViewControllerVerTarjetas.h"
+#import "ViewControllerVerTarjetas.h"
 
 @interface ViewControllerDeposito ()
 
@@ -27,8 +30,7 @@
     
     [self kuTopbar];
     
-    self.tarjetas = [NSArray arrayWithObjects:@"Visa",@"La Master",@"Visa elctron", @"Viajes", nil];
-    
+      
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -60,119 +62,74 @@
     ViewControllerCodigoOXXO *codifgooxo = [[ViewControllerCodigoOXXO alloc]init];
     [[self navigationController] pushViewController:codifgooxo animated:YES];
     }else{
-  
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Selecciona la tarjeta a usar (desliza para borrar)" message:@"click for submission \n\n\n \n\n\n\n\n\n"delegate:self  cancelButtonTitle:@"Cancelar"
-                                              otherButtonTitles:@"Aceptar",nil];
-     
-       UITableView *table = [[UITableView alloc]initWithFrame:CGRectMake(10, 70, 264, 175)];
-        table.delegate = self;
-        table.dataSource = self;
-        
-        [alert addSubview:table];
-        
-        [alert show];
-
-        
-        /*  ViewControllerTarjetaNueva *listTarj = [[ViewControllerTarjetaNueva alloc]init];
-        [[self navigationController] pushViewController:listTarj animated:YES];
-*/
+        ViewControllerVerTarjetas *tarjetas = [[ViewControllerVerTarjetas alloc] init];
+        [[self navigationController] pushViewController:tarjetas animated:YES];
     }
-    
 }
 -(void) pickOne:(id)sender{
-    UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
-   
-    [iToast makeText:[NSString stringWithFormat:@"seleccionado %@",[segmentedControl titleForSegmentAtIndex: [segmentedControl selectedSegmentIndex]]]];
-}
-
-
-
-//DElegado de listView para uitableview de loista de tarjetas
-
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"boorando!");
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-       
-        NSMutableArray *work_array = [NSMutableArray arrayWithArray:self.tarjetas];
-        [work_array removeObjectAtIndex:indexPath.row];
-        self.tarjetas = [NSArray arrayWithArray:work_array];
-        
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }
-
-}
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-   // [tableView setEditing:YES animated:YES];
-}
--(void)rmove{
-    
-}
-
-
-- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
-  //  SimpleEditableListAppDelegate *controller = (SimpleEditableListAppDelegate *)[[UIApplication sharedApplication] self];
-  //  if (indexPath.row == [controller countOfList]-1) {
-  //      return UITableViewCellEditingStyleInsert;
-  //  } else {
-        return UITableViewCellEditingStyleDelete;
-  //  }
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
-}
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"MyIdentifier";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [self makeLensListCell: CellIdentifier];
-        cell.selectionStyle = UITableViewCellSelectionStyleGray;
-       
-    }
-    
-    if (indexPath.section==1) {
-    cell.backgroundColor = [UIColor clearColor];
-    cell.textLabel.text = [self.tarjetas objectAtIndex:indexPath.row];  //  cell.editingAccessoryView = self.editButtonItem;
-    return cell;
-    }else{
-        cell.textLabel.text = @"Añadir nueva";
-        return cell;
-
+        switch ([segmentedControl selectedSegmentIndex]) {
+        case 0:
+            [self mostrarInputs];
+            [self.progress stopAnimating];
+            [self.spei stopRequest];
+        break;
+            
+        case 1:
+            [self mostrarInputs];
+            [self.progress stopAnimating];
+            [self.spei stopRequest];
+        break;
+            
+        case 2:
+            [self ocultarInputs];
+            [self.progress startAnimating];
+            KuBDD *bdd = [[KuBDD alloc] init];
+            [bdd abrirBDDenPath:@"database.kupay"];
+            NSString *imei = [bdd obtenerDatoConKey:@"kuPrivKey" deLaTabla:@"USR"];
+            NSString *usr = [bdd obtenerDatoConKey:@"id" deLaTabla:@"USR"];
+            [bdd cerrarBdd];
+            NSMutableDictionary  *data = [[NSMutableDictionary  alloc] init];
+            [data setValue:imei forKey:@"imei"];
+            [data setValue:usr forKey:@"usr"];
+            [data setValue:@"1" forKey:@"monto"];
+            self.spei = [[KUSoket alloc] init];
+            self.spei.delegate = self;
+            [self.spei startRequestForAction:@"21" andData:data];
+        break;
     }
 }
-- (UITableViewCell *)makeLensListCell: (NSString *)identifier
-{
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
-    
-    return cell;
+
+-(void)ocultarInputs{
+    [self.BTNaceptar setHidden:YES];
+    [self.TXTCantidad setHidden:YES];
+    [self.INPUTcantidad setHidden:YES];
+  
+}
+-(void)mostrarInputs{
+    [self.BTNaceptar setHidden:NO];
+    [self.TXTCantidad setHidden:NO];
+    [self.INPUTcantidad setHidden:NO];
+    [self.TXTspei setHidden:YES];
+  
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    if (section==0)
-    {
-        return 1;
-    }
-    else{
-        NSInteger numberOfRows = [self.tarjetas count];
-        return numberOfRows;
-    }
-    
-    
-}
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 0) {
-        return NO;
-    }
-        return YES;
-}
 
--(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return @"Borrar";
+-(void)processCompletedWhitResult:(NSDictionary *)result inAcction:(NSNumber *)acction{
+    
+    switch ([acction integerValue]) {
+        case 21:
+            if ([[result objectForKey:@"RESULTADO"] isEqualToString:@"EXITO"]) {
+                [self.progress stopAnimating];
+                self.TXTspei.text = [NSString stringWithFormat:@"Tu cuenta CLABE Interbancaria es: %@ del banco: %@, Transfiere desde tu banca en linea el saldo que deses y se vera reflejado en tu cuenta Cashapp.",[result[@"DATOS"] objectForKey:@"clabe"], [result[@"DATOS"] objectForKey:@"bank"]];
+                [self.TXTspei setHidden:NO];
+                
+            }
+            break;
+            
+        default:
+            break;
+    }
+    
 }
 
 @end

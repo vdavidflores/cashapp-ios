@@ -35,8 +35,8 @@
     
     bool cratus = [db executeUpdate:@"create table USR(id text, kuPrivKey text, kuPubKey text, ultimoToken text)"];
     
-    //[db executeUpdate:@"create table TARJETA(id text, kuPrivKey text, kuPubKey text, ultimoToken text)"];
-    
+     bool cratustar =[db executeUpdate:@"create table TARJETA(id INTEGER PRIMARY KEY AUTOINCREMENT,nombre text,numero_tarjeta_cryp text, nombre_titular_cryp text,  exp_mes_cryp text,  exp_anio_cryp text,  cvv_cryp text)"];
+    NSLog(@"Base t creada: %@", (cratustar) ? @"YES" : @"NO");
     NSLog(@"Base creada: %@", (cratus) ? @"YES" : @"NO");
     if (cratus){
         [db executeUpdate:@"INSERT INTO USR (id,kuPrivKey,kuPubKey,ultimoToken) values (?,?,?,?)",@"ku",@"ku",@"ku",@"ku"];
@@ -50,8 +50,11 @@
         i++;
     }
     NSLog(@"fillas en bdd: %d " ,i );
-    if (![idnt isEqualToString:@"ku"]){
-        NSLog(@"%@", @"El usuario ya estaba logeado");
+    
+    
+    if (![idnt isEqualToString:@"ku"])
+    {
+     
         ViewControllerMain *frontViewController = [[ViewControllerMain alloc] init];
         
         CRNavigationController * navController = [[CRNavigationController alloc] initWithRootViewController:

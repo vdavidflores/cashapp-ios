@@ -15,5 +15,9 @@
 -(BOOL)cerrarBdd;
 -(NSString*)obtenerDatoConKey:(NSString *)key deLaTabla:(NSString*)tabla;
 -(void)actualizarCampo:(NSString*)campo conDato:(NSString*)dato deLaTabla:(NSString*)tabla;
-
+-(void)actualizarCampo:(NSString*)campo conDato:(NSString*)dato enLaPocicion:(NSString *)posicion deLaTabla:(NSString*)tabla;
+-(BOOL)abrirKuBDD;
+-(BOOL)Update:(NSString *)query;
+-(NSMutableArray*)obtenerColumna:(NSString *)key deLaTabla:(NSString *)tabla;
+-(NSInteger)cantidadDeEntradasEnTabla:(NSString *)tabla;
 @end

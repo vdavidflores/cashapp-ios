@@ -83,4 +83,13 @@
     
 }
 
+
+-(void)stopRequest{
+    if ([request isExecuting]) {
+        [request cancel];
+    }
+    
+    
+  }
+
 @end

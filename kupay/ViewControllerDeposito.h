@@ -8,10 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "ZUUIRevealController.h"
+#import "KUSoket.h"
 
-@interface ViewControllerDeposito : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface ViewControllerDeposito : UIViewController <KUSoketDelegate>
 - (IBAction)Aceptoar:(id)sender;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
-@property (strong,nonatomic) NSArray *tarjetas;
+
+@property (strong,atomic) KUSoket *spei;
+@property (weak, nonatomic) IBOutlet UILabel *TXTCantidad;
+@property (weak, nonatomic) IBOutlet UITextField *INPUTcantidad;
+@property (weak, nonatomic) IBOutlet UIButton *BTNaceptar;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *progress;
+@property (weak, nonatomic) IBOutlet UITextView *TXTspei;
 
 @end
