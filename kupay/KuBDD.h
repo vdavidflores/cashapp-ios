@@ -20,4 +20,5 @@
 -(BOOL)Update:(NSString *)query;
 -(NSMutableArray*)obtenerColumna:(NSString *)key deLaTabla:(NSString *)tabla;
 -(NSInteger)cantidadDeEntradasEnTabla:(NSString *)tabla;
+-(NSString*)obtenerDatoConKey:(NSString *)key deLaTabla:(NSString *)tabla enLaPocicion:(int)posicion;
 @end

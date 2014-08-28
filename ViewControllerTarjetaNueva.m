@@ -46,7 +46,7 @@
     if(alertView.tag == 450 && buttonIndex == 1){
         //LOADER TRANSFIRIENDO
         self.pin = [[self.pinalert textFieldAtIndex:0] text];
-        self.transfiriendoDialog = [[UIAlertView alloc] initWithTitle:@"Transferencia en proceso" message:@"Espera un momento \n\n\n\n"
+        self.transfiriendoDialog = [[UIAlertView alloc] initWithTitle:@"Encriptando datos" message:@"Espera un momento \n\n\n\n"
                                                              delegate:self
                                                     cancelButtonTitle:nil
                                                     otherButtonTitles:nil, nil];

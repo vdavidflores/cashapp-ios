@@ -19,7 +19,7 @@
 @end
 
 @implementation ViewControllerDeposito
-@synthesize segmentedControl;
+@synthesize segmentedControl,INPUTcantidad;
 
 
 - (void)viewDidLoad
@@ -57,14 +57,35 @@
 }
 
 - (IBAction)Aceptoar:(id)sender {
+    if (![[INPUTcantidad text] isEqualToString:@""]) {
+        INPUTcantidad.backgroundColor = [UIColor whiteColor];
+        
+        if (segmentedControl.selectedSegmentIndex ==0){
+            ViewControllerVerTarjetas *tarjetas = [[ViewControllerVerTarjetas alloc] init];
+            [tarjetas setMonto:[INPUTcantidad text]];
+            [tarjetas setDeposito:YES];
+            [[self navigationController] pushViewController:tarjetas animated:YES];
+        }
+        
+            if (segmentedControl.selectedSegmentIndex ==1){
+                UIAlertView *al = [[UIAlertView alloc] initWithTitle:@"Fuera de servicio" message:@"Esta función se encuentra momentaneamente fuera de servicio" delegate:self cancelButtonTitle:@"Aceptar" otherButtonTitles:nil, nil];
+                [al show];
+
+            }
+               
+        
+            
+            
+        }else{
+            [[[iToast makeText:@"Cantidad vacia"]setDuration:2000] show] ;
+            [INPUTcantidad becomeFirstResponder];
+            INPUTcantidad.backgroundColor = [UIColor yellowColor];
+            
+            
+        }
+        
+        
     
-    if (segmentedControl.selectedSegmentIndex ==1){
-    ViewControllerCodigoOXXO *codifgooxo = [[ViewControllerCodigoOXXO alloc]init];
-    [[self navigationController] pushViewController:codifgooxo animated:YES];
-    }else{
-        ViewControllerVerTarjetas *tarjetas = [[ViewControllerVerTarjetas alloc] init];
-        [[self navigationController] pushViewController:tarjetas animated:YES];
-    }
 }
 -(void) pickOne:(id)sender{
         switch ([segmentedControl selectedSegmentIndex]) {

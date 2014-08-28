@@ -16,8 +16,8 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Bl-Vx-8h2">
-                    <rect key="frame" x="79" y="325" width="163" height="51"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Bl-Vx-8h2">
+                    <rect key="frame" x="79" y="351" width="163" height="51"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="163" id="2Ov-ru-KqR"/>
@@ -30,11 +30,11 @@
                         <action selector="onDesenlazar:" destination="-1" eventType="touchUpInside" id="3CQ-nx-8Hk"/>
                     </connections>
                 </button>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YGR-fY-e2V">
-                    <rect key="frame" x="20" y="109" width="280" height="156"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YGR-fY-e2V">
+                    <rect key="frame" x="20" y="82" width="280" height="156"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
+                        <constraint firstAttribute="height" constant="156" id="4kI-pn-hHj"/>
                         <constraint firstAttribute="width" constant="280" id="9pD-x9-fzY"/>
                     </constraints>
                     <string key="text">Desenlazar celular implica en desenlazar tu cuenta Cashapp de este dispositivo, Recuerda que después de des enlazar tu cuenta solo la podrás enlazar a un solo nuevo dispositivo</string>
@@ -45,10 +45,10 @@
             </subviews>
             <color key="backgroundColor" red="1" green="0.045006145910000003" blue="0.17888632879999999" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="YGR-fY-e2V" firstAttribute="top" secondItem="1" secondAttribute="top" constant="109" id="Fyr-FN-96h"/>
-                <constraint firstItem="7Bl-Vx-8h2" firstAttribute="top" secondItem="YGR-fY-e2V" secondAttribute="bottom" constant="60" id="QS8-dd-jb5"/>
-                <constraint firstItem="7Bl-Vx-8h2" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="79" id="i6S-PH-icT"/>
-                <constraint firstAttribute="trailing" secondItem="7Bl-Vx-8h2" secondAttribute="trailing" constant="78" id="sc2-Tj-pxJ"/>
+                <constraint firstItem="YGR-fY-e2V" firstAttribute="top" secondItem="1" secondAttribute="top" constant="82" id="Fyr-FN-96h"/>
+                <constraint firstItem="YGR-fY-e2V" firstAttribute="centerX" secondItem="7Bl-Vx-8h2" secondAttribute="centerX" id="cZn-f0-78u"/>
+                <constraint firstAttribute="bottom" secondItem="7Bl-Vx-8h2" secondAttribute="bottom" constant="166" id="eWO-NY-1dO"/>
+                <constraint firstItem="YGR-fY-e2V" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" symbolic="YES" id="wxr-66-SuH"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

@@ -73,6 +73,16 @@
     return aray;
 }
 
+-(NSString*)obtenerDatoConKey:(NSString *)key deLaTabla:(NSString *)tabla enLaPocicion:(int)posicion{
+    NSString *result = nil;
+    
+    FMResultSet *res = [self.db executeQuery:[NSString stringWithFormat:@"SELECT %@ FROM %@ WHERE id = %d",key,tabla,posicion]];
+    while ([res next]) {
+        result = [res stringForColumn:key];
+    }
+    return result;
+}
+
 -(NSString*)obtenerDatoConKey:(NSString *)key deLaTabla:(NSString *)tabla{
     NSString *result = nil;
     
