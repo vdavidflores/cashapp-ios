@@ -17,12 +17,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i3l-cO-u5A">
-                    <rect key="frame" x="10" y="70" width="300" height="391"/>
+                    <rect key="frame" x="10" y="20" width="300" height="417"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <attributedString key="attributedText">
                         <fragment>
-                            <string key="content">Cashapp es una herramienta de manejo de dinero y pagos que funciona por medio de una aplicación para smartphones y una consola web.Esta aplicación permite a los usuarios realizar recargas de saldo con su tarjeta de crédito y débito, comprando tarjetas de abono o en tiendas de autoservicio. A su vez estos usuarios pueden realizar pagos escaneando códigos QRs con un escáner integrado a su aplicación cashapp.
+                            <string key="content">Cashapp es una herramienta de manejo de dinero y pagos que funciona por medio de una aplicación para smartphones y una consola web. Esta aplicación permite a los usuarios realizar recargas de saldo con su tarjeta de crédito y débito, comprando tarjetas de abono o en tiendas de autoservicio. A su vez estos usuarios pueden realizar pagos escaneando códigos QRs con un escáner integrado a su aplicación cashapp.
 
 Es importante destacar que todos los usuarios de cashapp pueden acceder a una consola web (página web de venta) que les permite generar sus propios códigos QR de ventas y llevar un control sobre pedidos y ventas hechas, “Cashapp es tu negocio en la nube”.
 
@@ -59,7 +58,7 @@ Cg
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="0.045006145910000003" blue="0.17888632879999999" alpha="1" colorSpace="calibratedRGB"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
