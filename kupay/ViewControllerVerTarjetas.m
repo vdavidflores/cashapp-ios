@@ -197,7 +197,7 @@
         [al show];
         
     }else if([[result objectForKey:@"RESULTADO"] isEqualToString:@"FALLA"]) {
-        UIAlertView *al = [[UIAlertView alloc] initWithTitle:@"Tarjeta declinada" message:[result[@"DATOS"] objectForKey:@"MENSAJE"]delegate:self cancelButtonTitle:@"Aceptar" otherButtonTitles:nil, nil];
+        UIAlertView *al = [[UIAlertView alloc] initWithTitle:@"Operación declinada" message:[result[@"DATOS"] objectForKey:@"MENSAJE"]delegate:self cancelButtonTitle:@"Aceptar" otherButtonTitles:nil, nil];
         [al show];
 
     }

@@ -64,6 +64,7 @@
         [bdd abrirBDDenPath:@"database.kupay"];
         [bdd actualizarCampo:@"id" conDato:@"ku" deLaTabla:@"USR"];
         [bdd actualizarCampo:@"kuPrivKey" conDato:@"ku" deLaTabla:@"USR"];
+        [bdd Update:@"DROP TABLE TARJETA"];
         [bdd cerrarBdd];
         
         ViewControllerPregunta *preg = [[ViewControllerPregunta alloc] init];
